@@ -1,0 +1,292 @@
+.outerContainer {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    position: relative
+}
+
+/* ヘッダー部分 */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* 階層選択ボタン（ヘッダー内配置） */
+.floorSelector {
+    width: 100%;
+    max-width: 400px;
+    padding: 0 10px;
+    margin: 0 auto 20px;
+}
+
+.buttonContainer {
+    position: relative;
+    display: flex;
+    gap: 0;
+    width: 100%;
+    background-color: #B3E5FC;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #81D4FA;
+    border-radius: 8px;
+    transition: left 0.3s ease;
+    z-index: 0;
+}
+
+.buttonContainer button {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    color: #0277BD;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.activeButton {
+    color: #fff;
+}
+
+/* マップ表示部分 */
+.mapWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* 各ブレークポイントで固定ピクセル指定 */
+@media (min-width: 1290px) {
+    .mapContainer {
+        width: 1000px;
+        height: 749px;
+    }
+}
+
+/* 1290px未満、かつ880px以上：880×660px */
+@media (max-width: 1289px) and (min-width: 950px) {
+    .mapContainer {
+        width: 880px;
+        height: 659px;
+    }
+}
+
+/* 880px未満、かつ620px以上：620×465px */
+@media (max-width: 949px) and (min-width: 630px) {
+    .mapContainer {
+        width: 620px;
+        height: 464px;
+    }
+}
+
+/* 620px未満、かつ420px以上：420×315px */
+@media (max-width: 629px) and (min-width: 420px) {
+    .mapContainer {
+        width: 420px;
+        height: 315px;
+    }
+}
+
+/* 420px未満（必要に応じて調整） */
+@media (max-width: 419px) {
+    .mapContainer {
+        width: 370px;
+        height: 277px;
+    }
+}
+
+.mapContainer {
+    position: relative;
+    overflow: hidden;
+}
+
+.innerContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    transform: rotateX(30deg);
+}
+
+.floor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mapImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ピン用のスタイル */
+.pinWrapper {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    cursor: pointer;
+    z-index: 20;
+}
+
+.pinContent {
+    transform: rotateY(-30deg);
+    position: relative;
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tooltip {
+    position: absolute;
+    top: -50px;
+    left: 25px;
+    padding: 5px 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.Esearch {
+    position: relative;
+    width: 60vw;
+    max-width: 600px;
+    min-width: 330px;
+    margin: 0 auto;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 40px 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: #0070f3;
+    box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);
+}
+
+/* 検索アイコン */
+.Esearch::before {
+    content: '🔍';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+}
+
+/* クリアボタン（入力がある場合に表示する） */
+.Eclear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #888;
+}
+
+.suggestionList {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    max-width: 600px;
+    min-width: 330px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestionItem {
+    height: 38px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.suggestionItem:hover {
+    background-color: #f0f0f0;
+}
+
+.suggestionClass {
+    flex-shrink: 0;
+    width: 80px;
+    text-align: center;
+    font-size: 12px;
+    align-items: center;
+}
+
+.suggestionTitle {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.expMap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.expMapExp {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.expBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #373737 2px solid;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.expClass {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.expTitle {
+    font-size: 17px;
+    font-weight: bold
+}
