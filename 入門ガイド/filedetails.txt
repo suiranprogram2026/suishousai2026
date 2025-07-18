@@ -5,40 +5,36 @@
 
 ここではそれぞれのファイルについて説明していきます。
 ※ここに登場していないファイルは編集しても意味ないファイルだったり途中で別の人によって追加されたファイルの可能性があります。
+※2025/7/18時点の情報です
 
 #app ~ サイトのメインページディレクトリ
 
 - 404 ~ エラーが発生した場合にとばされる ※自動指定型
 
 - about ~ 翠翔祭についての説明ファイル
- - absui ~ 翠翔祭について
- - stuff ~ 翠翔祭のスタッフ
 
 - admin ~ アドミンディレクトリ
  - dashboard ~ 編集ダッシュボード
  - login ~ ログインページ
 
-- announce ~ お知らせページ
+-api
 
 - attention ~ 注意事項ページ
-
-- crowded ~ もともとは混雑状況ページだったけど整理券ページになった
 
 - error ~ エラーが発生したときに飛ばされるページ ※直接指定型
 
 - event ~ イベント検索ページ
- - [className] ~ イベント詳細ページ ※ページを一つにして統一して管理しています。
 
 - map ~ マップディレクトリ
  - three ~ 構造マップ
- - two ~ 平面マップ
 
-- setting ~ クッキーの設定
- - privacy ~ プライバシー関連の説明
+-timetable ~ タイムテーブル関連　eventページと連携していたりしてなかったり、、
 
 favicon.ico ~ サイトのアイコン
 
 global.css ~ 下部ページでの統一したcss
+
+homepage.css ~ 
 
 layout.tsx ~ 下部ページでの統一したコンテンツ
 
@@ -50,23 +46,31 @@ page.tsx ~ ホームページ
 
 #components ~ importファイルを格納している場所
 
-bread ~ 常時存在しているヘッダー部分の設定
+finish,topselect,form,result,announce,access ~ トップページのデザイン用　コンポーネントである必要あんまないかも
 
 editor ~ 編集ページのファイル
 
-Footer ~ メインページについてるフッター
+footer ~ メインページについてるフッター
 
-mod ~ サイドバーのメニュー関連
+HamburherMenu ~ サイドバーのメニュー関連
 
-notification系 ~ お知らせボックス
+nowedit ~ 「まだ編集中だって」のやつ
 
-search ~ 検索システム
+developer ~ 管理者のログインシステム
 
-ticketannouncementbox ~ 整理券情報
+event ~ 検索システム
+
+timetable ~ タイムテーブル
 
 ui ~ shadcnをちょっと変えたやつ。少し使いやすいようにいじってある。 ※shadcnとは便利なUIをパクれるやつ
 
-welcomecard ~ メインページの一番最初に見るやつ
+warning ~ ページをひたらいたときに出てくる電子マネー注意のやつ
+
+CookieConsent ~ クッキー用（不明）
+
+DevOnly ~ DevOnlyを管理している奴
+
+LoginForm ~ 管理者のログイン画面
 
 
 
@@ -100,7 +104,7 @@ festival系 ~ 催し物の概要などを記述する部分
 nomalizeKana ~ 検索ですべての言葉に対して検索できるようにする仕組み
 
 
-
+#扱い方ガイド ~ いろいろお役たち情報
 #入門ガイド ~ このサイトを使用するときに注意するべきことやセットアップに関して
 
 
