@@ -1,0 +1,13 @@
+クロームブックで開発するにはウィンドウズやマックとは異なる方法でインストールする必要があります。
+基本はgide.txtを参照し違うところのみをこっちで見てください
+
+必要なツールのインストール
+まずlinuxを有効化します。設定を開いて「chromeOSについて」を開いて一番下に行くと「Linux開発環境」というものがあるのでそれをオンにして画面通りに続けてください。
+ターミナルが開いたら次のコマンドを打ってください
+（ターミナルでコピペするにはctrl+shift+vです）
+sudo apt update
+sudo apt install -y nodejs npm git curl
+wget -O vscode.deb https://update.code.visualstudio.com/latest/linux-deb-x64/stable
+sudo apt install ./vscode.deb
+インストールに時間がかかるので気長に待っててください
+赤い文字が出ず、なんかうまく言ってそうだったらokです

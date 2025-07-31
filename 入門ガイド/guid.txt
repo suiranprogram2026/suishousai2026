@@ -11,12 +11,14 @@
 # インストールと周辺セットアップ
 #
 
-必要なツールのインストール
+必要なツールのインストール（windous）
 【Node.js のインストール】 URL: https://nodejs.org/ 公式サイトから最新版の Node.js をダウンロードしてインストールしてください。
 
 【Git Bash のインストール】 URL: https://gitforwindows.org/ Git Bash をインストールすると、Windows でも Unix ライクなシェルが利用可能になります。
 
 【VSCode のインストール】 URL: https://code.visualstudio.com/Download お使いの環境に合わせた VSCode をインストールしてください。
+（macは同じサイトでインストールするものを選ぶときにmac用のやつを選んでください）
+（chromeは別ページ）
 
 インストール後の基本確認
 
