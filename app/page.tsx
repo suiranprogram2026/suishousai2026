@@ -16,7 +16,8 @@ export default function Home() {
       <div className="body">
         <div className="hidden-x-side">
 
-          {/** ヘッダー */}
+          {/** ヘッダー　画面サイズによってそれぞれ少し違う画像を適応する */}
+
           <section
             className="headtop"
           >
@@ -81,12 +82,12 @@ export default function Home() {
               </picture>
             </div>
 
-            <a href="/attention" className='payment-btn'>お支払いについて</a>
+            <a href="/attention" className='payment-btn'>諸注意</a>
 
           </section>
 
           <div className="mid_header">
-            <Finish />
+            {/*<Finish />*/}
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
               <div className="headerbox_right"></div>
@@ -103,8 +104,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/*<Form />*/}
-            <Gresult />   {/*どっちかのみ使用 */}
+            <Form />
+            {/*<Gresult />*/}   {/*どっちかのみ使用 */}
 
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
