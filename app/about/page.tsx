@@ -1,8 +1,10 @@
 "use client"
 
+import Header from "@/components/Header/Header";
 import "./about.css"
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
+
 export default function About() {
     // 背景画像ラッパーに ref を貼る
     const leafRef = useRef<HTMLDivElement>(null);
@@ -23,27 +25,10 @@ export default function About() {
     return (
         <div>
             <div className="toppers">
-                <picture>
-                    <source
-                        media="(min-width:1024px)"
-                        srcSet="/header/header-pc.png"
-                    />
-                    <source
-                        media="(min-width:660px)"
-                        srcSet="/header/header-pd.png"
-                    />
-                    <Image
-                        className="header-leave"
-                        src="/header/header-sp.png"
-                        alt=""
-                        width={3000}
-                        height={2000}
-                        priority
-                    />
-                </picture>
-                <header className="h-header">
-                    <h1 className="h-title">ABOUT</h1>
-                </header>
+                <Header
+                    title="ABOUT"
+                    backgroundImage="/header/header-pc.png"
+                />
             </div>
             <div className="about-pc-box">
                 <div className="about-main">

@@ -1,6 +1,7 @@
 // /app/event/page.tsx
 "use client";
 import Image from 'next/image';
+import Header from '../Header/Header';
 import React, { useEffect, useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { festivalItems } from "@/utils/festival";
@@ -112,27 +113,10 @@ const EventPage: React.FC = () => {
         <main className="eventcontent">
             {/* ヘッダー */}
             <div className="toppers">
-                <picture>
-                    <source
-                        media="(min-width:1024px)"
-                        srcSet="/header/header-pc.png"
-                    />
-                    <source
-                        media="(min-width:660px)"
-                        srcSet="/header/header-pd.png"
-                    />
-                    <Image
-                        className="header-leave"
-                        src="/header/header-sp.png"
-                        alt=""
-                        width={3000}
-                        height={2000}
-                        priority
-                    />
-                </picture>
-                <header className="h-header">
-                    <h1 className="h-title">EVENT</h1>
-                </header>
+                <Header
+                    title="EVENT"
+                    backgroundImage="/header/header-pc.png"
+                />
             </div>
 
             {/* メインコンテンツ */}

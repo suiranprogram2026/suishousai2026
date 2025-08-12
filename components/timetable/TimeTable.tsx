@@ -2,6 +2,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import './TimeTable.css';
 import Image from "next/image";
+import Header from '../Header/Header';
 import { festivalDetail, FestivalDetail } from '@/utils/festivaldetail';
 import { Drawer, DrawerClose, DrawerContent, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from '../ui/drawer';
 import { Button } from '../ui/button';
@@ -109,27 +110,10 @@ const TimeTable: React.FC = () => {
         <div className="container">
             {/**トップ画像 */}
             <div className="toppers">
-                <picture>
-                    <source
-                        media="(min-width:1024px)"
-                        srcSet="/header/header-pc.png"
-                    />
-                    <source
-                        media="(min-width:660px)"
-                        srcSet="/header/header-pd.png"
-                    />
-                    <Image
-                        className="header-leave"
-                        src="/header/header-sp.png"
-                        alt=""
-                        width={3000}
-                        height={2000}
-                        priority
-                    />
-                </picture>
-                <header className="h-header">
-                    <h1 className="h-title">TIMETABLE</h1>
-                </header>
+                <Header
+                    title="TIMETABLE"
+                    backgroundImage="/header/header-pc.png"
+                 />
             </div>
             {/* Toggle Day */}
             <div className="toggleContainer">

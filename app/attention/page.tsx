@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react";
+import Header from "@/components/Header/Header";
 import "./attention.css"
 import Image from 'next/image';
 
@@ -9,27 +10,10 @@ export default function attention() {
         <div>
             {/**ヘッダー */}
             <div className="toppers">
-                <picture>
-                    <source
-                        media="(min-width:1024px)"
-                        srcSet="/header/header-pc.png"
-                    />
-                    <source
-                        media="(min-width:660px)"
-                        srcSet="/header/header-pd.png"
-                    />
-                    <Image
-                        className="header-leave"
-                        src="/header/header-sp.png"
-                        alt=""
-                        width={3000}
-                        height={2000}
-                        priority
-                    />
-                </picture>
-                <header className="h-header">
-                    <h1 className="h-title">ATTENTION</h1>
-                </header>
+                <Header
+                    title="ATTENTION"
+                    backgroundImage="/header/header-pc.png"
+                />
             </div>
             <div className="at-pc-box">
                 <div className="at_main">

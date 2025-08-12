@@ -7,6 +7,7 @@ import { normalizeSearchString } from "@/utils/normalizeKana";
 import { FestivalItem, festivalItems } from "@/utils/festival";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Header from "@/components/Header/Header";
 
 // 基準解像度（最大サイズ：1000×749px）
 const BASE_WIDTH = 1000;
@@ -177,27 +178,10 @@ export default function Three() {
         <div className={styles.outerContainer}>
             {/**トップ画像 */}
             <div className="toppers">
-                <picture>
-                    <source
-                        media="(min-width:1024px)"
-                        srcSet="/header/header-pc.png"
-                    />
-                    <source
-                        media="(min-width:660px)"
-                        srcSet="/header/header-pd.png"
-                    />
-                    <Image
-                        className="header-leave"
-                        src="/header/header-sp.png"
-                        alt=""
-                        width={3000}
-                        height={2000}
-                        priority
-                    />
-                </picture>
-                <header className="h-header">
-                    <h1 className="h-title">MAP</h1>
-                </header>
+                <Header
+                    title="MAP"
+                    backgroundImage="/header/header-pc.png"
+                />
             </div>
 
             {/* サーチボックス */}
