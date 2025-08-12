@@ -17,16 +17,16 @@ import {
 } from "@/components/ui/drawer"
 
 import { normalizeSearchString } from "@/utils/normalizeKana";
-import { LucideIcon, Drum, Sun, Moon, Soup } from "lucide-react";
+import { LucideIcon, Drum, Ent, Disp, Food } from "lucide-react";
 import "./event.css"
 import { Button } from '../ui/button';
 
 // 固定の属性候補（フィルター表示用）
 const fixedAttributes: { icon: LucideIcon; title: string }[] = [
-    { icon: Sun, title: "全日制" },
-    { icon: Soup, title: "調理食販" },
+    { icon: Ent, title: "娯楽" },  //enternainer
+    { icon: Food, title: "調理食販" },
     { icon: Drum, title: "ステージ" },
-    { icon: Moon, title: "定時制" },
+    { icon: Disp, title: "展示" },  //display
 ];
 
 const EventPage: React.FC = () => {
@@ -121,6 +121,7 @@ const EventPage: React.FC = () => {
 
             {/* メインコンテンツ */}
             <section className="e-content">
+                {/*検索ボックス */}
                 <div className="e-search">
                     <label htmlFor="search" className="sr-only">
                         イベント検索
@@ -140,6 +141,7 @@ const EventPage: React.FC = () => {
                     )}
                 </div>
 
+                {/**選択ボックス */}
                 <div className="e-iconbox">
                     {iconTypes.map((IconComponent, index) => (
                         <button
