@@ -4,7 +4,7 @@ import LoginForm from '@/components/LoginForm'
 
 // サイト作成にかかわったメンバーのリスト
 const siteMembers = [
-    "Pent",
+    "Pent,H0uk0u",
 ];
 
 export default async function LoginPage() {
