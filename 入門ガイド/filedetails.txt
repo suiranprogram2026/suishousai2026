@@ -146,7 +146,7 @@ tsconfig.json ~ ファイル形式などの設定
 
 #utils festival系すべて
 注意変更するときはtitleだけは一致させてください。あとfestival.tsの座標みたいな数値はマップのピンをさす場所です。
-あとfestival.tsは属性で分類しているのでそれも同時に指定してください。attributes: [Ent, Food]みたいな感じで。←この場合このイベントは全日制で食品販売であることを示している。
+あとfestival.tsは属性で分類しているのでそれも同時に指定してください。attributes: [Sun, Soup]みたいな感じで。←この場合このイベントは全日制で食品販売であることを示している。
 
 .env.local
 これに関してはguid.txtを見てください。

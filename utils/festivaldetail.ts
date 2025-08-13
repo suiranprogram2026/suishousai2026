@@ -3,8 +3,6 @@ export type FestivalDetail = {
     detail: string;
 }
 
-
-// ジャンルを募集するかもしれない
 export const festivalDetail: FestivalDetail[] = [
     //1年
     { id: 1, detail: "ポイント制のトランプゲームや丁半できます。景品もあるので是非来てください。" },

@@ -14,9 +14,9 @@ filedetails.txtでfestival系はtitleを完全に一致させてくれと言わ�
 3. idは空の状態、nameの部分にfestivalのtitleを入れます。それ以降は空でいいです。
 
 例：
-    { title: '1-1', attributes: [Ent], floor: 4, x: 1165, y: 500 },
-    { title: '1-2', attributes: [Ent], floor: 4, x: 1085, y: 500 },
-    { title: '1-3', attributes: [Ent], floor: 4, x: 935, y: 500 },
+    { title: '1-1', attributes: [Sun], floor: 4, x: 1165, y: 500 },
+    { title: '1-2', attributes: [Sun], floor: 4, x: 1085, y: 500 },
+    { title: '1-3', attributes: [Sun], floor: 4, x: 935, y: 500 },
 
     などとあった場合
 
