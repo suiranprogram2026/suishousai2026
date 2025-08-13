@@ -4,6 +4,7 @@
     overflow: clip;
 }
 
+/* ｘ印格納ボタン */
 .fusion-button {
     position: fixed;
     top: 0;
@@ -11,7 +12,7 @@
     width: 120px;
     height: 120px;
     text-align: right;
-    background-color: #FFEF37;
+    background-color: #4bc6ff;
     border-bottom-left-radius: 20px;
     cursor: pointer;
     z-index: 60;
@@ -26,76 +27,177 @@
 
 @media (max-width: 767px) {
     .fusion-button {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
 }
 
-.fusion-button-inner {
-    position: relative;
-    top: 40px;
-    right: 40px;
+/*黒線*/
+.btn-trigger {
+  position: relative;
+  width: 50px;
+  height: 44px;
+  cursor: pointer;
+  left: -15px;
+  top: 15px; 
+  font-size: 0;
 }
 
-@media (max-width: 1500px) {
-    .fusion-button-inner {
-        top: 32px;
-        right: 20px;
-    }
+.btn-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #000000;
+  border-radius: 4px;
 }
 
 @media (max-width: 767px) {
-    .fusion-button-inner {
-        top: 20px;
-        right: 20px;
-    }
+  .btn-trigger{
+    display: inline-block;  /* spanをひとまとめに */
+    transform: translate(19px, -10px); /* 右上にずらす */
+  }
+
+  .btn-trigger span {
+      width: 70%;
+      right: 0;
+      margin-right: 2px;
+  }
+
+  .btn-trigger span:last-child {
+    margin-right: 0; /* 最後だけ余白なし */
+  }
 }
 
-/* トグル状態時の変化 */
-.fusion-active.fusion-button .fusion-bar-top {
-    transform: translateY(12px);
+.btn-trigger, .btn-trigger span {
+  display: inline-block;
+  transition: all .5s;
+  box-sizing: border-box;
 }
 
-@media (max-width: 1500px) {
-    .fusion-active.fusion-button .fusion-bar-top {
-        transform: translateY(8px);
-    }
+.btn-trigger span:nth-of-type(1) {
+  top: 0;
 }
 
-@media (max-width: 767px) {
-    .fusion-active.fusion-button .fusion-bar-top {
-        transform: translateY(5px);
-    }
+.btn-trigger span:nth-of-type(2) {
+  top: 20px;
 }
 
-.fusion-active.fusion-button .fusion-bar-bottom {
-    transform: translateY(-12px);
+.btn-trigger span:nth-of-type(3) {
+  bottom: 0;
 }
 
-@media (max-width: 1500px) {
-    .fusion-active.fusion-button .fusion-bar-bottom {
-        transform: translateY(-8px);
-    }
+#btn07 span:nth-of-type(1) {
+  -webkit-animation: btn07-bar01 .75s forwards;
+  animation: btn07-bar01 .75s forwards;
 }
 
-@media (max-width: 767px) {
-    .fusion-active.fusion-button .fusion-bar-bottom {
-        transform: translateY(-5px);
-    }
+@-webkit-keyframes btn07-bar01 {
+  0% {
+    -webkit-transform: translateY(20px) rotate(45deg);
+  }
+  50% {
+    -webkit-transform: translateY(20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
 }
-
-.fusion-button span {
-    display: block;
-    height: 8px;
-    margin-left: auto;
-    background-color: #000000;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+@keyframes btn07-bar01 {
+  0% {
+    transform: translateY(20px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(20px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
 }
-
-@media (max-width: 767px) {
-    .fusion-button span {
-        height: 4px;
-    }
+#btn07 span:nth-of-type(2) {
+  transition: all .25s .25s;
+  opacity: 1;
+}
+#btn07 span:nth-of-type(3) {
+  -webkit-animation: btn07-bar03 .75s forwards;
+  animation: btn07-bar03 .75s forwards;
+}
+@-webkit-keyframes btn07-bar03 {
+  0% {
+    -webkit-transform: translateY(-20px) rotate(-45deg);
+  }
+  50% {
+    -webkit-transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+}
+@keyframes btn07-bar03 {
+  0% {
+    transform: translateY(-20px) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+#btn07.active span:nth-of-type(1) {
+  -webkit-animation: active-btn07-bar01 .75s forwards;
+  animation: active-btn07-bar01 .75s forwards;
+}
+@-webkit-keyframes active-btn07-bar01 {
+  0% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+  50% {
+    -webkit-transform: translateY(20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(20px) rotate(45deg);
+  }
+}
+@keyframes active-btn07-bar01 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(20px) rotate(0);
+  }
+  100% {
+    transform: translateY(20px) rotate(45deg);
+  }
+}
+#btn07.active span:nth-of-type(2) {
+  opacity: 0;
+}
+#btn07.active span:nth-of-type(3) {
+  -webkit-animation: active-btn07-bar03 .75s forwards;
+  animation: active-btn07-bar03 .75s forwards;
+}
+@-webkit-keyframes active-btn07-bar03 {
+  0% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+  50% {
+    -webkit-transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(-20px) rotate(-45deg);
+  }
+}
+@keyframes active-btn07-bar03 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    transform: translateY(-20px) rotate(-45deg);
+  }
 }
 
 .fusion-button .fusion-bar-top {
@@ -289,11 +391,12 @@
     left: 0;
     width: 100%;
     height: 21%;
-    background-color: #FFEF37;
+    background-color: #4bc6ff;  /*下のほうにあるfusion-bg-oneとかtwoとかに色を加えるとそれぞれ別の色を入れられると思う*/
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform;
+    z-index: 1;
 }
 
 .fusion-active.fusion-right {
@@ -311,11 +414,14 @@
     list-style: none;
     height: 100vh;
     overflow-y: scroll;
+    position: relative;
+    z-index: 2;
 }
 
 .fusion-item {
     position: relative;
     margin-top: 32px;
+    color: black;
 }
 
 .fusion-item:first-of-type {

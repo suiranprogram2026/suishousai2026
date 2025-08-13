@@ -38,14 +38,6 @@ const HamburgerMenu: React.FC = () => {
                 <div className={"fusion-main" + (isActive ? " fusion-active" : "")}>
                     <div className="fusion-main-inner">
                         <div className={"fusion-left" + (isActive ? " fusion-active" : "")} onClick={toggleMenu}>
-                            <Image
-                                className="fusion-logo"
-                                src="/welcome/logo.png"
-                                alt="logo"
-                                width={594}
-                                height={197}
-                                loading="eager"
-                            />
                         </div>
                         <div className={"fusion-right" + (isActive ? " fusion-active" : "")}>
                             <div className="fusion-right-inner">
@@ -85,8 +77,11 @@ const HamburgerMenu: React.FC = () => {
                 </div>
                 <div className={"fusion-button" + (isActive ? " fusion-active" : "")} onClick={toggleMenu}>
                     <div className="fusion-button-inner">
-                        <span className="fusion-bar-top"></span>
-                        <span className="fusion-bar-bottom"></span>
+                        <div className={`btn-trigger ${isActive ? 'active' : ''}`} id="btn07">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </nav>
