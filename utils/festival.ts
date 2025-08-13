@@ -25,7 +25,7 @@ export type FestivalItem = {
 // 属性の優先順位（サイドバー上で「主要な」属性として使う）
 export const attributePriority: LucideIcon[] = [Sun, Moon, Drum, Soup];
 
-/**属性について　Drum→ステージ、Soup→調理食販、Sun→全日制団体、Moon→定時制団体 */
+/**属性について　Drum→ステージ、Soup→調理食販、Sun→娯楽団体、Moon→展示団体 */
 
 export const festivalItems: FestivalItem[] = [
     //1年

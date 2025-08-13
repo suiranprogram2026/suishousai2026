@@ -23,10 +23,10 @@ import { Button } from '../ui/button';
 
 // 固定の属性候補（フィルター表示用）
 const fixedAttributes: { icon: LucideIcon; title: string }[] = [
-    { icon: Sun, title: "全日制" },
+    { icon: Sun, title: "娯楽団体" },
     { icon: Soup, title: "調理食販" },
     { icon: Drum, title: "ステージ" },
-    { icon: Moon, title: "定時制" },
+    { icon: Moon, title: "展示団体" },
 ];
 
 const EventPage: React.FC = () => {
