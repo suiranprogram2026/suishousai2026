@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import './HamburgerMenu.css';
+import Accordion from '../accordion/Accordion';
 
 const HamburgerMenu: React.FC = () => {
     const [isActive, setIsActive] = useState(false);
@@ -53,6 +54,10 @@ const HamburgerMenu: React.FC = () => {
                                     <li className="fusion-item">
                                         <a href="/map">MAP</a>
                                     </li>
+                                    <Accordion closedLabel='MAP' openLabel='close'>
+                                        <li>平面マップ</li>
+                                        <li>棟別マップ</li>
+                                    </Accordion>
                                     <li className="fusion-item">
                                         <a href="/event">EVENT</a>
                                     </li>
