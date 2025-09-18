@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import './HamburgerMenu.css';
-import Accordion from '../accordion/Accordion';
+
 
 const HamburgerMenu: React.FC = () => {
     const [isActive, setIsActive] = useState(false);
@@ -33,6 +33,13 @@ const HamburgerMenu: React.FC = () => {
         fetchDevMode();
     }, []);
 
+    const [isEventDropdownOpen, setIsEventDropdownOpen] = useState(false);
+
+    const toggleEventDropdown = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        e.preventDefault(); // ページ遷移防止
+        setIsEventDropdownOpen(!isEventDropdownOpen);
+    };
+
     return (
         <div className="fusion-container">
             <nav className="fusion-nav">
@@ -51,13 +58,19 @@ const HamburgerMenu: React.FC = () => {
                                     <li className="fusion-item">
                                         <a href="/">TOP</a>
                                     </li>
-                                    <li className="fusion-item">
-                                        <a href="/map">MAP</a>
+                                    <li className="fusion-item-expand">
+                                        <div className="fusion-item">
+                                            <a href="/event" onClick={toggleEventDropdown}>MAP</a>
+                                        </div>
+                                        <ul className={"fusion-dropdown" + (isEventDropdownOpen ? " fusion-open" : "")}>
+                                            <li className="fusion-dropdown-item">
+                                                <a href="/map">・階層マップ</a>
+                                            </li>
+                                            <li className="fusion-dropdown-item">
+                                                <a href="/mapver">・棟別マップ</a>
+                                            </li>
+                                        </ul>       
                                     </li>
-                                    <Accordion closedLabel='MAP' openLabel='close'>
-                                        <li>平面マップ</li>
-                                        <li>棟別マップ</li>
-                                    </Accordion>
                                     <li className="fusion-item">
                                         <a href="/event">EVENT</a>
                                     </li>

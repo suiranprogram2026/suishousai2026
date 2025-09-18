@@ -319,21 +319,21 @@
     .fusion-left::after {
         left: 22.4%;
     }
-}
-
-/* いつか追加する
+  }
 
 .fusion-left::before {
+    content: "";
+    display: block;
     height: 100%;
     background-color: #000000;
 }
 
 .fusion-left::after {
+    content: "";
+    display: block;
     height: 150px;
     background-color: #FFEF37;
 }
-
-*/
 
 .fusion-logo {
     padding: 10px;
