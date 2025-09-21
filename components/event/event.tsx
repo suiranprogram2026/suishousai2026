@@ -194,7 +194,7 @@ const EventPage: React.FC = () => {
                                                             <div className='event_detail'>{detailMap[item.id.toString()]?.detail ?? "詳細情報がありません"}</div>
                                                             <DrawerFooter>
                                                                 <DrawerClose asChild>
-                                                                    <Button variant="outline">閉じる</Button>
+                                                                    <Button variant="outline" className="close-button">閉じる</Button>
                                                                 </DrawerClose>
                                                             </DrawerFooter>
                                                         </DrawerContent>
