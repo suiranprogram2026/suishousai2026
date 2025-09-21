@@ -177,15 +177,7 @@ const EventPage: React.FC = () => {
                                                     priority
                                                 />
                                             </div>
-                                            <div className='dot'>
-                                                <div className="side-r"></div>
-                                                <div className="side-l"></div>
-                                                <ul className='ul'>
-                                                    {Array.from({ length: 50 }).map((_, index) => (
-                                                        <li key={index} className='li'></li>
-                                                    ))}
-                                                </ul>
-                                            </div>
+                                            <span className="line"></span>
                                             <div className="card-right">
                                                 <div className="card-item-box">
                                                     <h2>{item.title}</h2>
