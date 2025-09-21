@@ -1,12 +1,10 @@
 "use client";
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import './TimeTable.css';
-import Image from "next/image";
 import Header from '../Header/Header';
 import { festivalDetail, FestivalDetail } from '@/utils/festivaldetail';
 import { Drawer, DrawerClose, DrawerContent, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from '../ui/drawer';
 import { Button } from '../ui/button';
-import { supabase } from '@/utils/supabase/supabase';
 
 type Event = { id: string; stage: 'outdoor' | 'gym'; start: string; end: string; title: string; cell: number; };
 
@@ -63,39 +61,6 @@ const sampleEvents: Record<number, Event[]> = {
 };
 
 const TimeTable: React.FC = () => {
-    // Supabase から読み込む遅延情報を格納する state
-    const [delays, setDelays] = useState<Record<number, Record<'outdoor' | 'gym', number>>>({
-        1: { outdoor: 0, gym: 0 },
-        2: { outdoor: 0, gym: 0 },
-    });
-
-    // マウント時に Supabase から delay テーブルを取得
-    useEffect(() => {
-        const fetchDelays = async () => {
-            const { data, error } = await supabase
-                .from('delay')
-                .select('day,where,time');
-            if (error) {
-                console.error('delay fetch error:', error);
-                return;
-            }
-            // 取得結果を所望の形に整形
-            const newDelays: typeof delays = {
-                1: { outdoor: 0, gym: 0 },
-                2: { outdoor: 0, gym: 0 },
-            };
-            data.forEach(row => {
-                const d = row.day!;
-                const w = row.where! as 'outdoor' | 'gym';
-                const t = row.time!;
-                newDelays[d][w] = t;
-            });
-            setDelays(newDelays);
-        };
-
-        fetchDelays();
-    }, []);
-
     const detailMap = useMemo(() => {
         const map: { [key: string]: FestivalDetail } = {};
         for (const detail of festivalDetail) {
@@ -104,7 +69,7 @@ const TimeTable: React.FC = () => {
         return map;
     }, []);
 
-    const [day, setDay] = useState<number>(getInitialDay);
+    const [day, setDay] = useState<number>(getInitialDay());
 
     return (
         <div className="container">
@@ -136,11 +101,9 @@ const TimeTable: React.FC = () => {
                 <div className="headerAxis" />
                 <div className="headerStage">
                     <div className="stageTitle">野外ステージ</div>
-                    <div className="stageDelay">遅れ: {delays[day].outdoor} 分</div>
                 </div>
                 <div className="headerStage">
                     <div className="stageTitle">体育館ステージ</div>
-                    <div className="stageDelay">遅れ: {delays[day].gym} 分</div>
                 </div>
                 <div className="headerAxis" />
             </div>
@@ -163,19 +126,17 @@ const TimeTable: React.FC = () => {
                     {sampleEvents[day].map((event) => {
                         const startDec = parseTime(event.start);
                         const endDec = parseTime(event.end);
-                        const delayHr = (delays[day]?.[event.stage] ?? 0) / 60;
-                        const newStart = startDec + delayHr;
-                        const newEnd = endDec + delayHr;
-                        const baseTop = (startDec - startHour) * rowHeight;
-                        const delayOffset = delayHr * rowHeight;
+                        const newStart = startDec;
+                        const newEnd = endDec;
+                        const top = (startDec - startHour) * rowHeight;
                         return (
                             <Drawer key={event.id}>
                                 <DrawerTrigger asChild>
                                     <div
                                         className={`eventBox ${event.stage}`}
                                         style={{
-                                            top: `${baseTop + delayOffset}px`,
-                                            height: `${(endDec - startDec) * rowHeight}px`,
+                                            top: `${top}px`,
+                                            height: `${(newEnd - newStart) * rowHeight}px`,
                                             width: 'calc(50% - 2px)',
                                             left: event.stage === 'outdoor' ? '0' : 'calc(50% + 2px)',
                                         }}
