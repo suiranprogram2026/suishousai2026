@@ -96,6 +96,7 @@ export default function Home() {
               </div>
             </div>
             <TopSelect />
+
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
               <div className="headerbox_right"></div>
@@ -103,7 +104,6 @@ export default function Home() {
                 <h1 className=''>FORM</h1>
               </div>
             </div>
-
             <Form />
             {/*<Gresult />*/}   {/*どっちかのみ使用 */}
 
@@ -115,6 +115,7 @@ export default function Home() {
               </div>
             </div>
             <Announce />
+            
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
               <div className="headerbox_right"></div>
