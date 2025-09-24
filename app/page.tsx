@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import "./homepage.css"
 import Form from '@/components/form/form';
@@ -6,6 +8,12 @@ import Announce from '@/components/announce/announce';
 import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
 import Finish from '@/components/finish/finish';
+import Countdown from '@/components/countdown/countdown';
+import dynamic from 'next/dynamic';
+
+const CountdownDynamic = dynamic(() => import("@/components/countdown/countdown"), {
+  ssr: false, // 👈 サーバーでは描画しない
+});
 
 
 // Homeコンポーネント
@@ -87,6 +95,9 @@ export default function Home() {
           </section>
 
           <div className="mid_header">
+            <Countdown
+              targetDate="2025-12-31T23:59:59" //←に翠翔祭の日程を入れる            
+            />
             {/*<Finish />*/}
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
@@ -115,7 +126,7 @@ export default function Home() {
               </div>
             </div>
             <Announce />
-            
+
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
               <div className="headerbox_right"></div>

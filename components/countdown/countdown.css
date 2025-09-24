@@ -1,0 +1,18 @@
+.countdown{
+    width: 100%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.count-box{
+    position: absolute;
+    text-align: center;
+    font-size: 1.5rem;
+    height: 20px;
+    width: 70px;
+    background-color: aquamarine;
+}
+
+.finish{
+    color: red;
+}
