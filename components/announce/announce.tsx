@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import { supabase } from '@/utils/supabase/supabase';
+//import { supabase } from '@/utils/supabase/supabase';
 import { Database } from '@/types/database';
 import { Yusei_Magic } from "next/font/google";
 import "./announce.css"
@@ -26,23 +26,7 @@ export default function Announce() {
     const [announcements, setAnnouncements] = useState<Announcement[]>([]);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        async function fetchAnnouncements() {
-            setLoading(true);
-            const { data, error } = await supabase
-                .from("announce")
-                .select("*")
-                .order("created_at", { ascending: false });
-
-            if (error) {
-                console.error("Error fetching announcements:", error);
-            } else {
-                setAnnouncements(data ?? []);
-            }
-            setLoading(false);
-        }
-        fetchAnnouncements();
-    }, []);
+    
     return (
         <div className="announce">
             <div className="blackboard-box">
