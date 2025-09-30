@@ -63,7 +63,7 @@ git config --global user.name "ユーザー名"
 # プロジェクト初期設定
 #
 
-【1-1. 足りないファイルの作成】
+【1-1. 足りないファイルの作成】　2026は無視
 ・プロジェクトのトップディレクトリに「.env.local」という名前のファイルを作成（ドットを忘れずに）。
 ・このファイルは後で環境変数の設定に使用するので、初めは空でOK。
 
@@ -76,12 +76,12 @@ npm install
 # データベースの設定（Supabase）
 #
 
-【2-1. Supabase アカウント作成とプロジェクト設定】
+【2-1. Supabase アカウント作成とプロジェクト設定】　2026は無視
 ・URL: https://supabase.com/
 ・Supabase にアクセスし、アカウントを作成。（GitHub アカウント連携推奨）
 ・プロジェクト作成時は、サーバーリージョンとして「Tokyo」を選択。
 
-【2-2. .env.local への設定情報の記入】
+【2-2. .env.local への設定情報の記入】　2026は無視
 ・.env.local に以下の項目を記載：
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
@@ -94,12 +94,12 @@ URLが[https://YOURID.supabase.co]のようになっていると思うのでそ�
 NEXT_PUBLIC_COOKIE=sb-YOURID-auth-token
 ※「＝」の前後に余分な空白が入らないよう注意する。
 
-【2-3. SQL エディタでテーブル＆RLS 設定】
+【2-3. SQL エディタでテーブル＆RLS 設定】　2026は無視
 ・Supabase プロジェクト画面のサイドバーから「SQL Editor」を開く。
 ・VSCode 内の 入門ガイド/sqleditor フォルダにある各 SQL スニペットのコードをコピーし、SQL Editor に貼り付ける。
 ・貼り付けたら右下の「Run」ボタンをクリックし、エラーが出ないか確認する。
 
-【2-4. 型定義の生成】
+【2-4. 型定義の生成】　2026は無視
 ・ターミナルで以下を実行：
 npx supabase login
 ・ログイン後、以下のコマンドで TypeScript 用の型定義を生成：(YOURIDを使用する)
@@ -122,7 +122,7 @@ npm run dev
 ・URL: https://vercel.com/
 ・GitHub アカウントで登録後、「Add New Project」をクリックし、対象リポジトリを選択してインポートする。
 
-【3-2. 環境変数の設定】
+【3-2. 環境変数の設定】　2026は無視
 ・Vercel のプロジェクト設定内の「Environment Variables」に、.env.local の内容を登録する。
 　例：
 　Key: NEXT_PUBLIC_SUPABASE_URL → Value: Supabase の Project URL
