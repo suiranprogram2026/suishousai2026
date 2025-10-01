@@ -4,3 +4,5 @@ https://www.shadcn.net/ja
 ↑はuiのコンポーネントを持ってこれるやつ。自作しなくていいから楽
 
 tesuto
+tesutoo
+tesuto
