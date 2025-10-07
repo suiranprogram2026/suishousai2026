@@ -4,7 +4,7 @@ export type AnnounceItem = {
     detail: string;
 }
 
-const announceItems: announceItems: AnnounceItem[] = [
+export const announceItems: AnnounceItem[] = [
   { id: 1, title: "お知らせ1", detail: "メッセージ1" },
   { id: 2, title: "お知らせ2", detail: "メッセージ2" },
 ];

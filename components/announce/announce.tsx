@@ -1,15 +1,17 @@
-"use client"
+"use client";
 
-import { AnnounceItem } from "@/utils/announce"
+import "./announce.css"
+import { AnnounceItem, announceItems } from "@/utils/announce";
 
 export default function Announce() {
-    return(
-        <div className="annouce">
-            <div className="announce-item">
-                <div className="title">
-                    {AnnounceItem.title}
-                </div>
-            </div>
+  return (
+    <div className="announce">
+      {announceItems.map((item) => (
+        <div key={item.id} className="announce-item">
+          <div className="title">{item.title}</div>
+          <div className="detail">{item.detail}</div>
         </div>
-    )
+      ))}
+    </div>
+  );
 }
