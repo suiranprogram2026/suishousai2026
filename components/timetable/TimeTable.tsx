@@ -96,6 +96,12 @@ const TimeTable: React.FC = () => {
                 </div>
             </div>
 
+            <div className="dayNow">
+                <div className={`day1 ${day === 1 ? 'active' : ''}`}>DAY1</div>
+                <div className={`day2 ${day === 2 ? 'active' : ''}`}>DAY2</div>
+            </div>
+
+
             {/* Header */}
             <div className="headerRow">
                 <div className="headerAxis" />

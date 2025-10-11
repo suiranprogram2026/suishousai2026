@@ -16,7 +16,7 @@
     width: 160px;
     height: 36px;
     background-color: #ddd;
-    border-radius: 18px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -40,9 +40,30 @@
     top: 2px;
     width: calc(50% - 4px);
     height: calc(100% - 4px);
-    background-color: #007bff;
-    border-radius: 16px;
+    background-color: #14fc0a;
+    border-radius: 8px;
     transition: left 0.3s;
+}
+
+.dayNow {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+/* 共通スタイル */
+.day1,
+.day2 {
+  width: auto;
+  height: 12vw;
+  font-size: 10vw;
+}
+
+/* 選択されていない方は非表示 */
+.day1:not(.active),
+.day2:not(.active) {
+  display: none;
 }
 
 .headerRow {
@@ -72,6 +93,8 @@
     font-weight: bold;
     margin-bottom: 4px;
 }
+
+
 
 .stageDelay {
     font-size: 12px;
