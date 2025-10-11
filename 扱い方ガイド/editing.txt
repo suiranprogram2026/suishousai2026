@@ -3,6 +3,4 @@
 https://www.shadcn.net/ja
 ↑はuiのコンポーネントを持ってこれるやつ。自作しなくていいから楽
 
-tesuto
-tesutoo
-tesuto
+画像の大きさはファイルアプリからpublicを覗けば見れると思う→iマーク

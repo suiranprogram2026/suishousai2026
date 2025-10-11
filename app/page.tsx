@@ -8,11 +8,11 @@ import Announce from '@/components/announce/announce';
 import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
 import Finish from '@/components/finish/finish';
-import Countdown from '@/components/countdown/countdown';
 import dynamic from 'next/dynamic';
 
-const CountdownDynamic = dynamic(() => import("@/components/countdown/countdown"), {
-  ssr: false, // 👈 サーバーでは描画しない
+// ✅ Countdown はクライアント専用レンダリングに変更
+const Countdown = dynamic(() => import("@/components/countdown/countdown"), {
+  ssr: false, // サーバーでは描画しない
 });
 
 
