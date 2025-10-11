@@ -83,11 +83,6 @@ const HamburgerMenu: React.FC = () => {
                                     <li className="fusion-item">
                                         <a href="/attention">ATTENTION</a>
                                     </li>
-                                    {isDev && (
-                                        <li className="fusion-item">
-                                            <a href="/admin/login">DASHBOARD</a>
-                                        </li>
-                                    )}
                                 </ul>
                             </div>
                         </div>
