@@ -1,105 +1,126 @@
 "use client";
 
-import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
-import './HamburgerMenu.css';
+import { useState, useEffect, useRef, RefObject } from "react";
+import styles from "./HamburgerMenu.module.css"; // CSS Module
 
+export default function HamburgerMenu() {
+  const [open, setOpen] = useState<boolean>(false);
 
-const HamburgerMenu: React.FC = () => {
-    const [isActive, setIsActive] = useState(false);
-    const [isDev, setIsDev] = useState(false);
+  const menuRef: RefObject<HTMLDivElement> = useRef(null);
+  const firstLinkRef: RefObject<HTMLAnchorElement> = useRef(null);
+  const toggleRef: RefObject<HTMLButtonElement> = useRef(null);
 
-    // メニューが開いている場合は body のスクロールを固定
-    useEffect(() => {
-        document.body.style.overflow = isActive ? 'hidden' : '';
-        return () => {
-            document.body.style.overflow = '';
-        };
-    }, [isActive]);
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+      }
 
-    const toggleMenu = () => setIsActive(!isActive);
+      // Focus trap when menu open
+      if (e.key === "Tab" && open && menuRef.current) {
+        const focusable = menuRef.current.querySelectorAll<
+          HTMLButtonElement | HTMLAnchorElement
+        >("a, button, [tabindex]:not([tabindex='-1'])");
 
-    // コンポーネントマウント時に /api/dev-mode エンドポイントから dev_mode の状態を取得
-    useEffect(() => {
-        async function fetchDevMode() {
-            const res = await fetch("/api/dev-mode");
-            if (res.ok) {
-                const data = await res.json();
-                setIsDev(data.isDevMode);
-            } else {
-                setIsDev(false);
-            }
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last?.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first?.focus();
         }
-        fetchDevMode();
-    }, []);
-
-    const [isEventDropdownOpen, setIsEventDropdownOpen] = useState(false);
-
-    const toggleEventDropdown = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-        e.preventDefault(); // ページ遷移防止
-        setIsEventDropdownOpen(!isEventDropdownOpen);
+      }
     };
 
-    return (
-        <div className="fusion-container">
-            <nav className="fusion-nav">
-                <div className={"fusion-main" + (isActive ? " fusion-active" : "")}>
-                    <div className="fusion-main-inner">
-                        <div className={"fusion-left" + (isActive ? " fusion-active" : "")} onClick={toggleMenu}>
-                        </div>
-                        <div className={"fusion-right" + (isActive ? " fusion-active" : "")}>
-                            <div className="fusion-right-inner">
-                                <div className="fusion-bg fusion-bg-one"></div>
-                                <div className="fusion-bg fusion-bg-two"></div>
-                                <div className="fusion-bg fusion-bg-three"></div>
-                                <div className="fusion-bg fusion-bg-four"></div>
-                                <div className="fusion-bg fusion-bg-five"></div>
-                                <ul className="fusion-list">
-                                    <li className="fusion-item">
-                                        <a href="/">TOP</a>
-                                    </li>
-                                    <li className="fusion-item-expand">
-                                        <div className="fusion-item">
-                                            <a href="/event" onClick={toggleEventDropdown}>MAP</a>
-                                        </div>
-                                        <ul className={"fusion-dropdown" + (isEventDropdownOpen ? " fusion-open" : "")}>
-                                            <li className="fusion-dropdown-item">
-                                                <a href="/map">・階層マップ</a>
-                                            </li>
-                                            <li className="fusion-dropdown-item">
-                                                <a href="/mapver">・棟別マップ</a>
-                                            </li>
-                                        </ul>       
-                                    </li>
-                                    <li className="fusion-item">
-                                        <a href="/event">EVENT</a>
-                                    </li>
-                                    <li className="fusion-item">
-                                        <a href="/timetable">TIMETABLE</a>
-                                    </li>
-                                    <li className="fusion-item">
-                                        <a href="/about">ABOUT</a>
-                                    </li>
-                                    <li className="fusion-item">
-                                        <a href="/attention">ATTENTION</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className={"fusion-button" + (isActive ? " fusion-active" : "")} onClick={toggleMenu}>
-                    <div className="fusion-button-inner">
-                        <div className={`btn-trigger ${isActive ? 'active' : ''}`} id="btn07">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    );
-};
+    if (open) {
+      document.documentElement.style.overflow = "hidden";
+      document.addEventListener("keydown", onKeyDown);
+      firstLinkRef.current?.focus();
+    } else {
+      document.documentElement.style.overflow = "";
+      document.removeEventListener("keydown", onKeyDown);
+      toggleRef.current?.focus();
+    }
 
-export default HamburgerMenu;
+    return () => {
+      document.documentElement.style.overflow = "";
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
+  return (
+    <nav className={styles.siteNav}>
+      <div className={styles.navInner}>
+        <a className={styles.brand} href="/">
+          ロゴ
+        </a>
+
+        <button
+          ref={toggleRef}
+          className={styles.navToggle}
+          aria-controls="global-menu"
+          aria-expanded={open}
+          aria-label={open ? "メニューを閉じる" : "メニューを開く"}
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          <span className={`${styles.hamburger} ${open ? styles.open : ""}`}>
+            <span className={`${styles.bar} ${styles.bar1}`}></span>
+            <span className={`${styles.bar} ${styles.bar2}`}></span>
+            <span className={`${styles.bar} ${styles.bar3}`}></span>
+          </span>
+        </button>
+      </div>
+
+      <div
+        id="global-menu"
+        className={`${styles.globalMenu} ${open ? styles.open : ""}`}
+        aria-hidden={!open}
+        ref={menuRef}
+      >
+        <div
+          className={styles.menuInner}
+          role="menu"
+          aria-label="グローバルメニュー"
+        >
+          {/**<button
+            className={styles.menuClose}
+            aria-label="メニューを閉じる"
+            onClick={() => setOpen(false)}
+          >
+            ×
+          </button>*/}
+
+          <ul className={styles.menuList}>
+            <li>
+              <a ref={firstLinkRef} role="menuitem" href="/about">
+                About
+              </a>
+            </li>
+            <li>
+              <a role="menuitem" href="/news">
+                News
+              </a>
+            </li>
+            <li>
+              <a role="menuitem" href="/events">
+                Events
+              </a>
+            </li>
+            <li>
+              <a role="menuitem" href="/contact">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          className={`${styles.menuBackdrop} ${open ? styles.menuBackdropOpen : ""}`}
+          onClick={() => setOpen(false)}
+        />
+      </div>
+    </nav>
+  );
+}
