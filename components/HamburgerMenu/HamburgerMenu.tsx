@@ -81,7 +81,7 @@ export default function HamburgerMenu() {
         ref={menuRef}
       >
         <div
-          className={styles.menuInner}
+          className={`${styles.menuInner} ${open ? styles.menuInnerOpen : ""}`}
           role="menu"
           aria-label="グローバルメニュー"
         >
@@ -95,23 +95,33 @@ export default function HamburgerMenu() {
 
           <ul className={styles.menuList}>
             <li>
-              <a ref={firstLinkRef} role="menuitem" href="/about">
-                About
+              <a ref={firstLinkRef} role="menuitem" href="/">
+                TOP
               </a>
             </li>
             <li>
-              <a role="menuitem" href="/news">
-                News
+              <a role="menuitem" href="/map">
+                MAP
               </a>
             </li>
             <li>
-              <a role="menuitem" href="/events">
-                Events
+              <a role="menuitem" href="/event">
+                EVENT
               </a>
             </li>
             <li>
-              <a role="menuitem" href="/contact">
-                Contact
+              <a role="menuitem" href="/timetable">
+                TIMETABLE
+              </a>
+            </li>
+            <li>
+              <a role="menuitem" href="/attention">
+                ATTENTION
+              </a>
+            </li>
+            <li>
+              <a role="menuitem" href="/about">
+                ABOUT
               </a>
             </li>
           </ul>
