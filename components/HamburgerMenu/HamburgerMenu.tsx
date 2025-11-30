@@ -54,9 +54,6 @@ export default function HamburgerMenu() {
   return (
     <nav className={styles.siteNav}>
       <div className={styles.navInner}>
-        <a className={styles.brand} href="/">
-          ロゴ
-        </a>
 
         <button
           ref={toggleRef}
@@ -126,11 +123,11 @@ export default function HamburgerMenu() {
             </li>
           </ul>
         </div>
-        <div
-          className={`${styles.menuBackdrop} ${open ? styles.menuBackdropOpen : ""}`}
-          onClick={() => setOpen(false)}
-        />
       </div>
+      <div
+        className={`${styles.menuBackdrop} ${open ? styles.menuBackdropOpen : ""}`}
+        onClick={() => setOpen(false)}
+      />
     </nav>
   );
 }

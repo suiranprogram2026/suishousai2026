@@ -90,8 +90,6 @@ export default function Home() {
               </picture>
             </div>
 
-            <a href="/attention" className='payment-btn'>諸注意</a>
-
           </section>
 
           <div className="mid_header">
