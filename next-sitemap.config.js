@@ -1,7 +1,16 @@
-/**@type {import('next-sitemap').Iconfig}*/
+/** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://suishousai2025.vercel.app',
-    generalRobotsTxt: true,
-    sitemapSize: 5000,
-    generalIndexSitemap: true,
+  siteUrl: "https://suishousai2026.vercel.app",
+  generateRobotsTxt: true,
+
+  /** ↓ここから下までを消すとgoogle検索に乗せられる（すぐには乗らない）*/
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: "*",
+        disallow: "/",
+      },
+    ],
+  },
+  /**ここまで消す */
 };
