@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Disallow: /
+
+# Host
+Host: https://suishousai2026.vercel.app
+
+# Sitemaps
+Sitemap: https://suishousai2026.vercel.app/sitemap.xml
