@@ -10,7 +10,7 @@ import TopSelect from '@/components/topselect/topselect';
 import Finish from '@/components/finish/finish';
 import dynamic from 'next/dynamic';
 
-// ✅ Countdown はクライアント専用レンダリングに変更
+// Countdown はクライアント専用レンダリングに変更
 const Countdown = dynamic(() => import("@/components/countdown/countdown"), {
   ssr: false, // サーバーでは描画しない
 });
@@ -57,7 +57,7 @@ export default function Home() {
                     />
                     <Image
                       className="headtop-sp img"
-                      src="/welcome/themesp.png"
+                      src="/welcome/logo.png"
                       alt="neo"
                       width={180}
                       height={1164}
@@ -81,7 +81,7 @@ export default function Home() {
                 />
                 <Image
                   className="headtop-right-sp img"
-                  src="/welcome/rightsp.png"
+                  src="/welcome/logo.png"
                   alt=""
                   width={3000}
                   height={2000}
@@ -94,7 +94,7 @@ export default function Home() {
 
           <div className="mid_header">
             <Countdown
-              targetDate="2025-12-31T23:59:59" //←に翠翔祭の日程を入れる            
+              targetDate="2026-6-25T23:59:59" //←に翠翔祭の日程を入れる            
             />
             {/*<Finish />*/}
             <div className="headerbox_top">
@@ -114,7 +114,7 @@ export default function Home() {
               </div>
             </div>
             <Form />
-            {/*<Gresult />*/}   {/*どっちかのみ使用 */}
+            {/*<Gresult />*/}   {/*formとGresultのどっちかのみ使用 */}
 
             <div className="headerbox_top">
               <div className="headerbox_left"></div>

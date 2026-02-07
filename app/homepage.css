@@ -155,8 +155,10 @@
     width: 100%;
     height: 70px;
     z-index: 2;
+    align-items: center;
 }
 
+/*
 .headerbox_left {
     position: absolute;
     top: 0;
@@ -177,7 +179,7 @@
     z-index: 5;
     width: 60%;
     border-bottom: 4px #333333 solid;
-}
+} */
 
 .headerbox_titlearea {
     position: absolute;
@@ -186,12 +188,13 @@
     align-items: center;
     justify-content: center;
     z-index: 2;
-    left: 0;
     bottom: 0;
-    width: 40%;
+    width: 70%;
     height: 90%;
-    background-color: #14fc0a;
-    border-top-right-radius: 35px;
+    background: linear-gradient(to bottom left, #01b0d3, #14fc0a);
+    border-radius: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .headerbox_titlearea h1 {
