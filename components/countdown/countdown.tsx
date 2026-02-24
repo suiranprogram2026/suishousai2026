@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import "./countdown.css"
 
 type CountdownProps = {
-  targetDate: string; // 例: "2025-12-31T23:59:59"
+  targetDate: string; 
 };
 
 export default function Countdown({ targetDate }: CountdownProps) {
@@ -64,7 +65,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
   return (
     <div className="countdown">
       {isFinished ? (
-        <p className="finish">翠翔祭2026は終了しました！</p>
+        <p className="finish">翠翔祭2026開催中！！</p>
       ) : (
         <div className="count-box">
           <p>翠翔祭2026開幕まで残り</p>

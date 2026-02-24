@@ -141,3 +141,7 @@ a {
     height: 252px;
   }
 }
+
+*:focus {
+  outline: none;
+}

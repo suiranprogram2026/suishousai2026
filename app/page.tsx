@@ -93,9 +93,7 @@ export default function Home() {
           </section>
 
           <div className="mid_header">
-            <Countdown
-              targetDate="2026-6-25T23:59:59" //←に翠翔祭の日程を入れる            
-            />
+            <Countdown targetDate="2026-06-25T23:59:59+09:00" /> {/*←翠翔祭の日程を入れる。数字は2桁*/}
             {/*<Finish />*/}
             <div className="headerbox_top">
               <div className="headerbox_left"></div>

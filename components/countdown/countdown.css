@@ -1,16 +1,22 @@
 .countdown{
+    display: flex;
+    justify-content: center;  /* 横中央 */
+    align-items: center;      /* 縦中央（高さがある場合） */
+    padding: 2rem 1rem;
+    margin: 30px;
     width: 100%;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+    height: 50px;
 }
 
 .count-box{
     position: absolute;
     text-align: center;
     font-size: 1.5rem;
-    height: 20px;
-    width: 70px;
+    height: 100px;
+    width: 70%;
     background-color: aquamarine;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
 }
 
 .finish{
