@@ -9,12 +9,7 @@ import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
 import Finish from '@/components/finish/finish';
 import dynamic from 'next/dynamic';
-
-// Countdown はクライアント専用レンダリングに変更
-const Countdown = dynamic(() => import("@/components/countdown/countdown"), {
-  ssr: false, // サーバーでは描画しない
-});
-
+import Countdown from "../components/countdown/countdown";
 
 // Homeコンポーネント
 export default function Home() {

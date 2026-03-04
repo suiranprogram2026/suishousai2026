@@ -1,77 +1,85 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "./countdown.css"
+import styles from "./countdown.module.css";
 
-type CountdownProps = {
-  targetDate: string; 
+type Props = {
+  targetDate: string;
 };
 
-export default function Countdown({ targetDate }: CountdownProps) {
-  const targetTime = new Date(targetDate).getTime();
-
+export default function Countdown({ targetDate }: Props) {
   const [timeLeft, setTimeLeft] = useState<{
     days: number;
     hours: number;
     minutes: number;
     seconds: number;
-  } | null>(null); // ← 初期値は null に
-
-  function getTimeLeft() {
-    const now = Date.now();
-    const diff = targetTime - now;
-
-    if (diff <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
-
-    return {
-      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((diff / (1000 * 60)) % 60),
-      seconds: Math.floor((diff / 1000) % 60),
-    };
-  }
+  } | null>(null);
 
   useEffect(() => {
-    // 初回レンダー時に初期化
-    setTimeLeft(getTimeLeft());
+    const target = new Date(targetDate).getTime();
 
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft());
-    }, 1000);
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = target - now;
 
-    return () => clearInterval(timer);
-  }, []);
+      if (diff <= 0) {
+        setTimeLeft(null);
+        return;
+      }
 
-  if (!timeLeft) {
-    // SSR中はここを返すので内容が変動しない
-    return (
-      <div className="countdown">
-        <div className="count-box">
-          <p>翠翔祭2026開幕まで残り</p>
-          <p className="count">--日 --時間 --分 --秒</p>
-        </div>
-      </div>
-    );
-  }
+      const d = Math.floor(diff / 1000 / 60 / 60 / 24);
+      const h = Math.floor(diff / 1000 / 60 / 60) % 24;
+      const m = Math.floor(diff / 1000 / 60) % 60;
+      const s = Math.floor(diff / 1000) % 60;
 
-  const isFinished =
-    timeLeft.days === 0 &&
-    timeLeft.hours === 0 &&
-    timeLeft.minutes === 0 &&
-    timeLeft.seconds === 0;
+      setTimeLeft({
+        days: d,
+        hours: h,
+        minutes: m,
+        seconds: s,
+      });
+    }
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+    return () => clearInterval(interval);
+  }, [targetDate]);
 
   return (
-    <div className="countdown">
-      {isFinished ? (
-        <p className="finish">翠翔祭2026開催中！！</p>
+    <div className={styles.container}>
+      <h1 className={styles.title}>翠翔祭まであと</h1>
+
+      {timeLeft ? (
+        <div className={styles.timeContainer}>
+          <div className={styles.time}>
+            <span className={styles.timeNum}>{timeLeft.days}</span>
+            DAYS
+          </div>
+
+          <div className={styles.time}>
+            <span className={styles.timeNum}>
+              {String(timeLeft.hours).padStart(2, "0")}
+            </span>
+            HOURS
+          </div>
+
+          <div className={styles.time}>
+            <span className={styles.timeNum}>
+              {String(timeLeft.minutes).padStart(2, "0")}
+            </span>
+            MIN
+          </div>
+
+          <div className={styles.time}>
+            <span className={styles.timeNum}>
+              {String(timeLeft.seconds).padStart(2, "0")}
+            </span>
+            SEC
+          </div>
+        </div>
       ) : (
-        <div className="count-box">
-          <p>翠翔祭2026開幕まで残り</p>
-          <p className="count">
-            {timeLeft.days}日 {timeLeft.hours}時間 {timeLeft.minutes}分 {timeLeft.seconds}秒
-          </p>
+        <div className={styles.finished}>
+          🎉 翠翔祭開催中！ 🎉
         </div>
       )}
     </div>
