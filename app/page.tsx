@@ -9,7 +9,7 @@ import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
 import Finish from '@/components/finish/finish';
 import dynamic from 'next/dynamic';
-import Countdown from "../components/countdown/countdown";
+import Countdown from "../components/countdown/Countdown";
 
 // Homeコンポーネント
 export default function Home() {
