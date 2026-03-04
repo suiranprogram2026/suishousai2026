@@ -44,7 +44,9 @@ export default function RootLayout({
   return (
     <html lang="jp">
       <body >
-        <SpeedInsights />
+        {process.env.NODE_ENV === "production" && (
+          <SpeedInsights />
+        )}
         <WarningPopupCookie />
         <HamburgerMenu />
         <main className={kosugi.className}>
