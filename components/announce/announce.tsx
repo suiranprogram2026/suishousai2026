@@ -8,8 +8,9 @@ export default function Announce() {
     <div className="announce">
       {announceItems.map((item) => (
         <div key={item.id} className="announce-item">
-          <div className="title">{item.title}</div>
-          <div className="detail">{item.detail}</div>
+          <h1 className="title">{item.title}</h1>
+          <h3 className="date">{item.date}</h3>
+          <h2 className="detail">{item.detail}</h2>
         </div>
       ))}
     </div>

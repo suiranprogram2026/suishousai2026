@@ -10,13 +10,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 const kosugi = Noto_Sans_JP({ weight: "500", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "翠翔祭2026「」",
+  title: "翠翔祭2026「Luminous」",
   description: "6/28~6/29に行われる神奈川県立横浜翠嵐高校の翠翔祭の公式ホームページです。",
   openGraph: {
-    title: "翠翔祭2026「」",
+    title: "翠翔祭2026「Luminous」",
     description: "6/28~6/29に行われる神奈川県立横浜翠嵐高校の翠翔祭の公式ホームページです。",
     url: "https://suishousai2025.vercel.app/",
-    siteName: "翠翔祭2026「」",
+    siteName: "翠翔祭2026「Luminous」",
     images: [
       {
         url: "https://suishousai2025.vercel.app/og-image.jpg",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "翠翔祭2026「」",
+    title: "翠翔祭2026「Luminous」",
     description: "横浜翠嵐高等学校",
     images: ["https://suishousai2025.vercel.app/twitter-image.jpg"],
   },
