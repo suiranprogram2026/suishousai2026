@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "./countdown.module.css";
+import styles from "./Countdown.module.css";
 
 type Props = {
   targetDate: string;
