@@ -10,3 +10,4 @@ https://www.shadcn.net/ja
 　.cssは競合する可能性がある。.cssで書くときはclassNameを○○_titleとかにする。
 　ハイフンだと演算子と紛らわしいからアンダーバーを使ったほうがいい。
 　（別にどっちでも問題ないし、実際過去の遺物で残ってる）
+モジュールのときはこう書くclassName={styles.title}
