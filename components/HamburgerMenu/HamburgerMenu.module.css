@@ -157,7 +157,7 @@
 .menuBackdrop {
   position: fixed;
   inset: 0;
-  background: linear-gradient(to bottom left, #01b0d3, #14fc0a); /* 緑 → 水色 */
+  background: linear-gradient(to bottom left, #01b0d3, #ff42df); /* 緑 → 水色 */
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.45s ease;
