@@ -18,89 +18,76 @@
 
 /** ヘッダーの共通デザイン **/
 
-.mid_header {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffffff;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    z-index: 5;
+.body {
+  margin: 0;
+}
+
+.hidden-x-side {
+  overflow-x: hidden;
 }
 
 .headtop {
-    position: relative;
-    width: 100%;
-    top: 0;
-    margin-bottom: 20px;
-    min-height: 90dvh;
-    z-index: 5;
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* 画面いっぱい */
+  overflow: hidden;
 }
 
+/* 背景画像 */
+.headtop-top {
+  position: absolute;
+  inset: 0;
+}
+
+.headtop-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ロゴなど */
 .headtop-leftarea {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-}
-
-.headtop-right {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.headtop-right img {
-    width: 100%;
-    height: auto;
-    display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
 }
 
 .headtop-themelogo {
-    position: absolute;
-    top: -3dvh;
-    left: 3vw;
-    width: 40%;
-    max-width: 600px;
-    height: auto;
-    z-index: 1;
+  position: absolute;
+  top: 2vh;
+  left: 3vw;
+  width: 40%;
+  max-width: 600px;
 }
 
 .headtop-change {
-    position: absolute;
-    bottom: 0;
-    right: 3vw;
-    width: 35%;
-    max-width: 550px;
-    height: auto;
-    z-index: 1;
+  position: absolute;
+  bottom: 2vh;
+  right: 3vw;
+  width: 35%;
+  max-width: 550px;
 }
 
-.headtop-sp {
-    width: 100%;
-    height: auto;
-}
+/* ------------------ */
+/* 下の白コンテンツ */
+/* ------------------ */
 
-@media (max-width:767px) {
-    .headtop-themelogo {
-        left: 1vw;
-        width: 60%;
-    }
+.mid_header {
+  position: relative;
+  margin-top: -80px;   /* ←重なる量 */
+  padding-top: 40px;
 
-    .headtop-change {
-        bottom: 1vh;
-        width: 25%;
-        max-width: 150px;
-    }
+  width: 100%;
+  background: white;
+
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 5;
 }
 
 .payment-btn {

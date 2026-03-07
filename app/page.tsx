@@ -21,71 +21,38 @@ export default function Home() {
 
           {/** ヘッダー　画面サイズによってそれぞれ少し違う画像を適応する */}
 
-          <section
-            className="headtop"
-          >
-            <div className="headtop-leftarea">
-              <div className="headtop-left">
-
-                <div className="headtop-themelogo">
-                  <picture>
-                    <source
-                      media="(min-width:768px)"
-                      srcSet="/welcome/logo.png"
-                    />
-                    <Image
-                      className="headtop-sp img"
-                      src="/welcome/logo.png"
-                      alt=""
-                      width={900}
-                      height={850}
-                      priority
-                    />
-                  </picture>
-                </div>
-
-                <div className="headtop-change">
-                  <picture>
-                    <source
-                      media="(min-width:768px)"
-                      srcSet="/welcome/themepc.png"
-                    />
-                    <Image
-                      className="headtop-sp img"
-                      src="/welcome/logo.png"
-                      alt="neo"
-                      width={180}
-                      height={1164}
-                      priority
-                    />
-                  </picture>
-                </div>
-
-              </div>
-            </div>
-
-            <div className="headtop-right">
+          <section className="headtop">
+            <div className="headtop-top">
               <picture>
                 <source
                   media="(min-width:1024px)"
-                  srcSet="/welcome/rightpc.png"
+                  srcSet="/welcome/top_pc.png"
                 />
-                <source
-                  media="(min-width:660px)"
-                  srcSet="/welcome/rightpd.png"
-                />
-                <Image
-                  className="headtop-right-sp img"
-                  src="/welcome/logo.png"
-                  alt=""
-                  width={3000}
-                  height={2000}
-                  priority
-                />
-              </picture>
-            </div>
+              <Image
+                src="/welcome/top_sp.png"
+                alt=""
+                width={3000}
+                height={2000}
+                priority
+              />
+            </picture>
+          </div>
 
-          </section>
+          <div className="headtop-leftarea">
+
+          <div className="headtop-themelogo">
+            <Image
+              src="/welcome/logo.png"
+              alt=""
+              width={900}
+              height={850}
+             priority
+           />
+         </div>
+
+        </div>
+
+      </section>
 
           <div className="mid_header">
             <Countdown targetDate="2026-06-25T23:59:59+09:00" /> {/*←翠翔祭の日程を入れる。数字は2桁*/}
