@@ -79,7 +79,7 @@ export default function Countdown({ targetDate }: Props) {
         </div>
       ) : (
         <div className={styles.finished}>
-          🎉 翠翔祭開催中！ 🎉
+           翠翔祭開催中！
         </div>
       )}
     </div>

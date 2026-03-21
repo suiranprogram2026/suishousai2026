@@ -7,7 +7,7 @@
   right: 0;
   width: 80px;
   height: 80px;
-  background-color: #01b0d3;
+  background-color: #00c4eb;
   border-bottom-left-radius: 20px;
   cursor: pointer;
   z-index: 9998;
@@ -157,7 +157,7 @@
 .menuBackdrop {
   position: fixed;
   inset: 0;
-  background: linear-gradient(to bottom left, #01b0d3, #ff42df); /* 緑 → 水色 */
+  background: linear-gradient(to bottom left, #00c4eb, #ff42df); /* 緑 → 水色 */
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.45s ease;

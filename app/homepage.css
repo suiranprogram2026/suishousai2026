@@ -68,21 +68,28 @@
   max-width: 550px;
 }
 
+.left_date{
+    position: absolute;
+    bottom: 0;
+    z-index: 7000;
+    align-items: center;
+    right: 0;
+}
+
+@media (max-width:600px){
+    .left_date{
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+}
+
 /* ------------------ */
 /* 下の白コンテンツ */
 /* ------------------ */
-
 .mid_header {
-  position: relative;
-  margin-top: -80px;   /* ←重なる量 */
-  padding-top: 40px;
-
   width: 100%;
   background: white;
-
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -178,7 +185,7 @@
     bottom: 0;
     width: 70%;
     height: 90%;
-    background: linear-gradient(to bottom left, #01b0d3, #14fc0a);
+    background: linear-gradient(to bottom left, #00c4eb, #14fc0a);
     border-radius: 20px;
     left: 50%;
     transform: translateX(-50%);

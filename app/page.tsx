@@ -28,35 +28,35 @@ export default function Home() {
                   media="(min-width:1024px)"
                   srcSet="/welcome/top_pc.png"
                 />
-              <Image
-                src="/welcome/top_sp.png"
-                alt=""
-                width={3000}
-                height={2000}
-                priority
-              />
-            </picture>
-          </div>
+                <Image
+                  src="/welcome/top_sp.png"
+                  alt=""
+                  width={3000}
+                  height={2000}
+                  priority
+                />
+              </picture>
+            </div>
 
-          <div className="headtop-leftarea">
+            <div className="headtop-leftarea">
+              <div className="headtop-themelogo">
+                <Image
+                  src="/welcome/logo.png"
+                  alt=""
+                  width={900}
+                  height={850}
+                 priority
+               />
+              </div>
+            </div>
 
-          <div className="headtop-themelogo">
-            <Image
-              src="/welcome/logo.png"
-              alt=""
-              width={900}
-              height={850}
-             priority
-           />
-         </div>
-
-        </div>
-
-      </section>
+            <div className="left_date">
+              <Countdown targetDate="2026-06-25T23:59:59+09:00" /> {/*←翠翔祭の日程を入れる。数字は2桁*/}
+              {/*<Finish />*/}
+            </div>
+          </section>
 
           <div className="mid_header">
-            <Countdown targetDate="2026-06-25T23:59:59+09:00" /> {/*←翠翔祭の日程を入れる。数字は2桁*/}
-            {/*<Finish />*/}
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
               <div className="headerbox_right"></div>
