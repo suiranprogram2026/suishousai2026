@@ -19,7 +19,7 @@
   justify-content: space-between;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 12px 16px;
+  padding: 16px 18px;
 }
 
 .navToggle {
@@ -37,6 +37,11 @@
   .siteNav{
     width: 60px;
     height: 60px;
+    border-bottom-left-radius: 18px;
+  }
+
+  .navInner{
+    padding: 12px 18px;
   }
 }
 
@@ -45,8 +50,8 @@
 ========================= */
 .hamburger {
   position: relative;
-  width: 26px;
-  height: 20px;
+  width: 50px;
+  height: 30px;
   display: inline-block;
 }
 
@@ -54,7 +59,7 @@
   position: absolute;
   left: 0;
   width: 100%;
-  height: 3px;
+  height: 4px;
   background: #000;
   transition: transform 0.4s ease, opacity 0.4s ease;
   z-index: 9999;
@@ -66,7 +71,26 @@
 
 .navToggle[aria-expanded="true"] .bar1 { transform: translateY(9px) rotate(45deg); }
 .navToggle[aria-expanded="true"] .bar2 { opacity: 0; }
-.navToggle[aria-expanded="true"] .bar3 { transform: translateY(-9px) rotate(-45deg); }
+.navToggle[aria-expanded="true"] .bar3 { transform: translateY(-16px) rotate(-45deg); }
+
+@media (max-width: 767px){
+  .hamburger {
+    width: 26px;
+    height: 20px;
+    top: -5px;
+  }
+
+  .bar{
+    width: 100%;
+    height: 3px;
+  }
+
+  .navToggle[aria-expanded="true"] .bar1 { transform: translateY(9px) rotate(45deg); }
+  .navToggle[aria-expanded="true"] .bar2 { opacity: 0; }
+  .navToggle[aria-expanded="true"] .bar3 { transform: translateY(-8px) rotate(-45deg); }
+}
+
+
 
 /* =========================
   3. メニュー（スライド + フェード）
@@ -83,6 +107,7 @@
   opacity: 0;
   pointer-events: none;
   opacity: 1;
+  scrollbar-width: none;
 }
 
 @media (max-width: 767px) {
@@ -127,7 +152,7 @@
 .menuList li a,
 .menuList a {
   display: block;
-  font-size: 24px;
+  font-size: 26px;
   padding: 14px 0;
   text-decoration: none;
   color: #000000;
@@ -157,7 +182,7 @@
 .menuBackdrop {
   position: fixed;
   inset: 0;
-  background: linear-gradient(to bottom left, #00c4eb, #ff42df); /* 緑 → 水色 */
+  background: linear-gradient(to bottom left, #00c4eb, #ff42df);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.45s ease;
@@ -168,3 +193,29 @@
   opacity: 1;
   pointer-events: auto; 
 }
+
+.theme_title {
+  font-size: 20vh;
+  font-family: Impact;
+  writing-mode: vertical-rl;
+  position: fixed;
+  right: -3vw;
+  top: 100px;
+  height: 90vh;
+  z-index: 9000; 
+  color: rgba(255, 255, 255, 0.3);
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  transition: 
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.theme_title.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+

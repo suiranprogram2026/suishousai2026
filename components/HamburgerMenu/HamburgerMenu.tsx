@@ -124,6 +124,11 @@ export default function HamburgerMenu() {
           </ul>
         </div>
       </div>
+
+      <div className={`${styles.theme_title} ${open ? styles.open : ""}`} aria-hidden={!open}>
+        <h1>LUMINOUS</h1>
+      </div>
+
       <div
         className={`${styles.menuBackdrop} ${open ? styles.menuBackdropOpen : ""}`}
         onClick={() => setOpen(false)}
