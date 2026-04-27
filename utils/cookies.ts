@@ -1,5 +1,3 @@
 //cookieの一括管理
 
-export const SITE_COOKIES = [
-    '',
-]
+export const SITE_COOKIES: string[] = []

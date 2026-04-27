@@ -5,19 +5,15 @@
 
 ここではそれぞれのファイルについて説明していきます。
 ※ここに登場していないファイルは編集しても意味ないファイルだったり途中で別の人によって追加されたファイルの可能性があります。
-※2025/7/18時点の情報です
+※2026/4/27時点の情報です
+
+#.next ~ nextjsが動くときに後ろで動くもの。いじらなくておｋ。npm run buildで修復可能。
 
 #app ~ サイトのメインページディレクトリ
 
-- 404 ~ エラーが発生した場合にとばされる ※自動指定型
+- 404 ~ エラーが発生した場合にとばされる ※自動指定型（自動で飛ぶ）
 
 - about ~ 翠翔祭についての説明ファイル
-
-- admin ~ アドミンディレクトリ
- - dashboard ~ 編集ダッシュボード
- - login ~ ログインページ
-
--api
 
 - attention ~ 注意事項ページ
 
@@ -26,6 +22,7 @@
 - event ~ イベント検索ページ
 
 - map ~ マップディレクトリ
+ - page ~ 経由地
  - three ~ 構造マップ
 
 -timetable ~ タイムテーブル関連　eventページと連携していたりしてなかったり、、
@@ -34,29 +31,23 @@ favicon.ico ~ サイトのアイコン
 
 global.css ~ 下部ページでの統一したcss
 
-homepage.css ~ 
+homepage.css ~ topページのデザイン
 
-layout.tsx ~ 下部ページでの統一したコンテンツ
+layout.tsx ~ 下部ページでの統一したコンテンツ→ハンバーガーメニューやフッターなどすべてのページにつくやつ
 
 not-found.tsx ~ 見つからないときのページ（404）と同じ
 
-page.tsx ~ ホームページ
+page.tsx ~ topページ
 
 
 
 #components ~ importファイルを格納している場所
 
-finish,topselect,form,result,announce,access ~ トップページのデザイン用　コンポーネントである必要あんまないかも
-
-editor ~ 編集ページのファイル
+finish,topselect,form,result,announce,access,countdown ~ トップページのデザイン用　コンポーネントである必要あんまないかも
 
 footer ~ メインページについてるフッター
 
 HamburherMenu ~ サイドバーのメニュー関連
-
-nowedit ~ 「まだ編集中だって」のやつ
-
-developer ~ 管理者のログインシステム
 
 event ~ 検索システム
 
@@ -66,20 +57,17 @@ ui ~ shadcnをちょっと変えたやつ。少し使いやすいようにいじ
 
 warning ~ ページをひたらいたときに出てくる電子マネー注意のやつ
 
-CookieConsent ~ クッキー用（不明）
-
-DevOnly ~ DevOnlyを管理している奴
-
-LoginForm ~ 管理者のログイン画面
 
 
+#hooks ~ 基本編集しなくていいやつ
+            コンポーネント内で使えるuse○○の管理
 
-#hooks ~ 編集しなくていいやつ
+
+#lib ~ 基本編集しなくていいやつ
+            関数などを使いまわす用
 
 
-
-#lib ~ 編集しなくていいやつ
-
+#node_modules ~ ReactやNext.js本体が入ってる。npm installで再生成できる
 
 
 #publick ~ 画像を保存している場所
@@ -92,16 +80,15 @@ Imageで指定する場合は直に指定していいです。
 
 
 #utils ~ データを直接指定、保存している部分
+  -announce
 
-- supabase ~ supabaseに関する設定部分 （ルールや取得方法が変わらない限り変更する必要はない）
+  -categoryMapping ~ カテゴリーのアイコンを指定する部分
 
-categoryMapping ~ カテゴリーのアイコンを指定する部分
+  -cookie系 ~ クッキーの設定や削除、更新などをつかさどる部分
 
-cookie系 ~ クッキーの設定や削除、更新などをつかさどる部分
+  -festival系 ~ 催し物の概要などを記述する部分
 
-festival系 ~ 催し物の概要などを記述する部分
-
-nomalizeKana ~ 検索ですべての言葉に対して検索できるようにする仕組み
+  -nomalizeKana ~ 検索ですべての言葉に対して検索できるようにする仕組み
 
 
 #扱い方ガイド ~ いろいろお役たち情報
@@ -110,8 +97,6 @@ nomalizeKana ~ 検索ですべての言葉に対して検索できるように�
 
 
 #それ以降のファイルたち
-
-.env.local ~ ローカル環境でサイトをテストするために自分で作るenvファイル。絶対に漏らしてはいけない
 
 .eslintrc.json ~ ルールの変更を書くファイル ※vercelのデプロイでエラーが出たときに使う可能性が高い
 

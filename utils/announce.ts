@@ -14,6 +14,5 @@ export const announceItems: AnnounceItem[] = [
 ];
 
 
-//idいらんくね？
 
 console.log(announceItems[0].title);
