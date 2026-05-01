@@ -16,20 +16,60 @@ export default function Home() {
 
   return (
     <>
-      <div className="body">
+      <header className="header">
+  <div className="wrapper">
+    <h1>
+      <Image
+        className="logo"
+        src="/logo.svg"
+        alt="翠翔祭2026"
+        width={120}
+        height={40}
+      />
+    </h1>
+
+    <ul className="button">
+      <li>
+        <a href="">
+          <Image
+            className="apply"
+            src="/apply.svg"
+            alt="apply"
+            width={80}
+            height={30}
+          />
+        </a>
+      </li>
+
+      <li>
+        <button className="hamburger" id="hamburgerBtn">
+          <Image
+            src="/menu.svg"
+            alt="menu"
+            className="menu"
+            width={30}
+            height={30}
+          />
+        </button>
+      </li>
+    </ul>
+  </div>
+</header>
+                 
+
         <div className="hidden-x-side">
 
           {/** ヘッダー　画面サイズによってそれぞれ少し違う画像を適応する */}
-
-          <section className="headtop">
-            <div className="headtop-top">
+          {/**ここのセクションがるみなす画面だわ */}
+          <section className="hometop">
+            <div className="night-sky">
               <picture>
                 <source
                   media="(min-width:1024px)"
-                  srcSet="/welcome/top_pc.png"
+                  srcSet="/welcome/bg.png"
                 />
                 <Image
-                  src="/welcome/top_sp.png"
+                  src="/welcome/bg.png"
                   alt=""
                   width={3000}
                   height={2000}
@@ -38,10 +78,10 @@ export default function Home() {
               </picture>
             </div>
 
-            <div className="headtop-leftarea">
-              <div className="headtop-themelogo">
+            <div className="hometop-center">
+              <div className="luminous">
                 <Image
-                  src="/welcome/logo.png"
+                  src="/welcome/luminous.png"
                   alt=""
                   width={900}
                   height={850}
@@ -95,7 +135,6 @@ export default function Home() {
             <Access />
           </div>
         </div>
-      </div>
     </>
   );
 };

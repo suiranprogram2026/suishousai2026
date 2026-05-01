@@ -1,3 +1,62 @@
+.header
+{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 999;
+background: #1f1f1f;
+height: 100px;
+}
+
+.wrapper
+{
+max-width:1100px;
+  margin:0 auto;
+  padding:0 4%;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo
+{
+ height: 100px;
+  width: auto;
+}
+
+
+.button
+{
+display: flex;
+list-style: none;
+gap: 30px;
+}
+.apply
+{
+ height: 60px;
+  width: auto;
+transition: 0.3s;
+}
+.menu
+{
+ height: 60px;
+  width: auto;
+transition: 0.3s;
+}
+.button img:hover 
+{
+  opacity: 0.7;
+}
+
+.hamburger
+{
+z-index: 1000;
+list-style: none;
+}
+
+
 .body {
     margin: 0;
 }
@@ -12,10 +71,6 @@
     max-width: 100%;
 }
 
-.hidden-x-side {
-    overflow-x: hidden;
-}
-
 /** ヘッダーの共通デザイン **/
 
 .body {
@@ -24,16 +79,35 @@
 
 .hidden-x-side {
   overflow-x: hidden;
+  margin-top: 100px;
 }
 
-.headtop {
+.hometop {
   position: relative;
   width: 100%;
   height: 100vh;   /* 画面いっぱい */
   overflow: hidden;
 }
 
-/* 背景画像 */
+.nightsky
+{
+position: absolute;
+inset: 0;
+}
+
+.hometop-center {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+}
+.luminous{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+
+/* 背景画像 
 .headtop-top {
   position: absolute;
   inset: 0;
@@ -45,7 +119,7 @@
   object-fit: cover;
 }
 
-/* ロゴなど */
+/* ロゴなど 
 .headtop-leftarea {
   position: absolute;
   inset: 0;
@@ -87,6 +161,8 @@
 /* ------------------ */
 /* 下の白コンテンツ */
 /* ------------------ */
+
+/*
 .mid_header {
   width: 100%;
   background: white;

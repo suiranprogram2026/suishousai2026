@@ -6,9 +6,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/*
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: linear-gradient(
+    to bottom,
+    #2f4a73,
+    #1f2a3a
+    );
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -78,11 +83,21 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
+*/
 
 @layer base {
   * {
     @apply border-border;
   }
+
+ :root {
+  --background: linear-gradient(
+    to bottom,
+    #2f4a73,
+    #1f2a3a
+  );
+ }
+
 
   body {
     @apply bg-background text-foreground;

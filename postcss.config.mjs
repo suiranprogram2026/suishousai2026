@@ -6,3 +6,5 @@ const config = {
 };
 
 export default config;
+
+//Tailwind CSSをPostCSSで動かすための設定　by久保園
