@@ -18,3 +18,4 @@ https://www.shadcn.net/ja
 
 npm run buildが成功すればすべてにおいてエラーはない
 
+festivai.tsとestivaldetail.tsはcomponentsの中のevent.tsxでmapとして紐図けられている。その時にidを使う
