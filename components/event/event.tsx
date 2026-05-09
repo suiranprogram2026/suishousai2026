@@ -31,14 +31,45 @@ const fixedAttributes: { icon: LucideIcon; title: string }[] = [
 
 const EventPage: React.FC = () => {
 
-    //いやーマジでミスった。今更直せないけどidは外に出すべきだったわクッソ使いづらい。
     const detailMap = useMemo(() => {
-        const map: { [key: string]: FestivalDetail } = {};
-        for (const detail of festivalDetail) {
-            map[detail.id.toString()] = detail;
+    return new Map<number, string>(
+        festivalDetail.map((d) => [d.id, d.detail])
+    );
+}, []);
+
+    const [detailCache, setDetailCache] = useState<Map<number, string>>(new Map());
+    const [loadingId, setLoadingId] = useState<number | null>(null);
+
+    useEffect(() => {
+    let isMounted = true;
+
+    const preloadDetails = async () => {
+        for (const item of festivalItems) {
+
+            // すでにキャッシュあればスキップ
+            if (detailCache.has(item.id)) continue;
+
+            const detail = detailMap.get(item.id);
+
+            // ちょっとずつ読む（負荷軽減）
+            await new Promise((r) => setTimeout(r, 50));
+
+            if (!isMounted) return;
+
+            setDetailCache((prev) => {
+                const newMap = new Map(prev);
+                newMap.set(item.id, detail ?? "詳細がありません");
+                return newMap;
+            });
         }
-        return map;
-    }, []);
+    };
+
+    preloadDetails();
+
+    return () => {
+        isMounted = false;
+    };
+}, []);
 
     const searchParams = useSearchParams();
     const id = searchParams.get("id");
@@ -108,6 +139,24 @@ const EventPage: React.FC = () => {
         const found = fixedAttributes.find((attr) => attr.icon === icon);
         return found ? found.title : "カテゴリ";
     };
+
+    const fetchDetail = async (id: number) => {
+    if (detailCache.has(id)) return;
+
+    setLoadingId(id);
+
+    const detail = detailMap.get(id);
+
+    await new Promise((r) => setTimeout(r, 300)); // 後で消してOK
+
+    setDetailCache((prev) => {
+        const newMap = new Map(prev);
+        newMap.set(id, detail ?? "詳細がありません");
+        return newMap;
+    });
+
+    setLoadingId(null);
+};
 
     return (
         <main className="eventcontent">
@@ -184,13 +233,22 @@ const EventPage: React.FC = () => {
                                                 <div className="pop_button_area">
                                                     <Drawer>
                                                         <DrawerTrigger asChild>
-                                                            <button className='pop_button_sec'>詳細</button>
+                                                            <button
+                                                                className='pop_button_sec'
+                                                                onClick={() => fetchDetail(item.id)}
+                                                            >
+                                                                詳細
+                                                            </button>
                                                         </DrawerTrigger>
                                                         <DrawerContent>
                                                             <DrawerHeader>
                                                                 <DrawerTitle>{item.title}</DrawerTitle>
                                                             </DrawerHeader>
-                                                            <div className='event_detail'>{detailMap[item.id.toString()]?.detail ?? "詳細情報がありません"}</div>
+                                                            <div className='event_detail'>
+                                                                {loadingId === item.id
+                                                                ? "読み込み中..."
+                                                                : detailCache.get(item.id) ?? "データなし"} 
+                                                            </div>
                                                             <DrawerFooter>
                                                                 <DrawerClose asChild>
                                                                     <Button variant="outline" className="close-button">閉じる</Button>
