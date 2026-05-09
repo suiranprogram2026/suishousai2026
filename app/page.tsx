@@ -78,18 +78,6 @@ export default function Home() {
               </picture>
             </div>
 
-            <div className="hometop-center">
-              <div className="luminous">
-                <Image
-                  src="/welcome/luminous.png"
-                  alt=""
-                  width={900}
-                  height={850}
-                 priority
-               />
-              </div>
-            </div>
-
             <div className="left_date">
               <Countdown targetDate="2026-06-26T23:59:59+09:00" /> {/*←翠翔祭の日程を入れる。数字は2桁*/}
               {/*<Finish />*/}

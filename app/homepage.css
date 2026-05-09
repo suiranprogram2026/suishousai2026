@@ -79,7 +79,7 @@ list-style: none;
 
 .hidden-x-side {
   overflow-x: hidden;
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 .hometop {
@@ -89,22 +89,13 @@ list-style: none;
   overflow: hidden;
 }
 
-.nightsky
+.night-sky
 {
 position: absolute;
-inset: 0;
+inset:0;
 }
 
-.hometop-center {
-  position: absolute;
-  inset: 0;
-  z-index: 8;
-}
-.luminous{
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
+
 
 
 /* 背景画像 
