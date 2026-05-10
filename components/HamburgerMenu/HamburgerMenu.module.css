@@ -195,25 +195,29 @@
 }
 
 .theme_title {
+  position: fixed;
+
   font-size: 20vh;
   font-family: Impact;
   writing-mode: vertical-rl;
-  position: fixed;
+
   right: -3vw;
   top: 100px;
   height: 90vh;
-  z-index: 9000; 
   color: rgba(255, 255, 255, 0.3);
+
+  z-index: 10000;
 
   opacity: 0;
   transform: translateY(20px);
+  pointer-events: none;
 
-  transition: 
+  transition:
     opacity 0.4s ease,
     transform 0.4s ease;
 }
 
-.theme_title.open {
+.themeTitleOpen {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
