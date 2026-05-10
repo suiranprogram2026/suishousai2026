@@ -4,14 +4,19 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-   background: linear-gradient(
+}
+
+html, body {
+  background-color: #303030;
+  color: #cccbcb;
+}
+
+/*background: linear-gradient(
     to bottom,
     #3f4a58,
     #2f4468,
     #0d2f6b,
-    #082a66);
-}
-
+    #082a66);*/
 
 
 
