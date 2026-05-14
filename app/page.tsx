@@ -8,7 +8,6 @@ import Announce from '@/components/announce/announce';
 import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
 import Finish from '@/components/finish/finish';
-import dynamic from 'next/dynamic';
 import Countdown from "../components/countdown/Countdown";
 
 // Homeコンポーネント
@@ -16,60 +15,19 @@ export default function Home() {
 
   return (
     <>
-      <header className="header">
-  <div className="wrapper">
-    <h1>
-      <Image
-        className="logo"
-        src="/logo.svg"
-        alt="翠翔祭2026"
-        width={120}
-        height={40}
-      />
-    </h1>
-
-    <ul className="button">
-      <li>
-        <a href="">
-          <Image
-            className="apply"
-            src="/apply.svg"
-            alt="apply"
-            width={80}
-            height={30}
-          />
-        </a>
-      </li>
-
-      <li>
-        <button className="hamburger" id="hamburgerBtn">
-          <Image
-            src="/menu.svg"
-            alt="menu"
-            className="menu"
-            width={30}
-            height={30}
-          />
-        </button>
-      </li>
-    </ul>
-  </div>
-</header>
-                 
-
         <div className="hidden-x-side">
 
           {/** ヘッダー　画面サイズによってそれぞれ少し違う画像を適応する */}
           {/**ここのセクションがるみなす画面だわ */}
-          <section className="hometop">
-            <div className="night-sky">
+          <section className="headtop">
+            <div className="headtop_top">
               <picture>
                 <source
                   media="(min-width:1024px)"
-                  srcSet="/welcome/bg.png"
+                  srcSet="/welcome/top_pc.png"
                 />
                 <Image
-                  src="/welcome/bg.png"
+                  src="/welcome/top_sp.png"
                   alt=""
                   width={3000}
                   height={2000}

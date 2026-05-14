@@ -58,3 +58,7 @@
 .gaku{
     font-size: clamp(15px, 2vw, 20px);
 }
+
+.warning-text.gaku{
+    color: #000000;
+}
