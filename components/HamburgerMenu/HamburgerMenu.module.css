@@ -10,7 +10,7 @@
   background-color: #00c4eb;
   border-bottom-left-radius: 20px;
   cursor: pointer;
-  z-index: 9998;
+  z-index: 0;
 }
 
 .navInner {

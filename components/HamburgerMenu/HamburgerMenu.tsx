@@ -10,6 +10,7 @@ export default function HamburgerMenu() {
   const firstLinkRef: RefObject<HTMLAnchorElement> = useRef(null);
   const toggleRef: RefObject<HTMLButtonElement> = useRef(null);
 
+ 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -33,7 +34,7 @@ export default function HamburgerMenu() {
           first?.focus();
         }
       }
-    };
+    }; 
 
     if (open) {
       document.documentElement.style.overflow = "hidden";
