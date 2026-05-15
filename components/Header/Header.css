@@ -1,15 +1,10 @@
 /* app/components/Header.css */
 .custom-header {
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  background-color: #222A35;
-}
-
-/* 中身 */
-.wrapper {
+  height: 40vh; /* 高さを画面の40%に */
+  min-height: 100px;
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
