@@ -76,8 +76,9 @@ const EventPage: React.FC = () => {
 
     // 検索とフィルターの状態管理
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedAttributes, setSelectedAttributes] = useState<LucideIcon[]>([]);
-
+    const [selectedAttribute, setSelectedAttribute] =
+    useState<LucideIcon | null>(null);
+    
     // 固定属性リストを利用するので、iconTypes は fixedAttributes から取得
     const iconTypes = fixedAttributes.map((attr) => attr.icon);
     const pass = "ねお"
@@ -92,7 +93,7 @@ const EventPage: React.FC = () => {
                 (attr) => attr.title.toLowerCase() === id.toLowerCase()
             );
             if (matchedAttribute) {
-                setSelectedAttributes([matchedAttribute.icon]);
+                setSelectedAttribute(matchedAttribute.icon);
             }
         }
     }, [id]);
@@ -103,10 +104,8 @@ const EventPage: React.FC = () => {
     };
 
     const toggleIconFilter = (icon: LucideIcon) => {
-        setSelectedAttributes((prev) =>
-            prev.includes(icon)
-                ? prev.filter((i) => i !== icon)
-                : [...prev, icon]
+        setSelectedAttribute((prev: LucideIcon | null) =>
+            prev === icon ? null : icon
         );
     };
 
@@ -127,12 +126,12 @@ const EventPage: React.FC = () => {
             const matchesSearch = matchesTitleOrReading || matchesClass;
 
             const matchesAttribute =
-                selectedAttributes.length === 0 ||
-                selectedAttributes.every((attr) => item.attributes.includes(attr));
+                selectedAttribute === null ||
+                item.attributes.includes(selectedAttribute);
 
             return matchesSearch && matchesAttribute;
         });
-    }, [normalizedSearchTerm, selectedAttributes]);
+    }, [normalizedSearchTerm, selectedAttribute]);
 
     // 各属性に対応する固定のカテゴリ名を返す
     const getCategoryTitle = (icon: LucideIcon) => {
@@ -194,9 +193,10 @@ const EventPage: React.FC = () => {
                         <button
                             key={index}
                             onClick={() => toggleIconFilter(IconComponent)}
-                            className={`e-iconnomal ${selectedAttributes.includes(IconComponent)
-                                ? "e-iconclick"
-                                : "e-iconunclick"
+                            className={`e-iconnomal ${
+                            selectedAttribute === IconComponent
+                                    ? "e-iconclick"
+                                    : "e-iconunclick"
                                 }`}
                             title={`フィルター: ${getCategoryTitle(IconComponent)}`}
                             aria-label={`フィルター: ${getCategoryTitle(IconComponent)}`}
