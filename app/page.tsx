@@ -9,15 +9,12 @@ import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
 import Finish from '@/components/finish/finish';
 import Countdown from "../components/countdown/Countdown";
-import Header from '@/components/Header/Header';
 
 // Homeコンポーネント
 export default function Home() {
 
   return (
     <>
-    <Header />
-
         <div className="hidden-x-side">
 
           {/** ヘッダー　画面サイズによってそれぞれ少し違う画像を適応する */}
@@ -37,7 +34,7 @@ export default function Home() {
                   priority
                 />
               </picture>
-            </div> 
+            </div>
 
             <div className="left_date">
               <Countdown targetDate="2026-06-26T23:59:59+09:00" /> {/*←翠翔祭の日程を入れる。数字は2桁*/}

@@ -1,5 +1,5 @@
-/* Header全体 */
-.header {
+/* app/components/Header.css */
+.custom-header {
   width: 100%;
   position: fixed;
   top: 0;
@@ -11,30 +11,37 @@
 /* 中身 */
 .wrapper {
   display: flex;
-
-  justify-content: space-between;
   align-items: center;
-
-  padding: 20px;
+  justify-content: center;
+  color: black;
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
 }
 
-/* ロゴ */
-.logo {
-  width: 160px;
-  height: auto;
+.custom-header h1 {
+  font-family: Impact;
+  font-weight: bold;
+  font-size: 10vw;
+  z-index: 3;
 }
 
-/* applyボタン */
-.apply {
-  width: 160px;
-  height: auto;
+/* スマホ (600px以下) */
+@media (max-width: 600px) {
+  .custom-header {
+    height: 30vh;
+    min-height: 150px;
+    padding: 0 0.5rem;
+  }
+
+  .custom-header h1 {
+    font-size: 2.5rem;
+  }
 }
 
-/* ハンバーガー */
-.hamburger {
-  background: none;
-  border: none;
-
-  font-size: 30px;
-  cursor: pointer;
+/* タブレット (900px以下) */
+@media (max-width: 900px) {
+  .custom-header h1 {
+    font-size: 3.5rem;
+  }
 }
