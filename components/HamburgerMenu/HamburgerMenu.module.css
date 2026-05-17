@@ -1,225 +1,142 @@
-/* =========================
-  1. 全体ナビゲーションレイアウト
-========================= */
-.siteNav {
-  position: fixed;
-  top: 0;    
-  right: 0;
-  width: 80px;
+/* Header全体 */
+.header {
+  width: 100%;
   height: 80px;
-  background-color: #00c4eb;
-  border-bottom-left-radius: 20px;
-  cursor: pointer;
-  z-index: 9998;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: #10122e;
+
+  z-index: 1000;
 }
 
-.navInner {
+/* 中身 */
+.wrapper {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 30px;
+}
+
+/* 右側まとめ */
+.rightMenu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 16px 18px;
+
+  gap: 20px;
 }
 
-.navToggle {
-  width: 44px;
-  height: 44px;
-  display: inline-flex;
+/* ロゴ */
+.logo {
+  width: 160px;
+  height: auto;
+
+  display: block;
+}
+
+/* apply */
+.apply {
+  width: 120px;
+  height: auto;
+
+  display: block;
+}
+
+/* ハンバーガー */
+.hamburger {
+  background: none;
+  border: none;
+
+  color: white;
+  font-size: 32px;
+
+  cursor: pointer;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
 
-@media (max-width: 767px){
-  .siteNav{
-    width: 60px;
-    height: 60px;
-    border-bottom-left-radius: 18px;
-  }
+  width: 40px;
+  height: 40px;
 
-  .navInner{
-    padding: 12px 18px;
-  }
-}
-
-/* =========================
-  2. ハンバーガーアイコン
-========================= */
-.hamburger {
   position: relative;
-  width: 50px;
-  height: 30px;
-  display: inline-block;
 }
 
 .bar {
   position: absolute;
+
   left: 0;
+
   width: 100%;
-  height: 4px;
-  background: #000;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  z-index: 9999;
+  height: 3px;
+
+  background: white;
+
+  transition: 0.3s;
 }
 
-.bar1 { top: 0; }
-.bar2 { top: 50%; transform: translateY(-50%); }
-.bar3 { bottom: 0; }
-
-.navToggle[aria-expanded="true"] .bar1 { transform: translateY(9px) rotate(45deg); }
-.navToggle[aria-expanded="true"] .bar2 { opacity: 0; }
-.navToggle[aria-expanded="true"] .bar3 { transform: translateY(-16px) rotate(-45deg); }
-
-@media (max-width: 767px){
-  .hamburger {
-    width: 26px;
-    height: 20px;
-    top: -5px;
-  }
-
-  .bar{
-    width: 100%;
-    height: 3px;
-  }
-
-  .navToggle[aria-expanded="true"] .bar1 { transform: translateY(9px) rotate(45deg); }
-  .navToggle[aria-expanded="true"] .bar2 { opacity: 0; }
-  .navToggle[aria-expanded="true"] .bar3 { transform: translateY(-8px) rotate(-45deg); }
+.bar:nth-child(1) {
+  top: 8px;
+}
+.open .bar:nth-child(1) {
+  transform: rotate(45deg);
+  top: 18px;
+}
+.bar:nth-child(2) {
+  top: 18px;
+}
+.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.bar:nth-child(3) {
+  top: 28px;
+}
+.open .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 18px;
 }
 
 
+/* hover */
+.hamburger:hover {
+  opacity: 0.7;
+}
+.apply:hover {
+  opacity: 0.7;
+}
+.logo:hover {
+  opacity: 0.7;
+}
 
-/* =========================
-  3. メニュー（スライド + フェード）
-========================= */
-.globalMenu {
+.menu {
   position: fixed;
-  inset: 0;
-  width: 50vw;
+
+  top: calc(-100% + 80px);
+  left: 0;
+
+  width: 100%;
   height: 100vh;
-  transform: translateX(-100%);
-  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
-  z-index: 9900;
-  overflow-y: auto;
-  opacity: 0;
-  pointer-events: none;
-  opacity: 1;
-  scrollbar-width: none;
+
+  background: rgba(5, 15, 40, 0.65);
+  backdrop-filter: blur(10px);
+
+  transition: 0.5s;
+
+  z-index: 999;
 }
 
-@media (max-width: 767px) {
-  .globalMenu{
-    width: 70vw;
-  }
-}
-
-.globalMenu.open {
-  transform: translateX(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* --- テキストフェードイン --- */
-.menuInner {
-  padding: 40px 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.6s ease 0.25s, transform 0.6s ease 0.25s;
-}
-
-.globalMenu.open .menuInner {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* メニュー項目 */
-.menuList {
-  width: 50%;
+.menu ul {
   list-style: none;
-  padding: 48px 0 0 0;
-  margin: 0;
+  left: 20%;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 30px;
 }
 
-.menuList li a,
-.menuList a {
-  display: block;
-  font-size: 26px;
-  padding: 14px 0;
-  text-decoration: none;
-  color: #000000;
-  opacity: 0;            /* ← 初期を非表示に */
+.show {
+  top: 80px;
 }
-
-/* open時に fadeUp */
-.globalMenu.open .menuList li a {
-  animation: fadeUp 0.6s forwards ease;
-}
-
-.menuList li:nth-child(1) a { animation-delay: 0.45s; }
-.menuList li:nth-child(2) a { animation-delay: 0.55s; }
-.menuList li:nth-child(3) a { animation-delay: 0.65s; }
-.menuList li:nth-child(4) a { animation-delay: 0.75s; }
-.menuList li:nth-child(5) a { animation-delay: 0.85s; }
-.menuList li:nth-child(6) a { animation-delay: 0.95s; }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* =========================
-  背景暗幕
-========================= */
-.menuBackdrop {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(to bottom left, #00c4eb, #ff42df);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.45s ease;
-  z-index: 2000;
-}
-
-.menuBackdropOpen {
-  opacity: 1;
-  pointer-events: auto; 
-}
-
-.theme_title {
-  position: fixed;
-
-  font-size: 20vh;
-  font-family: Impact;
-  writing-mode: vertical-rl;
-
-  right: -3vw;
-  top: 100px;
-  height: 90vh;
-  color: rgba(255, 255, 255, 0.3);
-
-  z-index: 10000;
-
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
-
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-}
-
-.themeTitleOpen {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-

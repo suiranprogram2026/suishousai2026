@@ -18,7 +18,6 @@ export default function Home() {
         <div className="hidden-x-side">
 
           {/** ヘッダー　画面サイズによってそれぞれ少し違う画像を適応する */}
-          {/**ここのセクションがるみなす画面だわ */}
           <section className="headtop">
             <div className="headtop_top">
               <picture>

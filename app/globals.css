@@ -7,18 +7,9 @@ body {
 }
 
 html, body {
-  background-color: #303030;
+  background: #101c32;
   color: #cccbcb;
 }
-
-/*background: linear-gradient(
-    to bottom,
-    #3f4a58,
-    #2f4468,
-    #0d2f6b,
-    #082a66);*/
-
-
 
 a {
   text-decoration: none;
