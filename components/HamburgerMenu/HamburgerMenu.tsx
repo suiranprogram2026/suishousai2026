@@ -2,12 +2,25 @@
 
 import Image from "next/image";
 import styles from "./HamburgerMenu.module.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 export default function Header() {
-  
+
   const [open, setOpen] = useState(false);
   
+  useEffect(() => {
+  if (open) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [open]);
+
+
   return (
   <> 
     <header className={styles.header}>
@@ -61,4 +74,6 @@ export default function Header() {
     </div>
   </>
   );
+
+  
 }

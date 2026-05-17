@@ -188,7 +188,8 @@ body {
     bottom: 0;
     width: 70%;
     height: 90%;
-    background: linear-gradient(to bottom left, #00c4eb, #14fc0a);
+    background: linear-gradient(
+        to bottom, #ffffff, #767a81 80%);
     border-radius: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -196,7 +197,7 @@ body {
 
 .headerbox_titlearea h1 {
     font-size: clamp(35px, 8vw, 65px);
-    color: #fff;
+    color: #171733;
     font-family: Impact;
 }
 

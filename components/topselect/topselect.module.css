@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
 
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 10px;
 }
 
@@ -51,23 +51,24 @@
 }
 
 .circle a {
-  color: white;
+  color: #171733;
   text-decoration: none;
+  font-size: 30px;
 }
 
 /* 色 */
 .event {
-  background: #ff6b6b;
+  background :linear-gradient(to bottom, white , #b8b788 70%);
   z-index: 2;
 }
 
 .map {
-  background: #4ecdc4;
+  background :linear-gradient(to bottom, white , #5a7c85 70%);
   margin-right: -30px; /* 左右の円を重ねる */
 }
 
 .timetable {
-  background: #5c7cfa;
+   background :linear-gradient(to bottom, white , #715c7a 70%);
 }
 
 .topicon {position: absolute;

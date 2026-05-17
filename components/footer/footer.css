@@ -1,7 +1,7 @@
 ._fot_ {
     width: 100%;
     height: 300px;
-    background-color: rgb(32, 41, 63);
+    background: #10122e;
     color: white;
     display: flex;
     flex-direction: column;
