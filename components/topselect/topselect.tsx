@@ -1,59 +1,51 @@
-import styles from "./topselect.module.css"
-import Image from 'next/image';
+"use client";
 
-export default function TopSelect() {
-    return (
-        <>
-            <div className={styles.topselect}>
-                <div className={`${styles.circle} ${styles.event}`}>
-                    <a href="/event"className={styles.circle}>イベント検索</a>
-                    <div className={styles.iconWrap}>
-                        <Image
-                            className={styles.topicon}
-                            src="/topsearch/search.svg"
-                            alt=""
-                            width={1000}
-                            height={1000}
-                            priority                            
-                        />
-                    </div>
-                </div>
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./topselect.module.css";
 
-                <div className={styles.bottomRow}>
-                    <div className={`${styles.circle} ${styles.map}`}>
-                        <a href="/map" className={styles.circle}>校内マップ</a>
-                        <div className={styles.iconWrap}>
-                            <Image
-                                className={styles.topicon}
-                                src="/topsearch/map.svg"
-                                alt=""
-                                width={1000}
-                                height={1000}
-                                priority
-                            />
-                        </div>
-                    </div>
+type MenuButtonProps = {
+  image: string;
+  alt: string;
+  href: string;
+};
 
-                    <div className={`${styles.circle} ${styles.timetable}`}>
-                        <a href="/timetable" className={styles.circle}>タイムテーブル</a>
-                        <div className={styles.iconWrap}>
-                            <Image
-                                className={styles.topicon}
-                                src="/topsearch/calendar.svg"
-                                alt=""
-                                width={1000}
-                                height={1000}
-                                priority
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    )}
+function MenuButton({ image, alt, href }: MenuButtonProps) {
+  return (
+    <Link href={href} className={styles.menuButton}>
+      <Image
+        src={image}
+        alt={alt}
+        width={300}
+        height={120}
+        className={styles.menuImage}
+      />
+    </Link>
+  );
+}
 
+export default function Page() {
+  return (
+    <div className={styles.menuContainer}>
 
+      <MenuButton
+        image="/event.png"
+        alt="イベント"
+        href="/event"
+      />
 
+      <MenuButton
+        image="/map.png"
+        alt="マップ"
+        href="/map"
+      />
 
+      <MenuButton
+        image="/timetable.png"
+        alt="タイムテーブル"
+        href="/timetable"
+      />
 
-   
+    </div>
+  );
+}

@@ -147,6 +147,7 @@ body {
 }
 
 .headerbox_top {
+    top: 50px;
     display: flex;
     position: relative;
     width: 100%;
@@ -188,18 +189,11 @@ body {
     bottom: 0;
     width: 70%;
     height: 90%;
-    background: linear-gradient(
-        to bottom, #ffffff, #767a81 80%);
     border-radius: 20px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.headerbox_titlearea h1 {
-    font-size: clamp(35px, 8vw, 65px);
-    color: #171733;
-    font-family: Impact;
-}
 
 @media (min-width:768px) {
     .headerbox_top {
@@ -210,22 +204,3 @@ body {
         z-index: 2;
     }
 }
-
-/**
-.headerbox_search {
-    background-color: #ff59d9;
-}
-
-.headerbox_news {
-    background-color: #00a5ff;
-}
-
-.headerbox_access {
-    background-color: #ffb700;
-}
-
-.headerbox_form {
-    background-color: #fc0000;
-}
-
-*/

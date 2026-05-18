@@ -46,7 +46,15 @@ export default function Home() {
               <div className="headerbox_left"></div>
               <div className="headerbox_right"></div>
               <div className="headerbox_titlearea headerbox_search">
-                <h1 className=''>SEARCH</h1>
+                <h1>
+                  <Image
+                  src="/topsearch/search.png"
+                  alt="SEARCH"
+                  width={500}
+                  height={100}
+                  priority
+                  />
+                </h1>
               </div>
             </div>
             <TopSelect />
@@ -55,7 +63,15 @@ export default function Home() {
               <div className="headerbox_left"></div>
               <div className="headerbox_right"></div>
               <div className="headerbox_titlearea headerbox_form">
-                <h1 className=''>FORM</h1>
+                <h1>
+                  <Image
+                  src="/topsearch/form.png"
+                  alt="FORM"
+                  width={420}
+                  height={100}
+                  priority
+                  />
+                </h1>
               </div>
             </div>
             <Form />
