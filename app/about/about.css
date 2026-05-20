@@ -4,13 +4,20 @@
     z-index: 1;
 }
 
-.header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    height: 23vw;
+.custom-header h1 {
+  color: white;
+
+  font-size: 100px;
+
+  letter-spacing: 5px;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.7),
+    0 0 30px rgba(180,220,255,0.5);
+}
+
+.toppers{
+    margin-top: 80px;
 }
 
 .about-toppers {
@@ -45,8 +52,8 @@
     left: 0;
     width: 1px;
     height: 100%;
-    background-image: -webkit-linear-gradient(top, transparent, #333 25%, #333 75%, transparent);
-    background-image: linear-gradient(to bottom, transparent, #333 25%, #333 75%, transparent);
+    background-image:  linear-gradient(to bottom,transparent,
+    rgba(180, 220, 255, 0.7) 25%,rgba(180, 220, 255, 0.7) 75%,transparent);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -58,8 +65,8 @@
     right: 0;
     width: 1px;
     height: 100%;
-    background-image: -webkit-linear-gradient(top, transparent, #333 25%, #333 75%, transparent);
-    background-image: linear-gradient(to bottom, transparent, #333 25%, #333 75%, transparent);
+    background-image: linear-gradient(to bottom,transparent,
+    rgba(180, 220, 255, 0.7) 25%,rgba(180, 220, 255, 0.7) 75%,transparent);
     background-position: center;
     background-repeat: no-repeat;
 }

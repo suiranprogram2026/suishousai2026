@@ -114,7 +114,7 @@
 .menu {
   position: fixed;
 
-  top: calc(-100% + 80px);
+  top: calc(-150% + 80px);
   left: 0;
 
   width: 100%;
@@ -138,6 +138,24 @@
   gap: 30px;
 }
 
+.menu li a {
+  color: white;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.menu li a:hover {
+  color: #b9d8ff;
+
+  text-shadow:
+    0 0 5px #7db8ff,
+    0 0 15px #7db8ff,
+    0 0 30px #7db8ff;
+
+  letter-spacing: 3px;
+}
 
 .show {
   top: 80px;

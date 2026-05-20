@@ -1,11 +1,27 @@
+.toppers{
+    margin-top: 80px;
+}
+
+.custom-header h1 {
+  color: white;
+
+  font-size: 100px;
+
+  letter-spacing: 5px;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.7),
+    0 0 30px rgba(180,220,255,0.5);
+}
+
+
 .outerContainer {
     width: 100%;
     box-sizing: border-box;
-    background-color: #303030;
     position: relative
 }
 
-/* ヘッダー部分 */
+/* ヘッダー部分 :*/
 .header {
     display: flex;
     justify-content: center;

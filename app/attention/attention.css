@@ -1,8 +1,25 @@
+.toppers{
+    margin-top: 80px;
+}
+
 .roller {
     position: absolute;
     top: 0;
     z-index: 1;
 }
+
+.custom-header h1 {
+  color: white;
+
+  font-size: 100px;
+
+  letter-spacing: 5px;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.7),
+    0 0 30px rgba(180,220,255,0.5);
+}
+
 
 .header{
     width: 100%;

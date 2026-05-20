@@ -30,16 +30,16 @@ body {
 
 .headtop_top {
   position: absolute;
-  top: 80px;
   left: 0;
   right: 0;
-  bottom: 10px;
 }
 
 .headtop_top img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  margin-top: 100px;
+  margin-bottom: 100px;
 
 }
 

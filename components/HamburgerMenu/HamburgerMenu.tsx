@@ -65,11 +65,12 @@ export default function Header() {
     
     <div className={`${styles.menu} ${open ? styles.show :""}`}>
       <ul>
-        <li><a href="./page.txt">TOP</a></li>
-        <li><a href="./map/page.txt">MAP</a></li>
-        <li><a href="/">EVENT</a></li>
-        <li><a href="/">TIMETABLE</a></li>
-        <li><a href="/">ABOUT</a></li>
+        <li><a href="./top">TOP</a></li>
+        <li><a href="./map">MAP</a></li>
+        <li><a href="/event">EVENT</a></li>
+        <li><a href="/timetable">TIMETABLE</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/attention">ATTENTION</a></li>
       </ul>
     </div>
   </>
