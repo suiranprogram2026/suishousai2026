@@ -19,8 +19,7 @@ export default function Form() {
                 <div className="form_content">
                     <div className="formabout">
                         <h2></h2>
-                        <p>数ある団体の中から一番を決めます！</p>
-                        <p>翠翔祭二日間で最も票を集めた団体がグランプリ獲得です。</p>
+                        <p>翠翔祭二日間で最も票を集めた団体がグランプリ獲得です！</p>
                         <div className="button_vot">
                             <p>一人一票でお願いします</p>
                             <a href="">投票する</a>
@@ -80,7 +79,7 @@ export default function Form() {
                     <div className="anc">
                         <p>翠翔祭に関するアンケートです。次年度以降のためにご回答よろしくお願いします！</p>
                         <p>回答期限：6/30（火）まで</p>
-                        <p>※現役生徒は回答の必要はありません</p>
+                        <p>※翠嵐生は回答の必要はありません</p>
                         <a href="https://forms.gle/iUrw2htZqmvdJGj99" className="relative inline-block text-lg group mt-4">
                             <span className="relative z-10 block px-5 py-2 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
                                 <span className="absolute inset-0 w-full h-full px-5 py-2 rounded-lg bg-gray-50"></span>

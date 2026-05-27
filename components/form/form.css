@@ -64,28 +64,49 @@
 }
 
 .button_vot a {
-    
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+
     margin: 0 auto;
     max-width: 400px;
-    padding: 10px 25px;
+    padding: 14px 32px;
+
     color: #FFF;
-    transition: 0.3s ease-in-out;
-    font-weight: 400;
-    background: #ff6b6b;
     font-size: 30px;
-    filter: drop-shadow(0px 2px 4px #ccc);
-    border-radius: 50px;
+    font-weight: 500;
+
+    background: #ff6b6b;
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+    box-shadow:
+        0 8px 0 #e25555,
+        0 12px 20px rgba(0,0,0,0.18);
 }
 
 .button_vot a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px -5px rgb(0, 0, 0/ 15%), 0 0 5px rgb(0 0 0/ 10%);
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 0 #e25555,
+        0 18px 30px rgba(0,0,0,0.22);
 }
 
+.button_vot a:active {
+    transform: translateY(4px);
+
+    box-shadow:
+        0 4px 0 #e25555,
+        0 6px 10px rgba(0,0,0,0.15);
+}
 
 .form_content {
     margin-top: -50px;
