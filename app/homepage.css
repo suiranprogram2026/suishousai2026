@@ -77,7 +77,6 @@ body {
 
 @media (max-width:600px){
     .left_date{
-      width: 100%;
       align-items: center;
       text-align: center;
       left: 50%;
