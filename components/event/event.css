@@ -102,7 +102,7 @@
 }
 
 .e-iconclick {
-    background: linear-gradient(to bottom left, #01b0d3, #14fc0a);
+    background: linear-gradient(to bottom left, #01b0d3, #ffffff);
     color: #000;
     border-color: #005bb5;
 }
@@ -169,7 +169,7 @@
 .container .card {
     position: relative;
     width: 100%;
-    background: linear-gradient(to bottom left, #01b0d3, #14fc0a);
+    background: white;
     overflow: hidden;
     border-radius: 8px;
     border: #000000;

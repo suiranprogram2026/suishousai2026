@@ -57,7 +57,7 @@ export default function attention() {
                                 />
                             </div>
                             <div>
-                                <p>SPはっぴ</p>
+                                <p>SP法被</p>
                                 <Image
                                     src="/attention/sp_t.jpg"
                                     alt="巡回中のSPが羽織ってる服"

@@ -56,7 +56,7 @@ export default function Header() {
             <span className={styles.bar}></span>
             <span className={styles.bar}></span>
           </button>
-
+ 
         </div>
 
 
@@ -65,7 +65,7 @@ export default function Header() {
     
     <div className={`${styles.menu} ${open ? styles.show :""}`}>
       <ul>
-        <li><a href="./top">TOP</a></li>
+        <li><a href="/">TOP</a></li>
         <li><a href="./map">MAP</a></li>
         <li><a href="/event">EVENT</a></li>
         <li><a href="/timetable">TIMETABLE</a></li>

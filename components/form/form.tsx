@@ -18,10 +18,16 @@ export default function Form() {
                 </div>
                 <div className="form_content">
                     <div className="formabout">
-                        <h2>《概要》</h2>
-                        <p>各部門でのグランプリを決めます。</p>
-                        <p>生徒と来場者の皆さんに投票を行ってもらい、各部門で最も票を得た団体がグランプリ獲得です。</p>
-                        <h3 className="bumon">〈部門紹介〉</h3>
+                        <h2></h2>
+                        <p>数ある団体の中から一番を決めます！</p>
+                        <p>翠翔祭二日間で最も票を集めた団体がグランプリ獲得です。</p>
+                        <div className="button_vot">
+                            <p>一人一票でお願いします</p>
+                            <a href="">投票する</a>
+                        </div>
+                        
+                        
+                        {/*<h3 className="bumon">〈部門紹介〉</h3>
                         <div className="bumonbox">
                             <div className="bumonsboxl">
                                 <h4 className="bumons">企画部門</h4>
@@ -56,9 +62,9 @@ export default function Form() {
                                     <span className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
                                 </a>
                             </div>
-                        </div>
+                        </div>*/}
                     </div>
-
+                   
                     <div className="formhow">
                         <h2>《投票方法》</h2>
                         <p>上記の投票フォームから投票お願いします。</p>
@@ -66,20 +72,15 @@ export default function Form() {
                         <p>1人1回、各部門1団体投票してください。ただし、自分が所属する団体には投票できません。</p>
                     </div>
 
+
+                <div className="survey_box">
                     <div className="form_back">
-                        <Image
-                            className="form_topper"
-                            src="/about/raijousha.png"
-                            alt=""
-                            width={2000}
-                            height={1000}
-                            priority
-                        />
+                        <h2>-来場者アンケート-</h2>
                     </div>
                     <div className="anc">
-                        <p>翠翔祭に関するアンケートです。次年度以降のためにご回答をよろしくお願いします。</p>
-                        <p>回答期限：7/1（月）まで</p>
-                        <p>※在校生は回答しないでください</p>
+                        <p>翠翔祭に関するアンケートです。次年度以降のためにご回答よろしくお願いします！</p>
+                        <p>回答期限：6/30（火）まで</p>
+                        <p>※現役生徒は回答の必要はありません</p>
                         <a href="https://forms.gle/iUrw2htZqmvdJGj99" className="relative inline-block text-lg group mt-4">
                             <span className="relative z-10 block px-5 py-2 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
                                 <span className="absolute inset-0 w-full h-full px-5 py-2 rounded-lg bg-gray-50"></span>
@@ -89,8 +90,10 @@ export default function Form() {
                             <span className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
                         </a>
                     </div>
+                    
                 </div>
             </div>
+        </div>    
         </>
     );
 }
