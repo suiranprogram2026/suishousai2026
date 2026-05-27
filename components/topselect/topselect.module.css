@@ -30,3 +30,19 @@
 
   display: block;
 }
+
+@media (max-width: 600px) {
+
+  .menuContainer {
+    gap: 10px;
+  }
+
+  .menuButton {
+    width: 30%;
+  }
+
+  .menuImage {
+    width: 100%;
+  }
+
+}

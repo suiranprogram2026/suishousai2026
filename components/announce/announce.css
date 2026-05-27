@@ -1,7 +1,7 @@
 .announce {
   display: grid;
   gap: 1rem;
-  margin: 2rem 0;
+  margin: 3rem 0;
   max-height: 300px;   /* 好きな高さに調整 */
   overflow-y: auto;
   padding-right: 0.5rem; /* スクロールバーの余白 */
