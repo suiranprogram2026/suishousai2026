@@ -17,7 +17,9 @@ body {
 
 .hidden-x-side {
   overflow-x: hidden;
+  margin-top: -20px;
 }
+
 
 /* 背景画像 */
 .headtop{
@@ -69,7 +71,7 @@ body {
 .left_date{
     position: absolute;
     z-index: 500;
-    bottom: 10vh;
+    bottom: 6vh;
     right: 3vw;
 }
 
