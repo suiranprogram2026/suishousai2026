@@ -34,6 +34,14 @@
     margin-top: 50px;
     text-align: center;
 }
+@media (max-width:600px){
+.button_vot{
+    width: 80%;
+}
+
+}
+    
+
 .button_vot p {
     margin-bottom: 5px;
     color: rgb(255, 255, 255);
