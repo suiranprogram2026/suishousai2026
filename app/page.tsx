@@ -82,12 +82,12 @@ export default function Home() {
               <div className="headerbox_right"></div>
               <div className="headerbox_titlearea headerbox_news">
                 <h1>
-                 <Image
-                  src="/news.png"
-                  alt="NEWS"
-                  width={420}
-                  height={100}
-                  priority
+                  <Image
+                    src="/news.png"
+                    alt="NEWS"
+                    width={420}
+                    height={100}
+                    priority
                   />
                 </h1>
               </div>
@@ -100,11 +100,11 @@ export default function Home() {
               <div className="headerbox_titlearea headerbox_access">
                 <h1>
                   <Image
-                  src="/access.png"
-                  alt="ACCESS"
-                  width={500}
-                  height={100}
-                  priority
+                    src="/access.png"
+                    alt="ACCESS"
+                    width={500}
+                    height={100}
+                    priority
                   />
                 </h1>
               </div>

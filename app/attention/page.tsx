@@ -6,14 +6,15 @@ import Image from 'next/image';
 export default function attention() {
     return (
         <div>
-            {/**ヘッダー */}
-            <div className="toppers">
-                <Header
-                    title="ATTENTION"
-                    backgroundImage="/header/header-pc.png"
-                />
-            </div>
+            
             <div className="at-pc-box">
+                {/**ヘッダー */}
+                    <div className="toppers">
+                        <Header
+                            title="ATTENTION"
+                            backgroundImage="/header/header-pc.png"
+                        />
+                    </div>
                 <div className="at_main">
                     <div className="yoyaku">
                         <h1 className="pt">《予約について》</h1>

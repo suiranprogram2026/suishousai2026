@@ -75,6 +75,7 @@ body {
     right: 3vw;
 }
 
+/*スマホ用*/
 @media (max-width:600px){
     .left_date{
       align-items: center;

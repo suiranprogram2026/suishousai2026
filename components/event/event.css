@@ -169,10 +169,11 @@
 .container .card {
     position: relative;
     width: 100%;
-    background: white;
+    background:linear-gradient(to bottom right,rgb(209, 209, 209),rgb(195, 240, 255));
     overflow: hidden;
     border-radius: 8px;
     border: #000000;
+    color: black;
 }
 
 /* 画像内のスタイル */

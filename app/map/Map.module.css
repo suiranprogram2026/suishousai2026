@@ -18,7 +18,8 @@
 .outerContainer {
     width: 100%;
     box-sizing: border-box;
-    position: relative
+    position: relative;
+    background-color: #cccbcb;
 }
 
 /* ヘッダー部分 :*/
