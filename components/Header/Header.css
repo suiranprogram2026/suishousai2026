@@ -1,7 +1,7 @@
 /* app/components/Header.css */
 .custom-header {
   width: 100%;
-  height: 48vh; /* 高さを画面の40%に */
+  height: 45vh; /* 高さを画面の46%に */
   min-height: 100px;
   background-size: cover;
   background-position: center;

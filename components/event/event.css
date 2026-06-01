@@ -27,6 +27,7 @@
 .toppers {
     padding-bottom: 20px;
     margin-top: 80px;
+    max-width: 100%;
 }
 
 .e-content {
@@ -169,7 +170,7 @@
 .container .card {
     position: relative;
     width: 100%;
-    background:linear-gradient(to bottom right,rgb(209, 209, 209),rgb(195, 240, 255));
+    background:linear-gradient(to bottom right,rgb(170, 227, 241),rgb(195, 240, 255));
     overflow: hidden;
     border-radius: 8px;
     border: #000000;
