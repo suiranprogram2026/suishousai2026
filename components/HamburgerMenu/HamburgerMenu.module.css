@@ -160,3 +160,42 @@
 .show {
   top: 80px;
 }
+
+@media (max-width: 600px) {
+
+  .header{
+    height: 60px;
+  }
+
+  .wrapper {
+    padding: 0 10px;
+  }
+
+  .rightMenu {
+    gap: 10px;
+  }
+
+  .logo {
+    height: 55px;
+  }
+
+  .apply {
+    height: 20px;
+  }
+
+  .hamburger {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .bar:nth-child(1){ top:6px; }
+  .bar:nth-child(2){ top:14px; }
+  .bar:nth-child(3){ top:22px; }
+
+  .open .bar:nth-child(1),
+  .open .bar:nth-child(3){top:14px;}
+
+  .show {
+    top: 60px;
+  }
+}

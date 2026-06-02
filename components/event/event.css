@@ -45,6 +45,11 @@
     margin-top: 80px;
     max-width: 100%;
 }
+@media(max-width:600px){
+    .toppers{
+        margin-top: 60px;
+    }
+}
 
 .e-content {
     width: 100%;

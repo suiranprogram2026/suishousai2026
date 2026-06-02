@@ -37,6 +37,11 @@
 .toppers{
     margin-top: 80px;
 }
+@media(max-width:600px){
+    .toppers{
+        margin-top: 60px;
+    }
+}
 
 .about-toppers {
     padding-bottom: 20px;
