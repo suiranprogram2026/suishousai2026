@@ -10,10 +10,11 @@ body {
 }
 
 /** ヘッダーの共通デザイン **/
-
-.body {
-  margin: 0;
+.h1{
+    height: 80px;
+    width: auto;
 }
+
 
 .hidden-x-side {
   overflow-x: hidden;
@@ -86,6 +87,7 @@ body {
       width: max-content;
     }
 }
+
 
 /* ------------------ */
 /* 下の白コンテンツ */

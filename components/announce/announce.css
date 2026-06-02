@@ -1,17 +1,17 @@
 .announce {
   display: grid;
   gap: 1rem;
-  margin: 3rem 0;
+  margin: rem 0;
   max-height: 300px;   /* 好きな高さに調整 */
   overflow-y: auto;
   padding-right: 0.5rem; /* スクロールバーの余白 */
   width: 70vw;
-  border: 2px solid #00000000;
   align-items: center;
+  margin-top: 60px;
 }
 
 .announce-item {
-  background: #303030;
+  background: #2b3d56;
   border-radius: 14px;
   padding: 1.2rem 1.5rem;
   border: 3px solid rgb(0, 0, 0) !important;
@@ -25,7 +25,7 @@
 
 .detail {
   font-size: 0.95rem;
-  color: #cccbcb;
+  color: #ffffff;
   line-height: 1.6;
 }
 
@@ -37,5 +37,5 @@
 }
 
 .title,.date{
-  color: #fffafa;
+  color: #ffffff;
 }

@@ -48,7 +48,7 @@ export default function Home() {
               <div className="headerbox_titlearea headerbox_search">
                 <h1>
                   <Image
-                  src="/topsearch/search.png"
+                  src="/search.png"
                   alt="SEARCH"
                   width={500}
                   height={100}
@@ -65,7 +65,7 @@ export default function Home() {
               <div className="headerbox_titlearea headerbox_form">
                 <h1>
                   <Image
-                  src="/topsearch/form.png"
+                  src="/form.png"
                   alt="FORM"
                   width={420}
                   height={100}

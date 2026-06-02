@@ -1,15 +1,32 @@
 .custom-header h1 {
-  color: white;
+    color: #008cff;
 
-  font-size: 100px;
+    letter-spacing: 5px;
 
-  letter-spacing: 5px;
-
-  text-shadow:
-    0 0 10px rgba(255,255,255,0.7),
-    0 0 30px rgba(180,220,255,0.5);
+    text-shadow:
+    -4px  0   0 #fff,
+     4px  0   0 #fff,
+     0   -4px 0 #fff,
+     0    4px 0 #fff,
+    -4px -4px 0 #fff,
+     4px -4px 0 #fff,
+    -4px  4px 0 #fff,
+     4px  4px 0 #fff; 
 }
 
+@media (max-width:700px){
+  .custom-header h1{
+    text-shadow:
+      -2px  0   0 #fff,
+       2px  0   0 #fff,
+       0   -2px 0 #fff,
+       0    2px 0 #fff,
+      -2px -2px 0 #fff,
+       2px -2px 0 #fff,
+      -2px  2px 0 #fff,
+       2px  2px 0 #fff;
+  }
+}
 
 .toppers{
     margin-top: 60px;
