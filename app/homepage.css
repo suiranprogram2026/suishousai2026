@@ -19,7 +19,13 @@ body {
     .headerbox_titlearea img {
         height: 15vh;
     }
+
+     .headerbox_top{
+        margin-bottom: 30px;
+    }
 }
+
+
 
 .hidden-x-side {
   overflow-x: hidden;
@@ -206,6 +212,7 @@ body {
 
 @media (min-width:768px) {
     .headerbox_top {
+        
         display: flex;
         position: relative;
         width: 100%;
