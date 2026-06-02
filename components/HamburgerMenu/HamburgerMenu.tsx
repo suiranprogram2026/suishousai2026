@@ -30,23 +30,23 @@ export default function Header() {
           <a href="/">
             <Image
               className={styles.logo}
-              src="/logo.svg"
+              src="/logo.png"
               alt="翠翔祭2026"
-              width={20}
-              height={20}
+              width={1200}
+              height={600}
             />
           </a>
         </div>
 
         <div className={styles.rightMenu}>
-
+          
           <a href="/apply">
             <Image
               className={styles.apply}
               src="/apply.svg"
               alt="申し込み"
-              width={20}
-              height={20}
+              width={1200}
+              height={600}
             />
           </a>
 

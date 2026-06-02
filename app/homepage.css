@@ -10,11 +10,16 @@ body {
 }
 
 /** ヘッダーの共通デザイン **/
-.h1{
-    height: 80px;
+.headerbox_titlearea img {
+    height: 30vh;
     width: auto;
 }
 
+@media (max-width: 600px) {
+    .headerbox_titlearea img {
+        height: 15vh;
+    }
+}
 
 .hidden-x-side {
   overflow-x: hidden;

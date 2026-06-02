@@ -67,7 +67,7 @@ export default function Home() {
                   <Image
                   src="/form.png"
                   alt="FORM"
-                  width={420}
+                  width={500}
                   height={100}
                   priority
                   />
@@ -85,7 +85,7 @@ export default function Home() {
                   <Image
                     src="/news.png"
                     alt="NEWS"
-                    width={420}
+                    width={500}
                     height={100}
                     priority
                   />
