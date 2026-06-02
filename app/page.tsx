@@ -51,7 +51,7 @@ export default function Home() {
                   src="/search.png"
                   alt="SEARCH"
                   width={500}
-                  height={100}
+                  height={500}
                   priority
                   />
                 </h1>
@@ -68,7 +68,7 @@ export default function Home() {
                   src="/form.png"
                   alt="FORM"
                   width={500}
-                  height={100}
+                  height={500}
                   priority
                   />
                 </h1>
@@ -86,7 +86,7 @@ export default function Home() {
                     src="/news.png"
                     alt="NEWS"
                     width={500}
-                    height={100}
+                    height={500}
                     priority
                   />
                 </h1>
@@ -103,7 +103,7 @@ export default function Home() {
                     src="/access.png"
                     alt="ACCESS"
                     width={500}
-                    height={100}
+                    height={500}
                     priority
                   />
                 </h1>
