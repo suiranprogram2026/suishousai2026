@@ -42,10 +42,10 @@
 }
 
 .caution p {
-    font-size: clamp(15px, 1.5vw, 20px);
+    font-size: clamp(17px, 2vw, 30px);
     margin-top: 10px;
     font-weight: 500;
-    color: rgb(199, 255, 255);
+    color: rgb(231, 255, 255);
 }
 
 .map-ab {

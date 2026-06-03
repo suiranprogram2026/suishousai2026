@@ -15,7 +15,6 @@
 }
 
 .custom-header h1 {
-  font-family: Impact;
   font-weight: bold;
   font-size: 10vw;
   z-index: 3;
@@ -30,7 +29,7 @@
   }
 
   .custom-header h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 }
 
