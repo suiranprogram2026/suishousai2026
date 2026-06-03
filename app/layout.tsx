@@ -11,10 +11,10 @@ const kosugi = Noto_Sans_JP({ weight: "500", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "翠翔祭2026「Luminous」",
-  description: "6/28~6/29に行われる神奈川県立横浜翠嵐高校の翠翔祭の公式ホームページです。",
+  description: "6/27~6/28に行われる神奈川県立横浜翠嵐高校の翠翔祭の公式ホームページです。",
   openGraph: {
     title: "翠翔祭2026「Luminous」",
-    description: "6/28~6/29に行われる神奈川県立横浜翠嵐高校の翠翔祭の公式ホームページです。",
+    description: "6/27~6/28に行われる神奈川県立横浜翠嵐高校の翠翔祭の公式ホームページです。",
     url: "https://suishousai2025.vercel.app/",
     siteName: "翠翔祭2026「Luminous」",
     images: [
