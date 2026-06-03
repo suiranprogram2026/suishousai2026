@@ -23,7 +23,7 @@
 .survey_box {
     border: 4px solid #d0d0d0;
     border-radius: 16px;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
     max-width: 900px;
     margin: 0 auto;
     margin-top: 50px;

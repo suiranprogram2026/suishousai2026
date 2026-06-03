@@ -115,10 +115,6 @@
     left: 0;
     width: 1px;
     height: 100%;
-    background-image: -webkit-linear-gradient(top, transparent, #333 25%, #333 75%, transparent);
-    background-image: linear-gradient(to bottom, transparent, #333 25%, #333 75%, transparent);
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .at_main::after {
@@ -128,10 +124,6 @@
     right: 0;
     width: 1px;
     height: 100%;
-    background-image: -webkit-linear-gradient(top, transparent, #333 25%, #333 75%, transparent);
-    background-image: linear-gradient(to bottom, transparent, #333 25%, #333 75%, transparent);
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .at_main::before,
