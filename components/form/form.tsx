@@ -67,7 +67,7 @@ export default function Form() {
                     <div className="formhow">
                         <h2>《投票方法》</h2>
                         <p>上記の投票フォームから投票お願いします。</p>
-                        <p>校内にあるパンフレットからも投票可能です。</p>
+                        <p>校内パンフレットからも投票可能です。</p>
                         <p>1人1回、各部門1団体投票してください。ただし、自分が所属する団体には投票できません。</p>
                     </div>
 
@@ -79,7 +79,7 @@ export default function Form() {
                     <div className="anc">
                         <p>翠翔祭に関するアンケートです。次年度以降のためにご回答よろしくお願いします！</p>
                         <p>回答期限：6/30（火）まで</p>
-                        <p>※翠嵐生は回答の必要はありません</p>
+                        <p>※翠嵐生は回答不要です</p>
                         <a href="https://forms.gle/iUrw2htZqmvdJGj99" 
                             className="inline-block
                                 px-6 py-3 mt-6

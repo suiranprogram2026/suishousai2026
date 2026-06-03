@@ -11,6 +11,12 @@
   flex-wrap: wrap;
 }
 
+@media (max-width:600px) {
+  .menuContainer{
+    margin-top: 10px;
+  }
+}
+
 .menuButton {
   transition: 0.3s;
 
