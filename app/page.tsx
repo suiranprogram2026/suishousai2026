@@ -57,6 +57,7 @@ export default function Home() {
                 </h1>
               </div>
             </div>
+            <p className='preparation'>※現在準備中</p>
             <TopSelect />
 
             <div className="headerbox_top">

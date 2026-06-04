@@ -40,11 +40,11 @@ export default function Header() {
 
         <div className={styles.rightMenu}>
           
-          <a href="/apply">
+          <a href="https://www.pen-kanagawa.ed.jp/yokohamasuiran-h/zennichi/seikatsu/suisyousai.html">
             <Image
               className={styles.apply}
               src="/apply.svg"
-              alt="申し込み"
+              alt="お申し込み"
               width={1200}
               height={600}
             />
@@ -66,9 +66,9 @@ export default function Header() {
     <div className={`${styles.menu} ${open ? styles.show :""}`}>
       <ul>
         <li><a href="/">TOP</a></li>
-        <li><a href="./map">MAP</a></li>
-        <li><a href="/event">EVENT</a></li>
-        <li><a href="/timetable">TIMETABLE</a></li>
+        <li className={styles.comingsoon}><a>MAP</a><span>SOON</span></li>
+        <li className={styles.comingsoon}><a>EVENT</a><span>SOON</span></li>
+        <li className={styles.comingsoon}><a>TIMETABLE</a><span>SOON</span></li>
         <li><a href="/about">ABOUT</a></li>
         <li><a href="/attention">ATTENTION</a></li>
       </ul>

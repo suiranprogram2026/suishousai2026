@@ -18,11 +18,14 @@ export default function Form() {
                 </div>
                 <div className="form_content">
                     <div className="formabout">
-                        <h2></h2>
+                        <h2>《翠翔祭グランプリとは》</h2>
+                        <p>企画部門、調理食販部門、ステージ部門、立て看板部門←new</p> 
+                        <p>の４部門に分かれて、在校生及び来場者の人気を競います。</p>
                         <p>翠翔祭二日間で最も票を集めた団体がグランプリ獲得です！</p>
                         <div className="button_vot">
-                            <p>一人一票でお願いします</p>
-                            <a href="">投票する</a>
+                            {/*<p>一人一票でお願いします</p>*/}
+                            <p>現在準備中</p>
+                            <a href="/404">投票する</a>
                         </div>
                         
                         
@@ -66,13 +69,14 @@ export default function Form() {
                    
                     <div className="formhow">
                         <h2>《投票方法》</h2>
-                        <p>上記の投票フォームから投票お願いします。</p>
+                        <p>6/27,28の翠翔祭当日に、上のボタンから投票お願いします。</p>
+                        {/*<p>上記の投票フォームから投票お願いします。</p>*/}
                         <p>校内パンフレットからも投票可能です。</p>
                         <p>1人1回、各部門1団体投票してください。ただし、自分が所属する団体には投票できません。</p>
                     </div>
 
 
-                <div className="survey_box">
+                {/*<div className="survey_box">
                     <div className="form_back">
                         <h2>-来場者アンケート-</h2>
                     </div>
@@ -95,7 +99,7 @@ export default function Form() {
                                 hover:bg-sky-400">アンケートに回答</a>
                     </div>
                     
-                </div>
+                </div>*/}
             </div>
         </div>    
         </>

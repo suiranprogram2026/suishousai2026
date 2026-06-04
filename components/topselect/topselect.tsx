@@ -7,20 +7,28 @@ import styles from "./topselect.module.css";
 type MenuButtonProps = {
   image: string;
   alt: string;
-  href: string;
+  href?: string;
 };
 
 function MenuButton({ image, alt, href }: MenuButtonProps) {
-  return (
+  const content = (
+    <Image
+      src={image}
+      alt={alt}
+      width={300}
+      height={120}
+      className={styles.menuImage}
+    />
+  );
+
+  return href ? (
     <Link href={href} className={styles.menuButton}>
-      <Image
-        src={image}
-        alt={alt}
-        width={300}
-        height={120}
-        className={styles.menuImage}
-      />
+      {content}
     </Link>
+  ) : (
+    <div className={styles.menuButton}>
+      {content}
+    </div>
   );
 }
 
@@ -29,23 +37,24 @@ export default function Page() {
     <div className={styles.menuContainer}>
 
       <MenuButton
-        image="/event.png"
+        image="/preevent.png"
         alt="イベント"
-        href="/event"
+        
       />
 
       <MenuButton
-        image="/map.png"
+        image="/premap.png"
         alt="マップ"
-        href="/map"
+        
       />
 
       <MenuButton
-        image="/timetable.png"
+        image="/pretimetable.png"
         alt="タイムテーブル"
-        href="/timetable"
+        
       />
 
     </div>
+    
   );
 }
