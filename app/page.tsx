@@ -64,12 +64,12 @@ export default function Home() {
               <div className="headerbox_right"></div>
               <div className="headerbox_titlearea headerbox_form">
                 <h1>
-                  <Image
-                  src="/form.png"
-                  alt="FORM"
-                  width={500}
-                  height={500}
-                  priority
+                 <Image
+                   src="/form.png"
+                   alt="FORM"
+                   width={500}
+                   height={500}
+                   priority
                   />
                 </h1>
               </div>
