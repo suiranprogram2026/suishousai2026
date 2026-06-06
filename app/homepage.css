@@ -25,7 +25,8 @@ body {
 
 @media (max-width: 600px) {
     .headerbox_titlearea img {
-        height: 15vh;
+        height: clamp(120px, 18vw, 150px);
+        width: auto;
     }
 
      .headerbox_top{
@@ -88,6 +89,7 @@ body {
     position: absolute;
     z-index: 500;
     right: 3vw;
+    top: 60vh;
 }
 
 /*スマホ用*/
