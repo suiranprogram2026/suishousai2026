@@ -36,7 +36,7 @@ export default function Home() {
             </div>
 
             <div className="left_date">
-              <Countdown targetDate="2026-06-26T23:59:59+09:00" /> {/*←翠翔祭の日程を入れる。数字は2桁*/}
+              <Countdown targetDate="2026-06-27T09:30:00+09:00" /> {/*←翠翔祭の日程を入れる。数字は2桁*/}
               {/*<Finish />*/}
             </div>
           </section>
