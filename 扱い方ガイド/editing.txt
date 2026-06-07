@@ -22,5 +22,8 @@ npm run buildが成功すればすべてにおいてエラーはない
 
 festivai.tsとestivaldetail.tsはcomponentsの中のevent.tsxでmapとして紐図けられている。その時にidを使う
 
-pdf→svgはinkspace https://inkscape.org/ からインストールしたのを使うのがおすすめ
+pdf→svgはinkscape https://inkscape.org/ からインストールしたのを使うのがおすすめ
 svgのまま編集できるからすごくいい。最初は機能が多すぎてわかりずらいけど1時間くらいで慣れる。
+
+svg編集はinscapeとコードで両方進めるとよい。
+id入れてもエンター押さないと変更されてないことある

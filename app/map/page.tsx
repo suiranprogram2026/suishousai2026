@@ -1,6 +1,7 @@
 // /app/map/page.tsx
 
 "use client";
+import { Suspense } from "react";
 import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import styles from "./Map.module.css";
@@ -112,7 +113,7 @@ const Pin: React.FC<PinProps> = ({
 
 const floors = [1, 2, 3, 4];
 
-export default function Three() {
+function MapContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
 
@@ -175,6 +176,10 @@ export default function Three() {
     const mapContainerRef = useRef<HTMLDivElement>(null);
     const { width: mapWidth, height: mapHeight } = useContainerDimensions(
         mapContainerRef
+    );
+
+    const roomEvents = festivalItems.filter(
+    item => item.room === selectedRoom
     );
 
     return (
@@ -267,12 +272,16 @@ export default function Three() {
                                     style={{
                                         transform: `scale(${1 - (activeFloor - floor) * 0.1})`,
                                         zIndex: floor,
-                                        opacity: floor === activeFloor ? 1 : 0.05,
                                         transition: "transform 0.3s ease, opacity 0.3s ease",
                                         position: "absolute",
                                         left: 0,
                                         width: "100%",
                                         height: "100%",
+                                        opacity: floor === activeFloor ? 1 : 0.05,
+                                        pointerEvents:
+                                        floor === activeFloor
+                                            ? "auto"
+                                            : "none",
                                     }}
                                 >
                                     <SvgMap
@@ -309,35 +318,34 @@ export default function Three() {
 
             {selectedRoom && (
                 <div
-                    style={{
-                        position: "fixed",
-                        inset: 0,
-                        background: "rgba(0,0,0,0.5)",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        zIndex: 9000,
-                    }}
-                    onClick={() => setSelectedRoom(null)}
+                    className={styles.popupOverlay}
+                        onClick={() => setSelectedRoom(null)}
                 >
                     <div
-                        style={{
-                            background: "white",
-                            padding: "20px",
-                            borderRadius: "12px",
-                        }}
+                        className={styles.popup}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <h2>{selectedRoom}</h2>
 
+                        {roomEvents.map((event) => (
+                        <div key={event.id}>
+                            {event.title}
+                        </div>
+                        ))}
+
                         <button
                             onClick={() => {
-                                router.push(
-                                    `/event?room=${selectedRoom}`
-                                );
+                                router.push(`/event?room=${selectedRoom}`);
                             }}
                         >
-                        この教室の企画を見る
+                            この教室の企画を見る
+                        </button>
+
+                        <button
+                            className={styles.closeButton}
+                                onClick={() => setSelectedRoom(null)}
+                        >
+                            閉じる
                         </button>
                     </div>
                 </div>
@@ -347,3 +355,10 @@ export default function Three() {
     );
 }
 
+export default function page(){
+    return(
+        <Suspense fallback={<div>Loading...</div>}>
+            <MapContent/>
+        </Suspense>
+    )
+}
