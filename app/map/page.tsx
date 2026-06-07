@@ -271,12 +271,16 @@ export default function Three() {
                                     style={{
                                         transform: `scale(${1 - (activeFloor - floor) * 0.1})`,
                                         zIndex: floor,
-                                        opacity: floor === activeFloor ? 1 : 0.05,
                                         transition: "transform 0.3s ease, opacity 0.3s ease",
                                         position: "absolute",
                                         left: 0,
                                         width: "100%",
                                         height: "100%",
+                                        opacity: floor === activeFloor ? 1 : 0.05,
+                                        pointerEvents:
+                                        floor === activeFloor
+                                            ? "auto"
+                                            : "none",
                                     }}
                                 >
                                     <SvgMap
