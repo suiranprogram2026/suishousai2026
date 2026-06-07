@@ -14,6 +14,9 @@ export type FestivalItem = {
     // 複数の属性を持たせるため、icon プロパティを attributes 配列に変更
     attributes: LucideIcon[];
     floor?: number;
+
+    room?: string; // ←追加
+
     x?: number;
     y?: number;
     slug?: string;
@@ -28,6 +31,8 @@ export const attributePriority: LucideIcon[] = [Sun, Moon, Drum, Soup];
 /**属性について　Drum→ステージ、Soup→調理食販、Sun→娯楽団体、Moon→展示団体 */
 
 export const festivalItems: FestivalItem[] = [
+//更新するときにxy座標はすべて消しておｋ
+
     //1年
     { id: 1, img: 'event_1.jpg', title: 'みぞぐちのみぞしる”ミゾベガス”～かけるなら今でしょ～', reading: "みぞぐちのみぞしる”ミゾベガス”～かけるならいまでしょ～", attributes: [Sun], floor: 2, x: 458, y: 380, class: "1-1", location: "2-8" },
     { id: 2, img: 'event_2.jpg', title: '謎解き縁日', reading: "なぞときえんにち", attributes: [Sun], floor: 4, x: 809, y: 380, class: "1-2", location: "1-2" },
@@ -49,7 +54,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 17, img: 'event_17.jpg', title: '翔涼祭', reading: "しょうりょうさい", attributes: [Sun, Soup], floor: 2, x: 527, y: 380, class: "2-8", location: "2-7" },
     { id: 18, img: 'event_18.jpg', title: '末包の囁き', reading: "すえかねのささやき", attributes: [Sun], floor: 2, x: 316, y: 380, class: "2-9", location: "2-9" },
     //3年
-    { id: 19, img: 'event_19.jpg', title: 'スナダン・ジョーンズ～宝を隠す山～', reading: "すなだん・じょーんず～たからをかくすやま～", attributes: [Sun], floor: 2, x: 613, y: 640, class: "3-1,3-2", location: "多目的教室" },
+    { id: 19, img: 'event_19.jpg', title: 'スナダン・ジョーンズ～宝を隠す山～', reading: "すなだん・じょーんず～たからをかくすやま～", attributes: [Sun], floor: 2, x: 613, y: 640,room: "room-3-6", class: "3-1,3-2", location: "多目的教室" },
     { id: 20, img: 'event_20.jpg', title: '新世紀翠嵐シューティングコースター～全授業数学化計画～', reading: "しんせいきすいらんしゅーてぃんぐこーすたー～ぜんじゅぎょうすうがくかけいかく～", attributes: [Sun], floor: 1, x: 314, y: 432, class: "3-3,3-5", location: "みらい館" },
     { id: 21, img: 'event_21.jpg', title: 'MOMI of Terror', reading: "もみおふてらー", attributes: [Sun], floor: 1, x: 666, y: 380, class: "3-4", location: "3-4" },
     { id: 22, img: 'event_22.jpg', title: 'あつまれ！かとひろの森', reading: "あつまれ！かとひろのもり", attributes: [Sun], floor: 2, x: 666, y: 380, class: "3-6", location: "3-3" },

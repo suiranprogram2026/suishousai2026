@@ -177,6 +177,10 @@ export default function Three() {
         mapContainerRef
     );
 
+    const roomEvents = festivalItems.filter(
+    item => item.room === selectedRoom
+    );
+
     return (
         <div className={styles.outerContainer}>
             {/**トップ画像 */}
@@ -309,35 +313,34 @@ export default function Three() {
 
             {selectedRoom && (
                 <div
-                    style={{
-                        position: "fixed",
-                        inset: 0,
-                        background: "rgba(0,0,0,0.5)",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        zIndex: 9000,
-                    }}
-                    onClick={() => setSelectedRoom(null)}
+                    className={styles.popupOverlay}
+                        onClick={() => setSelectedRoom(null)}
                 >
                     <div
-                        style={{
-                            background: "white",
-                            padding: "20px",
-                            borderRadius: "12px",
-                        }}
+                        className={styles.popup}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <h2>{selectedRoom}</h2>
 
+                        {roomEvents.map((event) => (
+                        <div key={event.id}>
+                            {event.title}
+                        </div>
+                        ))}
+
                         <button
                             onClick={() => {
-                                router.push(
-                                    `/event?room=${selectedRoom}`
-                                );
+                                router.push(`/event?room=${selectedRoom}`);
                             }}
                         >
-                        この教室の企画を見る
+                            この教室の企画を見る
+                        </button>
+
+                        <button
+                            className={styles.closeButton}
+                                onClick={() => setSelectedRoom(null)}
+                        >
+                            閉じる
                         </button>
                     </div>
                 </div>

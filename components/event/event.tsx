@@ -2,7 +2,12 @@
 "use client";
 import Image from 'next/image';
 import Header from '../Header/Header';
-import React, { useEffect, useState, useMemo } from "react";
+import React, {
+    useEffect,
+    useState,
+    useMemo,
+    useRef,
+} from "react";
 import { useSearchParams } from "next/navigation";
 import { festivalItems } from "@/utils/festival";
 import { FestivalDetail, festivalDetail } from '@/utils/festivaldetail';
@@ -73,6 +78,10 @@ const EventPage: React.FC = () => {
 
     const searchParams = useSearchParams();
     const id = searchParams.get("id");
+    const roomParam = searchParams.get("room");
+    const roomRefs = useRef<
+        Record<string, HTMLDivElement | null>
+    >({});
 
     // 検索とフィルターの状態管理
     const [searchTerm, setSearchTerm] = useState("");
@@ -132,6 +141,25 @@ const EventPage: React.FC = () => {
             return matchesSearch && matchesAttribute;
         });
     }, [normalizedSearchTerm, selectedAttribute]);
+
+
+    useEffect(() => {
+        if (!roomParam) return;
+
+        const timer = setTimeout(() => {
+            const target = roomRefs.current[roomParam];
+
+            if (target) {
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                });
+            }
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, [roomParam, filteredItems]);
+
 
     // 各属性に対応する固定のカテゴリ名を返す
     const getCategoryTitle = (icon: LucideIcon) => {
@@ -213,7 +241,15 @@ const EventPage: React.FC = () => {
                     <div className="e-eventbox-f">
                         {filteredItems.length > 0 ? (
                             filteredItems.map((item, index) => (
-                                <div className="container" key={index}>
+                                <div
+                                    className="container"
+                                    key={index}
+                                    ref={(el) => {
+                                        if (item.room) {
+                                            roomRefs.current[item.room] = el;
+                                        }
+                                    }}
+                                >
                                     <div className="card">
                                         <div className="card-all">
                                             <div className="pic">

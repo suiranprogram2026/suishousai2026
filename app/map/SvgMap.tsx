@@ -20,15 +20,17 @@ export default function SvgMap({
             svg.style.display = "block";
         }}
         afterInjection={(svg) => {
-            console.log("SVG loaded");
+          svg.querySelectorAll("rect").forEach((el) => {
+            el.setAttribute("fill", "transparent");
+            el.style.pointerEvents = "all";
 
-            svg.querySelectorAll("[id]").forEach((el) => {
-                el.addEventListener("click", () => {
-                    console.log("clicked", el.id);
-                    onRoomClick(el.id);
-                });
+            el.addEventListener("click", () => {
+              console.log("clicked", el.id);
+              onRoomClick(el.id);
             });
+          });
         }}
+        
     />
   );
 }
