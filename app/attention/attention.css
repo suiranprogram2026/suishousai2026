@@ -7,7 +7,9 @@
     }
 }
 
-
+.at_main {
+    color:  white;
+}
 
 .roller {
     position: absolute;
