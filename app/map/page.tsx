@@ -1,6 +1,7 @@
 // /app/map/page.tsx
 
 "use client";
+import { Suspense } from "react";
 import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import styles from "./Map.module.css";
@@ -112,7 +113,7 @@ const Pin: React.FC<PinProps> = ({
 
 const floors = [1, 2, 3, 4];
 
-export default function Three() {
+function MapContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
 
@@ -354,3 +355,10 @@ export default function Three() {
     );
 }
 
+export default function page(){
+    return(
+        <Suspense fallback={<div>Loading...</div>}>
+            <MapContent/>
+        </Suspense>
+    )
+}
