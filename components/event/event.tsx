@@ -298,7 +298,7 @@ const EventPage: React.FC = () => {
 
                                                 <div className="card-about">
                                                     <p>開催団体 : {item.class}</p>
-                                                    <p>場所 : {item.location}</p>
+                                                    <p>場所 : {item.room}</p>
                                                 </div>
                                             </div>
                                         </div>
