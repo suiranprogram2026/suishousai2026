@@ -21,6 +21,7 @@
   font-weight: 600;
   font-size: 1.05rem;
   margin-bottom: 0.4rem;
+  color: #ffffff;
 }
 
 .detail {
@@ -38,5 +39,5 @@
 }
 
 .date{
-  color: #999999;
+  color: #c1c1c1;
 }
