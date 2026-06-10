@@ -14,14 +14,10 @@ export type FestivalItem = {
     // 複数の属性を持たせるため、icon プロパティを attributes 配列に変更
     attributes: LucideIcon[];
     floor?: number;
-
     room?: string; // ←追加
-
-    x?: number;
-    y?: number;
-    slug?: string;
     class?: string;
     img?: string;
+    location?: string;
 }
 
 // 属性の優先順位（サイドバー上で「主要な」属性として使う）

@@ -12,9 +12,6 @@ import Image from "next/image";
 import Header from "@/components/Header/Header";
 import SvgMap from "./SvgMap";
 
-// 基準解像度（最大サイズ：1000×749px）
-const BASE_WIDTH = 1000;
-const BASE_HEIGHT = 749;
 
 
 /**
@@ -37,79 +34,6 @@ function useContainerDimensions(ref: React.RefObject<HTMLElement>) {
     }, [ref]);
     return dimensions;
 }
-
-/**
- * ピン表示コンポーネント  
- * ・festivalItems の座標は BASE_WIDTH×BASE_HEIGHT を基準としたピクセル値で指定  
- * ・現在のマップサイズとの比率でピンの位置・サイズを計算します
- */
-interface PinProps {
-    item: FestivalItem;
-    isSelected: boolean;
-    containerWidth: number;
-    containerHeight: number;
-}
-
-const Pin: React.FC<PinProps> = ({
-    item,
-    isSelected,
-    containerWidth,
-}) => {
-    if (!isSelected) return null;
-    const scaleFactor = containerWidth / BASE_WIDTH;
-    const baseIconSize = 100;
-    const baseHitBoxSize = 40;
-    const iconSize = Math.round(baseIconSize * scaleFactor);
-    const hitBoxSize = Math.round(baseHitBoxSize * scaleFactor);
-    const leftPx = item.x! * scaleFactor;
-    const topPx = item.y! * scaleFactor;
-
-    return (
-        <div
-            className={styles.pinWrapper}
-            style={{
-                left: `${leftPx}px`,
-                top: `${topPx}px`,
-                width: hitBoxSize,
-                height: hitBoxSize,
-                marginLeft: `-${hitBoxSize / 2}px`,
-                marginTop: `-${hitBoxSize / 2}px`,
-            }}
-        >
-            <div
-                className={styles.pinContent}
-                style={{
-                    transform: "rotateY(-30deg)",
-                    pointerEvents: "none",
-                    position: "relative",
-                    width: "100%",
-                    height: "100%",
-                }}
-            >
-                <div
-                    className={styles.iconWrapper}
-                    style={{
-                        width: iconSize,
-                        height: iconSize,
-                        position: "absolute",
-                        left: "50%",
-                        top: "50%",
-                        transform: "translate(-50%, -50%)",
-                    }}
-                >
-                    <Image
-                        src="/mappin.png"
-                        alt="Map Pin"
-                        width={iconSize}
-                        height={iconSize}
-                        priority
-                        style={{ objectFit: "contain" }}
-                    />
-                </div>
-            </div>
-        </div>
-    );
-};
 
 const floors = [1, 2, 3, 4];
 
@@ -291,15 +215,6 @@ function MapContent() {
                                             setSelectedRoom(roomId);
                                         }}
                                     />
-
-                                    {selectedItem && selectedItem.floor === floor && (
-                                        <Pin
-                                            item={selectedItem}
-                                            isSelected={true}
-                                            containerWidth={mapWidth}
-                                            containerHeight={mapHeight}
-                                        />
-                                    )}
                                 </div>
                             ))}
                     </div>
