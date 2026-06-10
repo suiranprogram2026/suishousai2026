@@ -204,19 +204,6 @@
     border-radius: 10px;
 }
 
-/* 装飾用疑似要素（.container .card 共通） */
-.container .card:before,
-.container .card:after {
-    content: "";
-    z-index: 4;
-    position: absolute;
-    display: block;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: #ffffff;
-}
-
 /* 共通：ul内のli */
 .container .card .ul .li {
     width: 3px;

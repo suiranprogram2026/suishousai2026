@@ -26,10 +26,10 @@ export const attributePriority: LucideIcon[] = [Sun, Moon, Drum, Soup];
 /**属性について　Drum→ステージ、Soup→調理食販、Sun→娯楽団体、Moon→展示団体 */
 
 export const festivalItems: FestivalItem[] = [
-//更新するときにxy座標はすべて消しておｋ
+//{ id: 1, img: 'event_1.jpg←数字はidと一致', title: '企画名', reading: "企画名読み方", attributes: [Sun,Moon]上参照, floor: 階（マップ用）, class: "団体", room: マップのroomid, location: 開催教室（roomidでmapsvgと連動して、こっちをポップアップに表示する。},
 
     //1年
-    { id: 1, img: 'event_1.jpg', title: 'みぞぐちのみぞしる”ミゾベガス”～かけるなら今でしょ～', reading: "みぞぐちのみぞしる”ミゾベガス”～かけるならいまでしょ～", attributes: [Sun], floor: 2, class: "1-1"},
+    { id: 1, img: 'event_1.jpg', title: 'みぞぐちのみぞしる”ミゾベガス”～かけるなら今でしょ～', reading: "みぞぐちのみぞしる”ミゾベガス”～かけるならいまでしょ～", attributes: [Sun], floor: 2, class: "1-1", location: "aaaaaa"},
     { id: 2, img: 'event_2.jpg', title: '謎解き縁日', reading: "なぞときえんにち", attributes: [Sun], floor: 4, class: "1-2"},
     { id: 3, img: 'event_3.jpg', title: '焼き鳥屋喜鳥', reading: "やきとりやきとり", attributes: [Sun, Soup], floor: 1, class: "1-3"},
     { id: 4, img: 'event_4.jpg', title: '清水の国のアリス', reading: "しみずのくにのありす", attributes: [Sun], floor: 4, class: "1-4"},
@@ -53,7 +53,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 20, img: 'event_20.jpg', title: '新世紀翠嵐シューティングコースター～全授業数学化計画～', reading: "しんせいきすいらんしゅーてぃんぐこーすたー～ぜんじゅぎょうすうがくかけいかく～", attributes: [Sun], floor: 1, class: "3-3,3-5"},
     { id: 21, img: 'event_21.jpg', title: 'MOMI of Terror', reading: "もみおふてらー", attributes: [Sun], floor: 1, class: "3-4"},
     { id: 22, img: 'event_22.jpg', title: 'あつまれ！かとひろの森', reading: "あつまれ！かとひろのもり", attributes: [Sun], floor: 2, class: "3-6"},
-    { id: 23, img: 'event_23.jpg', title: 'コマーツ魔法学校', reading: "こまーつまほうがっこう", attributes: [Sun], floor: 1, class: "3-7"},
+    { id: 23, img: 'event_23.jpg', title: 'Shooting RIder オサムパニック', reading: "シューティングライダーおさむパニック", attributes: [Sun], floor: 1, class: "3-5,3-8", room: "mirai", location: "みらい館"},
     { id: 24, img: 'event_24.jpg', title: 'えじえじのはちみつのりハント', attributes: [Sun], floor: 1, class: "3-8"},
     { id: 25, img: 'event_25.gif', title: 'DESCAFE Excella', reading: "ですかふぇ えくせら", attributes: [Sun, Soup], floor: 2, class: "3-9"},
     //部活・委員会・有志 

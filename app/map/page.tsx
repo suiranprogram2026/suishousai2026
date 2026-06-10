@@ -102,8 +102,9 @@ function MapContent() {
         mapContainerRef
     );
 
+
     const roomEvents = festivalItems.filter(
-    item => item.room === selectedRoom
+        item => item.location === selectedRoom
     );
 
     return (
@@ -187,9 +188,7 @@ function MapContent() {
                 {/* mapContainer は各ブレークポイントで固定ピクセルサイズに設定 */}
                 <div className={styles.mapContainer} ref={mapContainerRef}>
                     <div className={styles.innerContainer}>
-                        {floors
-                            .filter((floor) => floor <= activeFloor)
-                            .map((floor) => (
+                        {[activeFloor].map((floor) => (
                                 <div
                                     key={floor}
                                     className={styles.floor}
@@ -220,6 +219,8 @@ function MapContent() {
                     </div>
                 </div>
             </div>
+
+            {/*凡例*/}
             <div className={styles.expMap}>
                 <div className={styles.expMapExp}>
                     -マップの見方-
@@ -230,7 +231,7 @@ function MapContent() {
                 </div>
             </div>
 
-
+            {/*ポップアップ*/}
             {selectedRoom && (
                 <div
                     className={styles.popupOverlay}
@@ -243,12 +244,13 @@ function MapContent() {
                         <h2>{selectedRoom}</h2>
 
                         {roomEvents.map((event) => (
-                        <div key={event.id}>
-                            {event.title}
+                        <div key={event.location}>
+                            {event.location}
                         </div>
                         ))}
 
                         <button
+                            className={styles.goButton}
                             onClick={() => {
                                 router.push(`/event?room=${selectedRoom}`);
                             }}
