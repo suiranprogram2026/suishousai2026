@@ -1,0 +1,40 @@
+/*部屋に色付け(SvgMapにかかる)*/
+.room {
+  fill: #ffffff;
+  stroke-width: 1;
+  cursor: pointer;
+  transition: fill 0.2s ease;
+}
+
+.room:hover {
+  fill-opacity: 0.6;
+}
+
+.play{
+    fill: #00c4eb;
+}
+.food {
+    fill: #ffb74d;
+}
+
+.stage {
+    fill: #e57373;
+}
+
+.exhibition {
+    fill: #64b5f6;
+}
+
+.shop {
+    fill: #81c784;
+}
+
+/* hover */
+.room:hover {
+    filter: brightness(1.1);
+}
+
+/* active / selected */
+.room.active {
+    outline: 2px solid #000;
+}

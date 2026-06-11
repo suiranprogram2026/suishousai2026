@@ -2,6 +2,7 @@
 
 import { ReactSVG } from "react-svg";
 import { festivalItems } from "@/utils/festival";
+import "./SvgMap.css"
 
 type Props = {
   floor: number;
