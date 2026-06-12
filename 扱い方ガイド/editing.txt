@@ -17,6 +17,8 @@ https://www.shadcn.net/ja
 　（別にどっちでも問題ないし、実際過去の遺物で残ってる）
 モジュールのときはこう書くclassName={styles.title}←titleに自由に名前をつける
 
+global.d.tsで通常のcssでもエラーが出ないようにしてる
+
 
 npm run buildが成功すればすべてにおいてエラーはない
 
