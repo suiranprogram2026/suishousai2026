@@ -12,29 +12,6 @@ import Image from "next/image";
 import Header from "@/components/Header/Header";
 import SvgMap from "./SvgMap";
 
-
-
-/**
- * カスタムフック：指定要素のサイズ（幅・高さ）を取得する
- */
-function useContainerDimensions(ref: React.RefObject<HTMLElement>) {
-    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-    useEffect(() => {
-        if (!ref.current) return;
-        const updateDimensions = () => {
-            const rect = ref.current!.getBoundingClientRect();
-            setDimensions({ width: rect.width, height: rect.height });
-        };
-        updateDimensions();
-        const resizeObserver = new ResizeObserver(() => updateDimensions());
-        resizeObserver.observe(ref.current);
-        return () => {
-            resizeObserver.disconnect();
-        };
-    }, [ref]);
-    return dimensions;
-}
-
 const floors = [1, 2, 3, 4];
 
 function MapContent() {
@@ -98,9 +75,6 @@ function MapContent() {
 
     // マップコンテナの ref（CSS で各ブレークポイントごとに固定ピクセル指定）
     const mapContainerRef = useRef<HTMLDivElement>(null);
-    const { width: mapWidth, height: mapHeight } = useContainerDimensions(
-        mapContainerRef
-    );
 
 
     const roomEvents = festivalItems.filter(
