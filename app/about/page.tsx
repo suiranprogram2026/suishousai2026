@@ -88,12 +88,12 @@ export default function About() {
                     <div className="about-site">
                     </div>
                     <div className="member-picture">
-                        <Image
+                        {/*<Image
                             src="/member.jpg"
                             alt="総務ず"
                             width={3000}
                             height={1000}
-                        />
+                        />*/}
                     </div>
 
                 </div>

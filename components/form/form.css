@@ -250,6 +250,11 @@
     }
 }
 
+@media (min-width: 760px) {
+    .form {
+        padding: 0 200px
+    }
+}
 .anc{
     margin-bottom: 40px;
 }
