@@ -22,17 +22,17 @@ import {
 } from "@/components/ui/drawer"
 
 import { normalizeSearchString } from "@/utils/normalizeKana";
-import { LucideIcon, Drum, Sun, Moon, Soup } from "lucide-react";
 import "./event.css"
 import { Button } from '../ui/button';
 
 // 固定の属性候補（フィルター表示用）
-const fixedAttributes: { icon: LucideIcon; title: string }[] = [
-    { icon: Sun, title: "娯楽団体" },
-    { icon: Soup, title: "調理食販" },
-    { icon: Drum, title: "ステージ" },
-    { icon: Moon, title: "展示団体" },
-];
+const categories = [
+    { value: "play", title: "娯楽団体" },
+    { value: "food", title: "調理食販" },
+    { value: "stage", title: "ステージ" },
+    { value: "exhibition", title: "展示団体" },
+    { value: "shop", title: "物販団体"}
+] as const;
 
 const EventPage: React.FC = () => {
 
@@ -85,11 +85,9 @@ const EventPage: React.FC = () => {
 
     // 検索とフィルターの状態管理
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedAttribute, setSelectedAttribute] =
-    useState<LucideIcon | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
     
-    // 固定属性リストを利用するので、iconTypes は fixedAttributes から取得
-    const iconTypes = fixedAttributes.map((attr) => attr.icon);
+
     const pass = "ねお"
     const neo_name = "根尾 昂"
     const neo_eng = "NEO AKIRA"
@@ -98,11 +96,12 @@ const EventPage: React.FC = () => {
     // クエリパラメータに基づく初期フィルター設定（必要に応じて）
     useEffect(() => {
         if (id) {
-            const matchedAttribute = fixedAttributes.find(
-                (attr) => attr.title.toLowerCase() === id.toLowerCase()
+            const matchedCategory = categories.find(
+                (c) => c.title.toLowerCase() === id.toLowerCase()
             );
-            if (matchedAttribute) {
-                setSelectedAttribute(matchedAttribute.icon);
+
+            if (matchedCategory) {
+                setSelectedCategory(matchedCategory.value);
             }
         }
     }, [id]);
@@ -112,9 +111,9 @@ const EventPage: React.FC = () => {
         setSearchTerm(e.target.value);
     };
 
-    const toggleIconFilter = (icon: LucideIcon) => {
-        setSelectedAttribute((prev: LucideIcon | null) =>
-            prev === icon ? null : icon
+    const toggleCategoryFilter = (category: string) => {
+        setSelectedCategory((prev) =>
+            prev === category ? null : category
         );
     };
 
@@ -134,13 +133,13 @@ const EventPage: React.FC = () => {
             const matchesClass = (item.class ?? "").includes(normalizedSearchTerm);
             const matchesSearch = matchesTitleOrReading || matchesClass;
 
-            const matchesAttribute =
-                selectedAttribute === null ||
-                item.attributes.includes(selectedAttribute);
+            const matchesCategory =
+                selectedCategory === null ||
+                item.category === selectedCategory;
 
-            return matchesSearch && matchesAttribute;
+            return matchesSearch && matchesCategory;
         });
-    }, [normalizedSearchTerm, selectedAttribute]);
+    }, [normalizedSearchTerm, selectedCategory]);
 
 
     useEffect(() => {
@@ -162,9 +161,11 @@ const EventPage: React.FC = () => {
 
 
     // 各属性に対応する固定のカテゴリ名を返す
-    const getCategoryTitle = (icon: LucideIcon) => {
-        const found = fixedAttributes.find((attr) => attr.icon === icon);
-        return found ? found.title : "カテゴリ";
+    const getCategoryTitle = (category: string) => {
+        return (
+            categories.find((c) => c.value === category)?.title ??
+            "カテゴリ"
+        );
     };
 
     const fetchDetail = async (id: number) => {
@@ -217,21 +218,22 @@ const EventPage: React.FC = () => {
                 </div>
 
                 <div className="e-iconbox">
-                    {iconTypes.map((IconComponent, index) => (
+                    {categories.map((category) => (
                         <button
-                            key={index}
-                            onClick={() => toggleIconFilter(IconComponent)}
+                            key={category.value}
+                            onClick={() => toggleCategoryFilter(category.value)}
                             className={`e-iconnomal ${
-                            selectedAttribute === IconComponent
+                                selectedCategory === category.value
                                     ? "e-iconclick"
                                     : "e-iconunclick"
-                                }`}
-                            title={`フィルター: ${getCategoryTitle(IconComponent)}`}
-                            aria-label={`フィルター: ${getCategoryTitle(IconComponent)}`}
+                            }`}
+                            title={`フィルター: ${category.title}`}
+                            aria-label={`フィルター: ${category.title}`}
                         >
                             <div className="e-icontitle">
-                                {getCategoryTitle(IconComponent)}
+                                {category.title}
                             </div>
+                            
                         </button>
                     ))}
                 </div>
@@ -298,7 +300,7 @@ const EventPage: React.FC = () => {
 
                                                 <div className="card-about">
                                                     <p>開催団体 : {item.class}</p>
-                                                    <p>場所 : {item.room}</p>
+                                                    <p>場所 : {item.location}</p>
                                                 </div>
                                             </div>
                                         </div>

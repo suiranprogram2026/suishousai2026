@@ -1,6 +1,8 @@
 "use client";
 
 import { ReactSVG } from "react-svg";
+import { festivalItems } from "@/utils/festival";
+import "./SvgMap.css"
 
 type Props = {
   floor: number;
@@ -21,16 +23,24 @@ export default function SvgMap({
         }}
         afterInjection={(svg) => {
           svg.querySelectorAll("rect").forEach((el) => {
-            el.setAttribute("fill", "transparent");
+
+            const item = festivalItems.find(
+              (f) => f.room === el.id
+            );
+
+            el.classList.add("room");/*cssで.roomが効くようになる*/
+
+            if (item) {
+              el.classList.add(item.category);/*cssでfoodやplayが効くようになる（それぞれのカテゴリーのみを抽出する）*/
+            }
+
             el.style.pointerEvents = "all";
 
             el.addEventListener("click", () => {
-              console.log("clicked", el.id);
               onRoomClick(el.id);
             });
           });
-        }}
-        
+        }}      
     />
   );
 }

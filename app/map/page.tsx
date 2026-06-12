@@ -12,105 +12,6 @@ import Image from "next/image";
 import Header from "@/components/Header/Header";
 import SvgMap from "./SvgMap";
 
-// 基準解像度（最大サイズ：1000×749px）
-const BASE_WIDTH = 1000;
-const BASE_HEIGHT = 749;
-
-
-/**
- * カスタムフック：指定要素のサイズ（幅・高さ）を取得する
- */
-function useContainerDimensions(ref: React.RefObject<HTMLElement>) {
-    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-    useEffect(() => {
-        if (!ref.current) return;
-        const updateDimensions = () => {
-            const rect = ref.current!.getBoundingClientRect();
-            setDimensions({ width: rect.width, height: rect.height });
-        };
-        updateDimensions();
-        const resizeObserver = new ResizeObserver(() => updateDimensions());
-        resizeObserver.observe(ref.current);
-        return () => {
-            resizeObserver.disconnect();
-        };
-    }, [ref]);
-    return dimensions;
-}
-
-/**
- * ピン表示コンポーネント  
- * ・festivalItems の座標は BASE_WIDTH×BASE_HEIGHT を基準としたピクセル値で指定  
- * ・現在のマップサイズとの比率でピンの位置・サイズを計算します
- */
-interface PinProps {
-    item: FestivalItem;
-    isSelected: boolean;
-    containerWidth: number;
-    containerHeight: number;
-}
-
-const Pin: React.FC<PinProps> = ({
-    item,
-    isSelected,
-    containerWidth,
-}) => {
-    if (!isSelected) return null;
-    const scaleFactor = containerWidth / BASE_WIDTH;
-    const baseIconSize = 100;
-    const baseHitBoxSize = 40;
-    const iconSize = Math.round(baseIconSize * scaleFactor);
-    const hitBoxSize = Math.round(baseHitBoxSize * scaleFactor);
-    const leftPx = item.x! * scaleFactor;
-    const topPx = item.y! * scaleFactor;
-
-    return (
-        <div
-            className={styles.pinWrapper}
-            style={{
-                left: `${leftPx}px`,
-                top: `${topPx}px`,
-                width: hitBoxSize,
-                height: hitBoxSize,
-                marginLeft: `-${hitBoxSize / 2}px`,
-                marginTop: `-${hitBoxSize / 2}px`,
-            }}
-        >
-            <div
-                className={styles.pinContent}
-                style={{
-                    transform: "rotateY(-30deg)",
-                    pointerEvents: "none",
-                    position: "relative",
-                    width: "100%",
-                    height: "100%",
-                }}
-            >
-                <div
-                    className={styles.iconWrapper}
-                    style={{
-                        width: iconSize,
-                        height: iconSize,
-                        position: "absolute",
-                        left: "50%",
-                        top: "50%",
-                        transform: "translate(-50%, -50%)",
-                    }}
-                >
-                    <Image
-                        src="/mappin.png"
-                        alt="Map Pin"
-                        width={iconSize}
-                        height={iconSize}
-                        priority
-                        style={{ objectFit: "contain" }}
-                    />
-                </div>
-            </div>
-        </div>
-    );
-};
-
 const floors = [1, 2, 3, 4];
 
 function MapContent() {
@@ -174,12 +75,10 @@ function MapContent() {
 
     // マップコンテナの ref（CSS で各ブレークポイントごとに固定ピクセル指定）
     const mapContainerRef = useRef<HTMLDivElement>(null);
-    const { width: mapWidth, height: mapHeight } = useContainerDimensions(
-        mapContainerRef
-    );
+
 
     const roomEvents = festivalItems.filter(
-    item => item.room === selectedRoom
+        item => item.location === selectedRoom
     );
 
     return (
@@ -263,9 +162,7 @@ function MapContent() {
                 {/* mapContainer は各ブレークポイントで固定ピクセルサイズに設定 */}
                 <div className={styles.mapContainer} ref={mapContainerRef}>
                     <div className={styles.innerContainer}>
-                        {floors
-                            .filter((floor) => floor <= activeFloor)
-                            .map((floor) => (
+                        {[activeFloor].map((floor) => (
                                 <div
                                     key={floor}
                                     className={styles.floor}
@@ -291,20 +188,13 @@ function MapContent() {
                                             setSelectedRoom(roomId);
                                         }}
                                     />
-
-                                    {selectedItem && selectedItem.floor === floor && (
-                                        <Pin
-                                            item={selectedItem}
-                                            isSelected={true}
-                                            containerWidth={mapWidth}
-                                            containerHeight={mapHeight}
-                                        />
-                                    )}
                                 </div>
                             ))}
                     </div>
                 </div>
             </div>
+
+            {/*凡例*/}
             <div className={styles.expMap}>
                 <div className={styles.expMapExp}>
                     -マップの見方-
@@ -315,7 +205,7 @@ function MapContent() {
                 </div>
             </div>
 
-
+            {/*ポップアップ*/}
             {selectedRoom && (
                 <div
                     className={styles.popupOverlay}
@@ -328,12 +218,13 @@ function MapContent() {
                         <h2>{selectedRoom}</h2>
 
                         {roomEvents.map((event) => (
-                        <div key={event.id}>
-                            {event.title}
+                        <div key={event.location}>
+                            {event.location}
                         </div>
                         ))}
 
                         <button
+                            className={styles.goButton}
                             onClick={() => {
                                 router.push(`/event?room=${selectedRoom}`);
                             }}
