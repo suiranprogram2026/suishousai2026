@@ -3,36 +3,47 @@ import "./globals.css";
 import { Noto_Sans_JP } from "next/font/google";
 //import { CookieConsent } from "@/components/CookieConsent";
 import HamburgerMenu from "@/components/HamburgerMenu/HamburgerMenu";
-//import WarningPopupCookie from "@/components/warning/WarningPopupCookie";//
+//import WarningPopupCookie from "@/components/warning/WarningPopupCookie";
 import Footer from "@/components/footer/footer";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const kosugi = Noto_Sans_JP({ weight: "500", subsets: ["latin"] });
+const kosugi = Noto_Sans_JP({
+  weight: "500",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "翠翔祭2026「Luminous」",
-  description: "6/27~6/28に行われる神奈川県立横浜翠嵐高校の翠翔祭の公式ホームページです。",
+  description:
+    "6/27〜6/28に行われる神奈川県立横浜翠嵐高校の翠翔祭2026「Luminous」公式ホームページです。",
+
+  verification: {
+    google: "pomW8UzqyNwJdcxZAGq6i7kfsA7oX9vWbVztL3to6Bs",
+  },
+
   openGraph: {
     title: "翠翔祭2026「Luminous」",
-    description: "6/27~6/28に行われる神奈川県立横浜翠嵐高校の翠翔祭の公式ホームページです。",
-    url: "https://suishousai2025.vercel.app/",
+    description:
+      "6/27〜6/28に行われる神奈川県立横浜翠嵐高校の翠翔祭2026「Luminous」公式ホームページです。",
+    url: "https://suishosai2026.vercel.app/",
     siteName: "翠翔祭2026「Luminous」",
     images: [
       {
-        url: "https://suishousai2025.vercel.app/og-image.jpg",
+        url: "https://suishosai2026.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "翠翔祭HPのプレビュー画像",
+        alt: "翠翔祭2026「Luminous」",
       },
     ],
     locale: "ja_JP",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "翠翔祭2026「Luminous」",
-    description: "横浜翠嵐高等学校",
-    images: ["https://suishousai2025.vercel.app/twitter-image.jpg"],
+    description: "神奈川県立横浜翠嵐高校",
+    images: ["https://suishosai2026.vercel.app/og-image.jpg"],
   },
 };
 
@@ -42,17 +53,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="jp">
-      <body >
+    <html lang="ja">
+      <body>
         {process.env.NODE_ENV === "production" && (
           <SpeedInsights />
         )}
+
         {/*<WarningPopupCookie />*/}
         <HamburgerMenu />
+
         <main className={kosugi.className}>
           {children}
           <Footer />
         </main>
+
         {/* <CookieConsent /> */}
       </body>
     </html>

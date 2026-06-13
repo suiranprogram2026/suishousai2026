@@ -176,6 +176,10 @@ body {
     transform: translateX(-50%);
 }
 
+.headerbox_news
+{
+   margin-bottom: 5vh;
+}
 
 @media (min-width:768px) {
     .headerbox_top {
