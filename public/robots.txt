@@ -6,4 +6,4 @@ Allow: /
 Host: https://suishosai2026.vercel.app
 
 # Sitemaps
-Sitemap: https://suishousai2026.vercel.app/sitemap.xml
+Sitemap: https://suishosai2026.vercel.app/sitemap.xml
