@@ -4,13 +4,5 @@ module.exports = {
   generateRobotsTxt: true,
 
   /** ↓ここから下までを消すとgoogle検索に乗せられる（すぐには乗らない）*/
-  robotsTxtOptions: {
-    policies: [
-      {
-        userAgent: "*",
-        disallow: "/",
-      },
-    ],
-  },
-  /**ここまで消す */
+ /**ここまで消す */
 };

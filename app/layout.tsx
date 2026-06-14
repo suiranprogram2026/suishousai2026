@@ -13,10 +13,9 @@ const kosugi = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "翠翔祭2026「Luminous」",
+  title: "翠翔祭2026「Luminous」|神奈川県立横浜翠嵐高校",
   description:
-    "6/27〜6/28に行われる神奈川県立横浜翠嵐高校の翠翔祭2026「Luminous」公式ホームページです。",
-
+    "神奈川県立横浜翠嵐高校の文化祭「翠翔祭2026 Luminous」の公式ホームページ。開催日程、企画情報、アクセス、お申し込みなどをご案内します。",
   verification: {
     google: "pomW8UzqyNwJdcxZAGq6i7kfsA7oX9vWbVztL3to6Bs",
   },
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "翠翔祭2026「Luminous」",
     description:
-      "6/27〜6/28に行われる神奈川県立横浜翠嵐高校の翠翔祭2026「Luminous」公式ホームページです。",
+      "神奈川県立横浜翠嵐高校の文化祭「翠翔祭2026 Luminous」の公式ホームページ。開催日程、企画情報、アクセス、お申し込みなどをご案内します。",
     url: "https://suishosai2026.vercel.app/",
     siteName: "翠翔祭2026「Luminous」",
     images: [
