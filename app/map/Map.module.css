@@ -303,25 +303,21 @@
 /*ポップアップ*/
 
 .popupOverlay {
-  position: fixed;
-  inset: 0;
+    position: fixed;
+    inset: 0;
 
-  background: rgba(0,0,0,.4);
+    display: flex;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  z-index: 9999;
+    z-index: 9999;
 }
 
 .popup {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  color: #000000;
-  width: 80%;
-  max-width: 400px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    color: #000000;
+    width: 80%;
+    width: 150px;
 }
 
 .goButton,.closeButton{

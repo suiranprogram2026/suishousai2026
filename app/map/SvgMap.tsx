@@ -6,7 +6,7 @@ import "./SvgMap.css"
 
 type Props = {
   floor: number;
-  onRoomClick: (roomId: string) => void;
+  onRoomClick: (roomId: string, x: number, y: number) => void;
 };
 
 export default function SvgMap({
@@ -17,9 +17,9 @@ export default function SvgMap({
     <ReactSVG
         src={`/maps/map_${floor}.svg`}
         beforeInjection={(svg) => {
-            svg.style.width = "100%";
-            svg.style.height = "100%";
-            svg.style.display = "block";
+          svg.style.width = "100%";
+          svg.style.height = "100%";
+          svg.style.display = "block";
         }}
         afterInjection={(svg) => {
           svg.querySelectorAll("rect").forEach((el) => {
@@ -36,8 +36,12 @@ export default function SvgMap({
 
             el.style.pointerEvents = "all";
 
-            el.addEventListener("click", () => {
-              onRoomClick(el.id);
+            el.addEventListener("click", (e: MouseEvent) => {
+              onRoomClick(
+                el.id,
+                e.clientX,
+                e.clientY
+              );
             });
           });
         }}      

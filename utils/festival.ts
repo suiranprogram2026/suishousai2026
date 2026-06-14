@@ -16,7 +16,7 @@ export type FestivalItem = {
 /** categoryについて　娯楽団体：play　調理食販団体：food　ステージ：stage　展示：exhibition　物販団体：shop */
 
 export const festivalItems: FestivalItem[] = [
-//{ id: 1, img: 'event_1.jpg←数字はidと一致', title: '企画名', reading: "企画名読み方", attributes: [Sun,Moon]上参照, floor: 階（マップ用）, class: "団体", room: マップのroomid, location: 開催教室（roomidでmapsvgと連動して、こっちをポップアップに表示する。},
+//{ id: 1, img: 'event_1.jpg←数字はidと一致', title: '企画名', reading: "企画名読み方", category: 上参照, floor: 階（マップ用）, class: "団体", room: マップのroomid, location: 開催教室（roomidでmapsvgと連動して、こっちをポップアップに表示する。},
 
     //1年
     { id: 1, img: 'event_1.jpg', title: 'みぞぐちのみぞしる”ミゾベガス”～かけるなら今でしょ～', reading: "みぞぐちのみぞしる”ミゾベガス”～かけるならいまでしょ～", category: "play", floor: 2, class: "1-1", location: "aaaaaa"},
