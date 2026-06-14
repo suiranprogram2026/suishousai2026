@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://suishousai2026.vercel.app
+Host: https://suishosai2026.vercel.app
 
 # Sitemaps
 Sitemap: https://suishousai2026.vercel.app/sitemap.xml
