@@ -1,21 +1,21 @@
 /*部屋に色付け(SvgMapにかかる)*/
 .room {
     /*fill: #ffffff00;*/
-    fill: #810810;
+    fill: #114514;
     stroke-width: 1;
     cursor: pointer;
     transition: fill 0.2s ease;
 }
 
 .play{
-    fill: #00c4eb80;
+    fill: #d800eb80;
 }
 .food {
     fill: #ffff0080;
 }
 
 .stage {
-    fill: #e5737350;
+    fill: #e5737380;
 }
 
 .exhibition {
@@ -28,5 +28,5 @@
 
 /* active / selected */
 .room:hover {
-    fill: #eb000050;
+    fill: #eb0000b9;
 }

@@ -25,6 +25,7 @@ function MapContent() {
     const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
     const [isInitialized, setIsInitialized] = useState(false);
 
+
     const normalizedSearchQuery = normalizeSearchString(searchQuery);
 
     const suggestions = searchQuery
@@ -40,6 +41,39 @@ function MapContent() {
             );
         })
         : [];
+
+
+    //ポップアップ関連
+    const handleRoomClick = (
+        roomId: string,
+        e: React.MouseEvent
+    ) => {
+        setSelectedRoom(roomId);
+        setPopupPos({
+            x: e.clientX,
+            y: e.clientY,
+        });
+    };
+    const [popupPos, setPopupPos] = useState({ x: 0, y: 0 });
+    const POPUP_WIDTH = 200;
+    const POPUP_HEIGHT = 150; // だいたいでOK
+
+    const clampPopup = (x: number, y: number) => {
+        const margin = 10;
+
+        const safeX = Math.min(
+            window.innerWidth - POPUP_WIDTH - margin,
+            Math.max(margin, x)
+        );
+
+    const safeY = Math.min(
+        window.innerHeight - POPUP_HEIGHT - margin,
+        Math.max(margin, y)
+    );
+
+    return { x: safeX, y: safeY };
+    };
+
 
     // URLのクエリパラメータ "id" をチェックし、あれば対象のイベントを選択し、検索ボックスに反映
     useEffect(() => {
@@ -79,6 +113,10 @@ function MapContent() {
 
     const roomEvents = festivalItems.filter(
         item => item.location === selectedRoom
+    );
+
+    const roomInfo = festivalItems.find(
+        (item) => item.room === selectedRoom
     );
 
     return (
@@ -183,9 +221,9 @@ function MapContent() {
                                 >
                                     <SvgMap
                                         floor={floor}
-                                        onRoomClick={(roomId) => {
-                                            console.log(roomId);
+                                        onRoomClick={(roomId, x, y) => {
                                             setSelectedRoom(roomId);
+                                            setPopupPos(clampPopup(x, y));
                                         }}
                                     />
                                 </div>
@@ -209,17 +247,24 @@ function MapContent() {
             {selectedRoom && (
                 <div
                     className={styles.popupOverlay}
-                        onClick={() => setSelectedRoom(null)}
+                    onClick={() => setSelectedRoom(null)}
                 >
                     <div
                         className={styles.popup}
                         onClick={(e) => e.stopPropagation()}
+                        style={{
+                            position: "fixed",
+                            left: popupPos.x,
+                            top: popupPos.y,
+                        }}
                     >
                         <h2>{selectedRoom}</h2>
+                        <h2>{roomInfo?.location ?? selectedRoom}</h2>
+                        <h2>{roomInfo?.title ?? selectedRoom}</h2>
 
                         {roomEvents.map((event) => (
-                        <div key={event.location}>
-                            {event.location}
+                        <div key={event.room}>
+                            {event.room}
                         </div>
                         ))}
 
@@ -229,7 +274,7 @@ function MapContent() {
                                 router.push(`/event?room=${selectedRoom}`);
                             }}
                         >
-                            この教室の企画を見る
+                            詳細
                         </button>
 
                         <button
