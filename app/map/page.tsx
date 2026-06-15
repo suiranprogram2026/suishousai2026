@@ -24,8 +24,8 @@ function MapContent() {
     const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
     const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
     const [isInitialized, setIsInitialized] = useState(false);
-
-
+    const [pendingRoom, setPendingRoom] = useState<string | null>(null);
+    
     const normalizedSearchQuery = normalizeSearchString(searchQuery);
 
     const suggestions = searchQuery
@@ -72,6 +72,23 @@ function MapContent() {
     );
 
     return { x: safeX, y: safeY };
+    };
+
+    const openRoom = (roomId: string) => {
+        const element = document.getElementById(roomId);
+
+        if (!element) return;
+
+        const rect = element.getBoundingClientRect();
+
+        setSelectedRoom(roomId);
+
+        setPopupPos(
+            clampPopup(
+                rect.right + 10,
+                rect.top
+            )
+        );
     };
 
 
@@ -159,6 +176,9 @@ function MapContent() {
                                     setActiveFloor(item.floor!);
                                     setSearchQuery(item.title);
                                     setShowSuggestions(false);
+                                    if (item.room) {
+                                        setPendingRoom(item.room);
+                                    }
                                 }}
                             >
                                 <div className={styles.suggestionClass}>{item.class}</div>
@@ -197,7 +217,6 @@ function MapContent() {
 
             {/* マップ表示部分 */}
             <div className={styles.mapWrapper}>
-                {/* mapContainer は各ブレークポイントで固定ピクセルサイズに設定 */}
                 <div className={styles.mapContainer} ref={mapContainerRef}>
                     <div className={styles.innerContainer}>
                         {[activeFloor].map((floor) => (
@@ -221,9 +240,12 @@ function MapContent() {
                                 >
                                     <SvgMap
                                         floor={floor}
-                                        onRoomClick={(roomId, x, y) => {
-                                            setSelectedRoom(roomId);
-                                            setPopupPos(clampPopup(x, y));
+                                        onRoomClick={openRoom}
+                                        onLoaded={() => {
+                                            if (pendingRoom) {
+                                                openRoom(pendingRoom);
+                                                setPendingRoom(null);
+                                            }
                                         }}
                                     />
                                 </div>

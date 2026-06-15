@@ -6,12 +6,14 @@ import "./SvgMap.css"
 
 type Props = {
   floor: number;
-  onRoomClick: (roomId: string, x: number, y: number) => void;
+  onRoomClick: (roomId: string) => void;
+  onLoaded?: () => void;
 };
 
 export default function SvgMap({
   floor,
   onRoomClick,
+  onLoaded,
 }: Props) {
   return (
     <ReactSVG
@@ -36,14 +38,12 @@ export default function SvgMap({
 
             el.style.pointerEvents = "all";
 
-            el.addEventListener("click", (e: MouseEvent) => {
-              onRoomClick(
-                el.id,
-                e.clientX,
-                e.clientY
-              );
+            el.addEventListener("click", () => {
+              onRoomClick(el.id);
             });
           });
+
+          onLoaded?.();
         }}      
     />
   );
