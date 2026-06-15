@@ -233,13 +233,51 @@ function MapContent() {
             </div>
 
             {/*凡例*/}
-            <div className={styles.expMap}>
-                <div className={styles.expMapExp}>
-                    -マップの見方-
-                </div>
-                <div className={styles.expBox}>
-                    <div className={styles.expClass}>0-0 (場所)</div>
-                    <div className={styles.expTitle}>0-0 (団体)</div>
+            <div className={styles.expContainer}>
+                <div className={styles.expMap}>
+                    <div className={styles.expMapExp}>
+                        -マップの見方-
+                    </div>
+
+                    <div className={styles.expCategory}>
+                        <div className={styles.expBox}>
+                            <div className={styles.expClass}>0-0 (場所)</div>
+                            <div className={styles.expTitle}>娯楽団体</div>
+                        </div>
+                        <div className={styles.expBox}>
+                            <div className={styles.expClass}>0-0 (場所)</div>
+                            <div className={styles.expTitle}>調理職版団体</div>
+                        </div>
+                        <div className={styles.expBox}>
+                            <div className={styles.expClass}>0-0 (場所)</div>
+                            <div className={styles.expTitle}>展示団体</div>
+                        </div>
+                        <div className={styles.expBox}>
+                            <div className={styles.expClass}>0-0 (場所)</div>
+                            <div className={styles.expTitle}>物販団体</div>
+                        </div>
+                        <div className={styles.expBox}>
+                            <div className={styles.expClass}>0-0 (場所)</div>
+                            <div className={styles.expTitle}>ステージ</div>
+                        </div>
+                    </div>
+
+                    <div className={styles.expToilet}>
+                        <Image 
+                            src={"maps/mentoilet.svg"} 
+                            alt={"男子トイレ"}
+                            width={50}
+                            height={50}
+                        />
+                        <p>男子トイレ</p>
+                        <Image 
+                            src={"maps/womentoilet.svg"} 
+                            alt={"女子トイレ"}
+                            width={50}
+                            height={50}
+                        />
+                        <p>女子トイレ</p>
+                    </div>
                 </div>
             </div>
 
