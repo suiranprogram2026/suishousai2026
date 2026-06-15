@@ -267,7 +267,7 @@
 
 
 /*凡例*/
-.expontainer{
+.expContainer{
     display: flex;
     justify-content: center;
     width: 100%;
@@ -293,6 +293,11 @@
     color: #373737;
 }
 
+.expCategory{
+    display: flex;
+    gap: 10px;
+}
+
 .expBox {
     display: flex;
     flex-direction: column;
@@ -302,14 +307,38 @@
     border-radius: 3px;
 }
 
+.boxPlay{
+    background-color: #d800eb80;
+}
+
 .expClass {
     font-size: 15px;
     margin-bottom: 5px;
+    color: #000000;
 }
 
 .expTitle {
     font-size: 17px;
-    font-weight: bold
+    font-weight: bold;
+    color: #000000;
+}
+
+.expPlay{
+    fill: #d800eb80;
+}
+
+.expToilet{
+    display: flex;
+    gap: 10px;
+}
+
+.expToiletInner{
+    align-items: center;
+    text-align: center;
+}
+
+.expToiletInner p{
+    color: #000000;
 }
 
 
