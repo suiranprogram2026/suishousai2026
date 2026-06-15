@@ -18,7 +18,6 @@ export const metadata: Metadata = {
     "神奈川県立横浜翠嵐高校の文化祭「翠翔祭2026 Luminous」の公式ホームページ。開催日程、企画情報、アクセス、お申し込みなどをご案内します。",
   verification: {
     google: "pomW8UzqyNwJdcxZAGq6i7kfsA7oX9vWbVztL3to6Bs",
-  keywords: ["翠翔祭", "翠翔祭2026", "Luminous", "横浜翠嵐", "翠嵐"]
   },
 
   openGraph: {
