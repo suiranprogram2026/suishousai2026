@@ -242,23 +242,23 @@ function MapContent() {
                     <div className={styles.expCategory}>
                         <div className={styles.expBox}>
                             <div className={styles.expClass}>0-0 (場所)</div>
-                            <div className={styles.expTitle}>娯楽団体</div>
+                            <div className={`${styles.expTitle} ${styles.expPlay}`}>娯楽団体</div>
                         </div>
                         <div className={styles.expBox}>
                             <div className={styles.expClass}>0-0 (場所)</div>
-                            <div className={styles.expTitle}>調理職版団体</div>
+                            <div className={`${styles.expTitle} ${styles.expFood}`}>調理職版団体</div>
                         </div>
                         <div className={styles.expBox}>
                             <div className={styles.expClass}>0-0 (場所)</div>
-                            <div className={styles.expTitle}>展示団体</div>
+                            <div className={`${styles.expTitle} ${styles.expExhibition}`}>展示団体</div>
                         </div>
                         <div className={styles.expBox}>
                             <div className={styles.expClass}>0-0 (場所)</div>
-                            <div className={styles.expTitle}>物販団体</div>
+                            <div className={`${styles.expTitle} ${styles.expShop}`}>物販団体</div>
                         </div>
                         <div className={styles.expBox}>
                             <div className={styles.expClass}>0-0 (場所)</div>
-                            <div className={styles.expTitle}>ステージ</div>
+                            <div className={`${styles.expTitle} ${styles.expStage}`}>ステージ</div>
                         </div>
                     </div>
 
