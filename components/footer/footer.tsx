@@ -23,20 +23,20 @@ export default function Footer() {
             <h1>〈 SHARE 〉</h1>
             <div className="footer-icon">
                 <TwitterShareButton
-                    url={'https://suishosai2025.vercel.app/'}
+                    url={'https://suishosai2026.vercel.app/'}
                     title={'6/27-28にかけて翠翔祭2026が開催中！ぜひご来場ください！'}
                 >
                     <FontAwesomeIcon icon={faXTwitter} size="lg" />
                 </TwitterShareButton>
                 <FacebookShareButton
-                    url={'https://suishosai2025.vercel.app/'}
+                    url={'https://suishosai2026.vercel.app/'}
                     quote={'6/27-28にかけて翠翔祭2026が開催中！ぜひご来場ください！'}
                     hashtag={'#翠翔祭2026'}
                 >
                     <FontAwesomeIcon icon={faFacebook} size="lg" />
                 </FacebookShareButton>
                 <LineShareButton
-                    url={'https://suishosai2025.vercel.app/'}
+                    url={'https://suishosai2026.vercel.app/'}
                     title={'6/27-28にかけて翠翔祭2026が開催中！ぜひご来場ください！'}
                 >
                     <FontAwesomeIcon icon={faLine} size="lg" />
