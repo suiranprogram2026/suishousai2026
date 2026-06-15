@@ -92,7 +92,7 @@ function MapContent() {
     };
 
 
-    // URLのクエリパラメータ "id" をチェックし、あれば対象のイベントを選択し、検索ボックスに反映
+    // 5. URLのクエリパラメータ "id" をチェックし、あれば対象のイベントを選択し、検索ボックスに反映
     useEffect(() => {
         const id = searchParams.get("id");
 
@@ -105,6 +105,11 @@ function MapContent() {
                 setSelectedItem(foundEvent);
                 setSearchQuery(foundEvent.title);
                 setActiveFloor(foundEvent.floor!);
+            
+                // ⭐ここを追加：該当イベントに部屋番号があれば、読み込み待ち状態にする
+                if (foundEvent.room) {
+                    setPendingRoom(foundEvent.room);
+                }
             } else {
                 setSelectedItem(null);
                 setSearchQuery("");
@@ -116,7 +121,7 @@ function MapContent() {
 
         // 初期化完了フラグをON
         setIsInitialized(true);
-    }, []);
+    }, [searchParams]); // 依存配列にsearchParamsを追加しておくと安全です
 
     useEffect(() => {
         if (!isInitialized) return;

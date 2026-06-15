@@ -8,7 +8,7 @@ import React, {
     useMemo,
     useRef,
 } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { festivalItems } from "@/utils/festival";
 import { FestivalDetail, festivalDetail } from '@/utils/festivaldetail';
 import {
@@ -34,7 +34,15 @@ const categories = [
     { value: "shop", title: "物販団体"}
 ] as const;
 
+
 const EventPage: React.FC = () => {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
+    const detailParam = searchParams.get("detail");
+
+    const [openId, setOpenId] = useState<number | null>(null);
+
 
     const detailMap = useMemo(() => {
     return new Map<number, string>(
@@ -76,7 +84,6 @@ const EventPage: React.FC = () => {
     };
 }, []);
 
-    const searchParams = useSearchParams();
     const id = searchParams.get("id");
     const roomParam = searchParams.get("room");
     const roomRefs = useRef<
@@ -161,30 +168,43 @@ const EventPage: React.FC = () => {
 
 
     // 各属性に対応する固定のカテゴリ名を返す
-    const getCategoryTitle = (category: string) => {
-        return (
-            categories.find((c) => c.value === category)?.title ??
-            "カテゴリ"
-        );
+
+    const getCategoryTitle = (category?: string) => {
+        const found = categories.find((c) => c.value === category);
+        return found?.title ?? "カテゴリ";
     };
 
     const fetchDetail = async (id: number) => {
-    if (detailCache.has(id)) return;
+        if (detailCache.has(id)) return;
 
-    setLoadingId(id);
+        setLoadingId(id);
 
     const detail = detailMap.get(id);
 
-    await new Promise((r) => setTimeout(r, 300)); // 後で消してOK
+        await new Promise((r) => setTimeout(r, 300));
 
-    setDetailCache((prev) => {
-        const newMap = new Map(prev);
-        newMap.set(id, detail ?? "詳細がありません");
-        return newMap;
-    });
+        setDetailCache((prev) => {
+            const newMap = new Map(prev);
+            newMap.set(id, detail ?? "詳細がありません");
+            return newMap;
+        });
 
     setLoadingId(null);
-};
+    };
+
+    const openDetail = (id: number) => {
+        router.push(`/event?detail=${id}`);
+    };
+
+    useEffect(() => {
+    if (!detailParam) return;
+
+    const idNum = Number(detailParam);
+       if (!Number.isNaN(idNum)) {
+            setOpenId(idNum);
+            fetchDetail(idNum);
+        }
+    }, [detailParam]);
 
     return (
         <main className="eventcontent">
@@ -272,12 +292,13 @@ const EventPage: React.FC = () => {
                                                     <Drawer>
                                                         <DrawerTrigger asChild>
                                                             <button
-                                                                className='pop_button_sec'
+                                                                className="pop_button_sec"
                                                                 onClick={() => fetchDetail(item.id)}
                                                             >
                                                                 詳細
                                                             </button>
                                                         </DrawerTrigger>
+
                                                         <DrawerContent>
                                                             <DrawerHeader>
                                                                 <DrawerTitle>{item.title}</DrawerTitle>
@@ -294,7 +315,12 @@ const EventPage: React.FC = () => {
                                                             </DrawerFooter>
                                                         </DrawerContent>
                                                     </Drawer>
-                                                    <a href={`/map?id=${encodeURIComponent(item.title)}`}><button className='pop_button_sec'>マップ</button></a>
+                                                    
+                                                    <a href={`/map?id=${encodeURIComponent(item.title)}`}>
+                                                        <button className="pop_button_sec">
+                                                            マップ
+                                                        </button>
+                                                    </a>
 
                                                 </div>
 
