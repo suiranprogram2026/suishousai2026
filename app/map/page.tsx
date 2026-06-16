@@ -1,4 +1,4 @@
-// /app/map/page.tsx
+﻿// /app/map/page.tsx
 
 "use client";
 import { Suspense } from "react";
@@ -23,7 +23,6 @@ function MapContent() {
     const [selectedItem, setSelectedItem] = useState<FestivalItem | null>(null);
     const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
     const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
-    const [isInitialized, setIsInitialized] = useState(false);
     const [pendingRoom, setPendingRoom] = useState<string | null>(null);
     
     const normalizedSearchQuery = normalizeSearchString(searchQuery);
@@ -93,8 +92,10 @@ function MapContent() {
 
 
     // 5. URLのクエリパラメータ "id" をチェックし、あれば対象のイベントを選択し、検索ボックスに反映
+    const idParam = searchParams.get("id");
+
     useEffect(() => {
-        const id = searchParams.get("id");
+        const id = idParam;
 
         if (id !== null && id !== "") {
             const decodedId = decodeURIComponent(id);
@@ -112,22 +113,13 @@ function MapContent() {
                 }
             } else {
                 setSelectedItem(null);
-                setSearchQuery("");
+                setSearchQuery(decodedId);
             }
         } else {
             setSelectedItem(null);
             setSearchQuery("");
         }
-
-        // 初期化完了フラグをON
-        setIsInitialized(true);
-    }, [searchParams]); // 依存配列にsearchParamsを追加しておくと安全です
-
-    useEffect(() => {
-        if (!isInitialized) return;
-
-        router.push(`?id=${encodeURIComponent(searchQuery)}`, { scroll: false });
-    }, [searchQuery, isInitialized]);
+    }, [idParam]);
 
     // マップコンテナの ref（CSS で各ブレークポイントごとに固定ピクセル指定）
     const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -181,6 +173,7 @@ function MapContent() {
                                     setActiveFloor(item.floor!);
                                     setSearchQuery(item.title);
                                     setShowSuggestions(false);
+                                    router.replace(`?id=${encodeURIComponent(item.title)}`, { scroll: false });
                                     if (item.room) {
                                         setPendingRoom(item.room);
                                     }
