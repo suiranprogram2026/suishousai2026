@@ -9,10 +9,15 @@ import { normalizeSearchString } from "@/utils/normalizeKana";
 import { FestivalItem, festivalItems } from "@/utils/festival";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Header from "@/components/Header/Header";
 import SvgMap from "./SvgMap";
+import { Anton } from 'next/font/google'
 
 const floors = [1, 2, 3, 4];
+const anton = Anton({
+  subsets: ['latin'],
+  weight: '400',
+})
+
 
 function MapContent() {
     const searchParams = useSearchParams();
@@ -135,12 +140,12 @@ function MapContent() {
 
     return (
         <div className={styles.outerContainer}>
-            {/**トップ画像 */}
-            <div className="toppers">
-                <Header
-                    title="MAP"
-                    backgroundImage="/header/header-pc.png"
-                />
+            <div className={styles.toppers}>
+                <header
+                    className={styles.custom_header}
+                >
+                    <h1 className={anton.className}>MAP</h1>
+                </header>
             </div>
 
             {/* サーチボックス */}

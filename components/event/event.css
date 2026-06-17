@@ -4,6 +4,7 @@
     width: 100%;
     min-height: 100vh;
     background: #101c32;
+    overflow-x: hidden;
 }
 
 .e-boxcontent {
@@ -80,6 +81,13 @@
 }
 
 /* 検索アイコン */
+@media (max-width: 360px) {
+    .e-search {
+        width: calc(100% - 20px);
+        min-width: 0;
+    }
+}
+
 .e-search::before {
     content: '🔍';
     position: absolute;
@@ -604,4 +612,30 @@
 
 .close-button:hover{
     background-color: #928f8f;
+}
+
+@media (max-width: 650px) {
+    .e-eventbox-f {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .nothing {
+        height: auto;
+        min-height: 220px;
+        padding: 10px;
+    }
+
+    .leftnot {
+        width: 30%;
+        min-width: 90px;
+    }
+
+    .rightnot {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+        margin-left: 12px;
+    }
 }

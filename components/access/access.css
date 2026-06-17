@@ -5,6 +5,7 @@
     align-items: center;
     margin-top: 10px;
     color: white;
+    overflow-x: hidden;
 }
 
 .access_about {
