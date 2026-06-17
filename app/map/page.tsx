@@ -238,6 +238,7 @@ function MapContent() {
                                 >
                                     <SvgMap
                                         floor={floor}
+                                        selectedRoom={selectedRoom}
                                         onRoomClick={openRoom}
                                         onLoaded={() => {
                                             if (pendingRoom) {

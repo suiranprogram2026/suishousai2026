@@ -7,6 +7,8 @@
     transition: fill 0.2s ease;
 }
 
+
+/*ここ変更したら凡例のほうも忘れずに治す*/
 .play{
     fill: #d800eb80;
 }
@@ -26,7 +28,10 @@
     fill: #81c78450;
 }
 
-/* active / selected */
-.room:hover {
-    fill: #eb0000b9;
+.svg-map-popup-open .room {
+    fill: #ffffff00;
+}
+
+.svg-map-popup-open .room.selected-room {
+    fill: #ff0000;
 }
