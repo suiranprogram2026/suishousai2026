@@ -193,6 +193,7 @@
     display: grid;
     gap: 1rem;
     width: 100%;
+    min-width: 0;
 }
 
 /* .container .card の共通部分 */
@@ -227,7 +228,7 @@
 
     /* グリッドの列数 */
     .e-eventbox-f {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     @media (min-width: 1600px) {
@@ -348,7 +349,7 @@
 
     /* グリッドの列数 */
     .e-eventbox-f {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .pop_button_sec {
@@ -614,13 +615,24 @@
     background-color: #928f8f;
 }
 
-@media (max-width: 650px) {
-    .e-eventbox-f {
-        grid-template-columns: 1fr;
-    }
-}
-
 @media (max-width: 500px) {
+    .e-eventbox {
+        padding: 12px;
+    }
+
+    .e-eventbox-f {
+        gap: 0.75rem;
+    }
+
+    .container .card {
+        padding: 0.6rem;
+    }
+
+    .pop_button_sec {
+        width: 100%;
+        max-width: 120px;
+    }
+
     .nothing {
         height: auto;
         min-height: 220px;
