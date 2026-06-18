@@ -349,16 +349,6 @@ const EventPage: React.FC = () => {
                                                     {neo_read}
                                                 </div>
                                             </div>
-                                            <div className="neo_r">
-                                                <Image
-                                                    className="neo_pic"
-                                                    src="/event/neoakira.jpg"
-                                                    alt="画像を読み込めませんでした"
-                                                    width={1000}
-                                                    height={1000}
-                                                    priority
-                                                />
-                                            </div>
                                         </div>
                                     </div>
                                 ) : (
