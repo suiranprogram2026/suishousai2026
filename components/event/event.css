@@ -472,103 +472,12 @@
 /* ----------------------- */
 .nothing {
     width: 100%;
-    height: 300px;
+    height: 100px;
     grid-column: 1 / -1;
     justify-self: center;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.leftnot,
-.rightnot {
-    position: relative;
-    background-color: #ffd984;
-    height: 200px;
-}
-
-.leftnot {
-    transform: rotate(-10deg);
-    width: 150px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.rightnot {
-    transform: rotate(7deg);
-    width: 350px;
-    margin: 15px 0 0 30px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.leftnot::before,
-.leftnot::after,
-.rightnot::before,
-.rightnot::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 16px;
-    height: 16px;
-    z-index: 4;
-    border-radius: 50%;
-    background-color: #ffffff;
-}
-
-.leftnot::before {
-    top: -8px;
-    right: -8px;
-}
-
-.leftnot::after {
-    bottom: -8px;
-    right: -8px;
-}
-
-.rightnot::before {
-    top: -8px;
-    left: -8px;
-}
-
-.rightnot::after {
-    bottom: -8px;
-    left: -8px;
-}
-
-.leftnotbox {
-    height: 200px;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-}
-
-.rightnotbox {
-    height: 200px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    font-size: larger;
-    font-weight: bold;
-}
-
-@media (max-width: 500px) {
-
-    .leftnot,
-    .rightnot {
-        height: 150px;
-    }
-
-    .leftnotbox {
-        height: 150px;
-        padding: 0.5rem;
-    }
-
-    .rightnotbox {
-        height: 150px;
-    }
 }
 
 .all_neo {

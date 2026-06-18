@@ -353,21 +353,7 @@ const EventPage: React.FC = () => {
                                     </div>
                                 ) : (
                                     <div className='nothing'>
-                                        <div className="leftnot">
-                                            <div className="leftnotbox">
-                                                <Image
-                                                    className="piceve"
-                                                    src="/welcome/logo.png"
-                                                    alt="画像を読み込めませんでした"
-                                                    width={1000}
-                                                    height={1000}
-                                                    priority
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className='rightnot'>
-                                            <div className="rightnotbox">該当項目はありません</div>
-                                        </div>
+                                        <h2>該当項目はありません</h2>
                                     </div>
                                 )}
                             </>
