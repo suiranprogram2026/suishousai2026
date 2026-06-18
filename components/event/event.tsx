@@ -299,7 +299,7 @@ const EventPage: React.FC = () => {
                                                             </button>
                                                         </DrawerTrigger>
 
-                                                        <DrawerContent>
+                                                        <DrawerContent className="bg-[#3f3f3f] text-white">
                                                             <DrawerHeader>
                                                                 <DrawerTitle>{item.title}</DrawerTitle>
                                                             </DrawerHeader>

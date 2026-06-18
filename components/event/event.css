@@ -108,7 +108,7 @@
     border: none;
     font-size: 18px;
     cursor: pointer;
-    color: #cccbcb;
+    color: #dfdddd;
 }
 
 .e-iconbox {
@@ -139,7 +139,7 @@
 
 .e-iconunclick {
     background-color: #535353;
-    color: #000;
+    color: #dfdddd;
 }
 
 .pop_button_area {
