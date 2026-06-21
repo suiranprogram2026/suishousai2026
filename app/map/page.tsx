@@ -137,6 +137,8 @@ function MapContent() {
     const roomInfo = festivalItems.find(
         (item) => item.room === selectedRoom
     );
+    const hasTimetableButton =
+        selectedRoom === "gym_stage" || selectedRoom === "outdoor_stage";
 
     return (
         <div className={styles.outerContainer}>
@@ -327,8 +329,8 @@ function MapContent() {
                         }}
                     >
                         <h2>{selectedRoom}</h2>
-                        <h2>{roomInfo?.location ?? selectedRoom}</h2>
-                        <h2>{roomInfo?.title ?? selectedRoom}</h2>
+                        <h2>会場 : {roomInfo?.location ?? selectedRoom}</h2>
+                        <h2>団体 : {roomInfo?.class ?? selectedRoom}</h2>
 
                         {roomEvents.map((event) => (
                         <div key={event.room}>
@@ -336,21 +338,34 @@ function MapContent() {
                         </div>
                         ))}
 
-                        <button
-                            className={styles.goButton}
-                            onClick={() => {
-                                router.push(`/event?room=${selectedRoom}`);
-                            }}
-                        >
-                            詳細
-                        </button>
+                        <div className={styles.popupButtonRow}>
+                            {hasTimetableButton && (
+                                <button
+                                    className={styles.timetableButton}
+                                    onClick={() => {
+                                        router.push("/timetable");
+                                    }}
+                                >
+                                    タイムテーブル
+                                </button>
+                            )}
 
-                        <button
-                            className={styles.closeButton}
-                                onClick={() => setSelectedRoom(null)}
-                        >
-                            閉じる
-                        </button>
+                            <button
+                                className={styles.goButton}
+                                onClick={() => {
+                                    router.push(`/event?room=${selectedRoom}`);
+                                }}
+                            >
+                                詳細
+                            </button>
+
+                            <button
+                                className={styles.closeButton}
+                                    onClick={() => setSelectedRoom(null)}
+                            >
+                                閉じる
+                            </button>
+                        </div>
                     </div>
                 </div>
             )}

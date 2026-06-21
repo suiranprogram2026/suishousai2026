@@ -437,13 +437,23 @@
     border: 3px #373737 solid;
 }
 
-.goButton,.closeButton{
+.popupButtonRow {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.goButton,.closeButton,.timetableButton{
+    width: 100%;
     font-size: 12px;
     border-radius: 5px;
     border: 2px black solid;
     padding: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 0;
+    background: #ffffff;
+    color: #000000;
+    cursor: pointer;
 }
 
 
