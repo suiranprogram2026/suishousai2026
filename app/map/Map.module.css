@@ -1,19 +1,67 @@
 .toppers{
-    margin-top: 80px;
+    margin-top: 60px;
     max-width: 100%;
 }
 
-.custom-header h1 {
-  color: white;
 
-  font-size: 100px;
-
-  letter-spacing: 5px;
-
-  text-shadow:
-    0 0 10px rgba(255,255,255,0.7),
-    0 0 30px rgba(180,220,255,0.5);
+/*個別でヘッダー設定*/
+.custom_header {
+  width: 100%;
+  box-sizing: border-box;
+  height: 45vh; /* 高さを画面の46%に */
+  min-height: 100px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+  background: linear-gradient(#10122e, #ffffff);
+  
 }
+
+.custom_header h1 {
+  font-weight: bold;
+  font-size: 10vw;
+  z-index: 3;
+  color: #008cff;
+  letter-spacing: 2px;
+  text-shadow:
+      0 0 6px rgba(255,255,255,0.5),
+      0 0 20px rgba(125,184,255,0.25);
+  
+}
+
+/* スマホ (600px以下) */
+@media (max-width: 600px) {
+  .custom_header {
+    height: 120px;
+    padding: 0 0.5rem;
+  }
+
+  .custom_header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 5px rgba(255,255,255,0.4),
+        0 0 15px rgba(125,184,255,0.2);
+  }
+}
+
+/* タブレット (900px以下) */
+@media (max-width: 900px) {
+  .custom_header h1 {
+    font-size: 3.5rem;
+  }
+}
+
+
+
+
+
 
 
 .outerContainer {
@@ -21,6 +69,7 @@
     box-sizing: border-box;
     position: relative;
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 /* ヘッダー部分 :*/
@@ -30,6 +79,8 @@
     align-items: center;
     margin-bottom: 20px;
     position: relative;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* 階層選択ボタン（ヘッダー内配置） */
@@ -38,6 +89,7 @@
     max-width: 400px;
     padding: 0 10px;
     margin: 0 auto 20px;
+    box-sizing: border-box;
 }
 
 .buttonContainer {
@@ -128,6 +180,9 @@
 .mapContainer {
     position: relative;
     overflow: hidden;
+    max-width: calc(100vw - 20px);
+    height: auto;
+    aspect-ratio: 1000 / 749;
 }
 
 .innerContainer {
@@ -173,22 +228,28 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+
+/*検索ボックス*/
 .Esearch {
+    padding: 10px;
     position: relative;
     width: 60vw;
     max-width: 600px;
     min-width: 330px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .searchInput {
     width: 100%;
+    box-sizing: border-box;
     padding: 10px 40px 10px 35px;
-    border: 2px solid #ccc;
+    border: 2px solid #373737;
     border-radius: 25px;
     font-size: 16px;
     transition: border-color 0.3s, box-shadow 0.3s;
-    background-color: #535353;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .searchInput:focus {
@@ -218,7 +279,7 @@
     border: none;
     font-size: 18px;
     cursor: pointer;
-    color: #cccbcb;
+    color: #000000;
 }
 
 .suggestionList {
@@ -226,11 +287,12 @@
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 60vw;
+    width: calc(100% - 20px);
     max-width: 600px;
-    min-width: 330px;
-    background-color: #535353;
-    border: 1px solid #ccc;
+    min-width: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #373737;
     border-radius: 10px;
     z-index: 10;
     max-height: 200px;
@@ -243,10 +305,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: #000000;
 }
 
 .suggestionItem:hover {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
 }
 
 .suggestionClass {
@@ -262,6 +325,13 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@media (max-width: 360px) {
+    .Esearch {
+        width: calc(100% - 20px);
+        min-width: 0;
+    }
 }
 
 
@@ -285,6 +355,7 @@
     padding: 10px;
     border-radius: 3px;
     left: 50%;
+    box-sizing: border-box;
 }
 
 .expMapExp {
@@ -296,6 +367,7 @@
 .expCategory{
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .expBox {
@@ -362,15 +434,26 @@
     color: #000000;
     width: 80%;
     width: 150px;
+    border: 3px #373737 solid;
 }
 
-.goButton,.closeButton{
+.popupButtonRow {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.goButton,.closeButton,.timetableButton{
+    width: 100%;
     font-size: 12px;
     border-radius: 5px;
     border: 2px black solid;
     padding: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 0;
+    background: #ffffff;
+    color: #000000;
+    cursor: pointer;
 }
 
 

@@ -8,7 +8,7 @@ import React, {
     useMemo,
     useRef,
 } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { festivalItems } from "@/utils/festival";
 import { FestivalDetail, festivalDetail } from '@/utils/festivaldetail';
 import {
@@ -34,7 +34,15 @@ const categories = [
     { value: "shop", title: "物販団体"}
 ] as const;
 
+
 const EventPage: React.FC = () => {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
+    const detailParam = searchParams.get("detail");
+
+    const [openId, setOpenId] = useState<number | null>(null);
+
 
     const detailMap = useMemo(() => {
     return new Map<number, string>(
@@ -76,7 +84,6 @@ const EventPage: React.FC = () => {
     };
 }, []);
 
-    const searchParams = useSearchParams();
     const id = searchParams.get("id");
     const roomParam = searchParams.get("room");
     const roomRefs = useRef<
@@ -161,30 +168,43 @@ const EventPage: React.FC = () => {
 
 
     // 各属性に対応する固定のカテゴリ名を返す
-    const getCategoryTitle = (category: string) => {
-        return (
-            categories.find((c) => c.value === category)?.title ??
-            "カテゴリ"
-        );
+
+    const getCategoryTitle = (category?: string) => {
+        const found = categories.find((c) => c.value === category);
+        return found?.title ?? "カテゴリ";
     };
 
     const fetchDetail = async (id: number) => {
-    if (detailCache.has(id)) return;
+        if (detailCache.has(id)) return;
 
-    setLoadingId(id);
+        setLoadingId(id);
 
     const detail = detailMap.get(id);
 
-    await new Promise((r) => setTimeout(r, 300)); // 後で消してOK
+        await new Promise((r) => setTimeout(r, 300));
 
-    setDetailCache((prev) => {
-        const newMap = new Map(prev);
-        newMap.set(id, detail ?? "詳細がありません");
-        return newMap;
-    });
+        setDetailCache((prev) => {
+            const newMap = new Map(prev);
+            newMap.set(id, detail ?? "詳細がありません");
+            return newMap;
+        });
 
     setLoadingId(null);
-};
+    };
+
+    const openDetail = (id: number) => {
+        router.push(`/event?detail=${id}`);
+    };
+
+    useEffect(() => {
+    if (!detailParam) return;
+
+    const idNum = Number(detailParam);
+       if (!Number.isNaN(idNum)) {
+            setOpenId(idNum);
+            fetchDetail(idNum);
+        }
+    }, [detailParam]);
 
     return (
         <main className="eventcontent">
@@ -272,13 +292,14 @@ const EventPage: React.FC = () => {
                                                     <Drawer>
                                                         <DrawerTrigger asChild>
                                                             <button
-                                                                className='pop_button_sec'
+                                                                className="pop_button_sec"
                                                                 onClick={() => fetchDetail(item.id)}
                                                             >
                                                                 詳細
                                                             </button>
                                                         </DrawerTrigger>
-                                                        <DrawerContent>
+
+                                                        <DrawerContent className="bg-[#3f3f3f] text-white">
                                                             <DrawerHeader>
                                                                 <DrawerTitle>{item.title}</DrawerTitle>
                                                             </DrawerHeader>
@@ -294,7 +315,12 @@ const EventPage: React.FC = () => {
                                                             </DrawerFooter>
                                                         </DrawerContent>
                                                     </Drawer>
-                                                    <a href={`/map?id=${encodeURIComponent(item.title)}`}><button className='pop_button_sec'>マップ</button></a>
+                                                    
+                                                    <a href={`/map?id=${encodeURIComponent(item.title)}`}>
+                                                        <button className="pop_button_sec">
+                                                            マップ
+                                                        </button>
+                                                    </a>
 
                                                 </div>
 
@@ -323,35 +349,11 @@ const EventPage: React.FC = () => {
                                                     {neo_read}
                                                 </div>
                                             </div>
-                                            <div className="neo_r">
-                                                <Image
-                                                    className="neo_pic"
-                                                    src="/event/neoakira.jpg"
-                                                    alt="画像を読み込めませんでした"
-                                                    width={1000}
-                                                    height={1000}
-                                                    priority
-                                                />
-                                            </div>
                                         </div>
                                     </div>
                                 ) : (
                                     <div className='nothing'>
-                                        <div className="leftnot">
-                                            <div className="leftnotbox">
-                                                <Image
-                                                    className="piceve"
-                                                    src="/welcome/logo.png"
-                                                    alt="画像を読み込めませんでした"
-                                                    width={1000}
-                                                    height={1000}
-                                                    priority
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className='rightnot'>
-                                            <div className="rightnotbox">該当項目はありません</div>
-                                        </div>
+                                        <h2>該当項目はありません</h2>
                                     </div>
                                 )}
                             </>

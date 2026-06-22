@@ -17,9 +17,9 @@
     border: 2px #bcbcbc solid;
     border-radius: 20px;
     overflow: hidden;
-    width: 30vw;
+    width: min(90vw, 700px);
     height: auto;
-    min-width: 330px;
+    min-width: 0;
     max-width: 700px;
     display: flex;
     flex-direction: column;

@@ -1,4 +1,4 @@
-// /app/map/page.tsx
+﻿// /app/map/page.tsx
 
 "use client";
 import { Suspense } from "react";
@@ -9,10 +9,15 @@ import { normalizeSearchString } from "@/utils/normalizeKana";
 import { FestivalItem, festivalItems } from "@/utils/festival";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Header from "@/components/Header/Header";
 import SvgMap from "./SvgMap";
+import { Anton } from 'next/font/google'
 
 const floors = [1, 2, 3, 4];
+const anton = Anton({
+  subsets: ['latin'],
+  weight: '400',
+})
+
 
 function MapContent() {
     const searchParams = useSearchParams();
@@ -23,9 +28,8 @@ function MapContent() {
     const [selectedItem, setSelectedItem] = useState<FestivalItem | null>(null);
     const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
     const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
-    const [isInitialized, setIsInitialized] = useState(false);
-
-
+    const [pendingRoom, setPendingRoom] = useState<string | null>(null);
+    
     const normalizedSearchQuery = normalizeSearchString(searchQuery);
 
     const suggestions = searchQuery
@@ -74,10 +78,29 @@ function MapContent() {
     return { x: safeX, y: safeY };
     };
 
+    const openRoom = (roomId: string) => {
+        const element = document.getElementById(roomId);
 
-    // URLのクエリパラメータ "id" をチェックし、あれば対象のイベントを選択し、検索ボックスに反映
+        if (!element) return;
+
+        const rect = element.getBoundingClientRect();
+
+        setSelectedRoom(roomId);
+
+        setPopupPos(
+            clampPopup(
+                rect.right + 10,
+                rect.top
+            )
+        );
+    };
+
+
+    // 5. URLのクエリパラメータ "id" をチェックし、あれば対象のイベントを選択し、検索ボックスに反映
+    const idParam = searchParams.get("id");
+
     useEffect(() => {
-        const id = searchParams.get("id");
+        const id = idParam;
 
         if (id !== null && id !== "") {
             const decodedId = decodeURIComponent(id);
@@ -88,24 +111,20 @@ function MapContent() {
                 setSelectedItem(foundEvent);
                 setSearchQuery(foundEvent.title);
                 setActiveFloor(foundEvent.floor!);
+            
+                // ⭐ここを追加：該当イベントに部屋番号があれば、読み込み待ち状態にする
+                if (foundEvent.room) {
+                    setPendingRoom(foundEvent.room);
+                }
             } else {
                 setSelectedItem(null);
-                setSearchQuery("");
+                setSearchQuery(decodedId);
             }
         } else {
             setSelectedItem(null);
             setSearchQuery("");
         }
-
-        // 初期化完了フラグをON
-        setIsInitialized(true);
-    }, []);
-
-    useEffect(() => {
-        if (!isInitialized) return;
-
-        router.push(`?id=${encodeURIComponent(searchQuery)}`, { scroll: false });
-    }, [searchQuery, isInitialized]);
+    }, [idParam]);
 
     // マップコンテナの ref（CSS で各ブレークポイントごとに固定ピクセル指定）
     const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -118,15 +137,17 @@ function MapContent() {
     const roomInfo = festivalItems.find(
         (item) => item.room === selectedRoom
     );
+    const hasTimetableButton =
+        selectedRoom === "gym_stage" || selectedRoom === "outdoor_stage";
 
     return (
         <div className={styles.outerContainer}>
-            {/**トップ画像 */}
-            <div className="toppers">
-                <Header
-                    title="MAP"
-                    backgroundImage="/header/header-pc.png"
-                />
+            <div className={styles.toppers}>
+                <header
+                    className={styles.custom_header}
+                >
+                    <h1 className={anton.className}>MAP</h1>
+                </header>
             </div>
 
             {/* サーチボックス */}
@@ -159,6 +180,10 @@ function MapContent() {
                                     setActiveFloor(item.floor!);
                                     setSearchQuery(item.title);
                                     setShowSuggestions(false);
+                                    router.replace(`?id=${encodeURIComponent(item.title)}`, { scroll: false });
+                                    if (item.room) {
+                                        setPendingRoom(item.room);
+                                    }
                                 }}
                             >
                                 <div className={styles.suggestionClass}>{item.class}</div>
@@ -197,7 +222,6 @@ function MapContent() {
 
             {/* マップ表示部分 */}
             <div className={styles.mapWrapper}>
-                {/* mapContainer は各ブレークポイントで固定ピクセルサイズに設定 */}
                 <div className={styles.mapContainer} ref={mapContainerRef}>
                     <div className={styles.innerContainer}>
                         {[activeFloor].map((floor) => (
@@ -221,9 +245,13 @@ function MapContent() {
                                 >
                                     <SvgMap
                                         floor={floor}
-                                        onRoomClick={(roomId, x, y) => {
-                                            setSelectedRoom(roomId);
-                                            setPopupPos(clampPopup(x, y));
+                                        selectedRoom={selectedRoom}
+                                        onRoomClick={openRoom}
+                                        onLoaded={() => {
+                                            if (pendingRoom) {
+                                                openRoom(pendingRoom);
+                                                setPendingRoom(null);
+                                            }
                                         }}
                                     />
                                 </div>
@@ -301,8 +329,8 @@ function MapContent() {
                         }}
                     >
                         <h2>{selectedRoom}</h2>
-                        <h2>{roomInfo?.location ?? selectedRoom}</h2>
-                        <h2>{roomInfo?.title ?? selectedRoom}</h2>
+                        <h2>会場 : {roomInfo?.location ?? selectedRoom}</h2>
+                        <h2>団体 : {roomInfo?.class ?? selectedRoom}</h2>
 
                         {roomEvents.map((event) => (
                         <div key={event.room}>
@@ -310,21 +338,34 @@ function MapContent() {
                         </div>
                         ))}
 
-                        <button
-                            className={styles.goButton}
-                            onClick={() => {
-                                router.push(`/event?room=${selectedRoom}`);
-                            }}
-                        >
-                            詳細
-                        </button>
+                        <div className={styles.popupButtonRow}>
+                            {hasTimetableButton && (
+                                <button
+                                    className={styles.timetableButton}
+                                    onClick={() => {
+                                        router.push("/timetable");
+                                    }}
+                                >
+                                    タイムテーブル
+                                </button>
+                            )}
 
-                        <button
-                            className={styles.closeButton}
-                                onClick={() => setSelectedRoom(null)}
-                        >
-                            閉じる
-                        </button>
+                            <button
+                                className={styles.goButton}
+                                onClick={() => {
+                                    router.push(`/event?room=${selectedRoom}`);
+                                }}
+                            >
+                                詳細
+                            </button>
+
+                            <button
+                                className={styles.closeButton}
+                                    onClick={() => setSelectedRoom(null)}
+                            >
+                                閉じる
+                            </button>
+                        </div>
                     </div>
                 </div>
             )}
