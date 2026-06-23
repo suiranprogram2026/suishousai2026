@@ -65,7 +65,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 41, img: 'event_41.jpg', title: '山岳部の山岳カレー', reading: "さんがくぶのさんがくかれー", category: "food", floor: 1, class: "山岳部",location:"屋外テント"},
     { id: 42, img: 'event_42.jpg', title: '写真作品展示', reading: "しゃしんさくひんてんじ", category: "exhibition", floor: 2, class: "写真部"},
     { id: 43, img: 'event_43.png', title: '書道作品展示', reading: "しょどうさくひんてんじ", category: "exhibition", floor: 3, class: "書道部"},
-    { id: 44, img: 'event_44.jpg', title: '書道部', reading: "しょどうぶ", category: "stage",class: "書道部"},
+
     { id: 45, img: 'event_45.jpg', title: 'スイラン！ブラバン！ビックバン！', reading: "すいらん！ぶらばん！びっくばん！", category: "stage",class: "吹奏楽部"},
     { id: 46, img: 'event_46.jpg', title: 'スパゲティ', category: "stage", class: "吹奏楽部"},
     { id: 47, img: 'event_47.jpg', title: 'ミントブルー', category: "stage", class: "吹奏楽部"},
@@ -85,12 +85,13 @@ export const festivalItems: FestivalItem[] = [
     { id: 61, img: 'event_61.jpg', title: '翠嵐ピアノの会', reading: "すいらんぴあののかい", category: "stage", class: "有志"},
     { id: 62, img: 'event_62.png', title: 'ベーゴマ体験',reading:"べーごまたいけん", category: "play", floor: 3, class: "有志",location:"書道室"},
     { id: 63, img: 'event_63.jpg', title: 'Project Untitled', reading: "ぷろじぇくとあんたいとるど", category: "stage", class: "有志"},
-    { id: 64, img: 'event_58.png', title: '定時制 多文化共生（イラストなし！！）', reading: "ていじせい たぶんかきょうせい", category: "exhibition", floor: 1, class: "定時制",location:"3-6"},
+    { id: 64, img: 'event_64.png', title: '定時制 多文化共生（イラストなし！！）', reading: "ていじせい たぶんかきょうせい", category: "exhibition", floor: 1, class: "定時制",location:"3-6"},
     { id: 65, img: 'event_65.jpg', title: '定時制 イラスト・写真部', reading: "ていじせい いらすと・しゃしんぶ", category: "play", floor: 1, class: "定時制", location:"3-6"},
     { id: 66, img: 'event_66.png', title: 'どすこいコンテスト', category: "stage", class: "有志"},
     { id: 67, img: 'event_67.png', title: 'AIと人間はどのように独自性と有用性に差が出るか',reading:"えーあいとにんげんはどのようにどくじせいとゆうようせいにさがでるか", category: "exhibition", floor: 1, class: "有志"},
     { id: 68, img: 'event_68.png', title: '翠嵐アジアンダイニング', reading: "すいらんあじあんだいにんぐ", category: "food", floor: 1, class: "定時制",location:"屋外テント"},
     { id: 69, img: 'event_69.jpg', title: 'アジアンスイーツパラダイス', reading: "あじあんすいーつぱらだいす", category: "food", floor: 1, class: "定時制",location:"屋外テント"},
     { id: 70, img: 'event_70.jpg', title: '多文化共生研究会', reading: "たぶんかきょうせいけんきゅうかい", category: "stage",class: "定時制"},
-    { id: 74, img: 'event_74.png', title: '朝鮮学校', reading: "ちょうせんがっこう", category: "stage", floor: 1, class: "有志"},
+    { id: 71, img: 'event_71.png', title: '朝鮮学校', reading: "ちょうせんがっこう", category: "stage", floor: 1, class: "有志"},
+    { id: 72, img: 'event_72.png', title: '音楽部', reading:"音楽部", category: "stage", class:"音楽部"}
 ];
