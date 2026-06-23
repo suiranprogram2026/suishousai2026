@@ -10,7 +10,8 @@ import { FestivalItem, festivalItems } from "@/utils/festival";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import SvgMap from "./SvgMap";
-import { Anton } from 'next/font/google'
+import { Anton } from 'next/font/google';
+import Header from '@/components/Header/Header';
 
 const floors = [1, 2, 3, 4];
 const anton = Anton({
@@ -142,13 +143,15 @@ function MapContent() {
 
     return (
         <div className={styles.outerContainer}>
+            
             <div className={styles.toppers}>
-                <header
-                    className={styles.custom_header}
-                >
-                    <h1 className={anton.className}>MAP</h1>
-                </header>
+                            <Header
+                                title="MAP"
+                                backgroundImage="/header/header-pc.png"
+                            />
             </div>
+
+             <div className={styles.topArea}>
 
             {/* サーチボックス */}
             <div className={styles.header}>
@@ -168,7 +171,6 @@ function MapContent() {
                             ×
                         </button>
                     )}
-                </div>
                 {showSuggestions && suggestions.length > 0 && (
                     <div className={styles.suggestionList}>
                         {suggestions.map((item, index) => (
@@ -191,7 +193,8 @@ function MapContent() {
                             </div>
                         ))}
                     </div>
-                )}
+                )}</div>
+            </div>
             </div>
 
             {/* 階層選択ボタン（ヘッダー内配置） */}

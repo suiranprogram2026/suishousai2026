@@ -1,3 +1,13 @@
+.topArea {
+    background: linear-gradient(
+        to bottom,
+        #101c32 0%,   /* 紺 */
+        #ffffff 100%  /* 白 */
+    );
+
+    padding-bottom: 20px;
+}
+
 .toppers{
     margin-top: 60px;
     max-width: 100%;
@@ -21,47 +31,6 @@
   background: linear-gradient(#10122e, #ffffff);
   
 }
-
-.custom_header h1 {
-  font-weight: bold;
-  font-size: 10vw;
-  z-index: 3;
-  color: #008cff;
-  letter-spacing: 2px;
-  text-shadow:
-      0 0 6px rgba(255,255,255,0.5),
-      0 0 20px rgba(125,184,255,0.25);
-  
-}
-
-/* スマホ (600px以下) */
-@media (max-width: 600px) {
-  .custom_header {
-    height: 120px;
-    padding: 0 0.5rem;
-  }
-
-  .custom_header h1 {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-
-    text-shadow:
-        0 0 5px rgba(255,255,255,0.4),
-        0 0 15px rgba(125,184,255,0.2);
-  }
-}
-
-/* タブレット (900px以下) */
-@media (max-width: 900px) {
-  .custom_header h1 {
-    font-size: 3.5rem;
-  }
-}
-
-
-
-
-
 
 
 .outerContainer {
@@ -237,6 +206,7 @@
     max-width: 600px;
     min-width: 330px;
     margin: 0 auto;
+    margin-top: 60px;
     box-sizing: border-box;
 }
 
