@@ -5,7 +5,7 @@ export type FestivalItem = {
     title: string;
     reading?: string;
     // 複数の属性を持たせるため、icon プロパティを attributes 配列に変更
-    category: "play" | "food" | "stage" | "exhibition" | "shop";
+    category: "play" | "food" | "stage" | "exhibition" | "shop" | "other";
     floor?: number;
     room?: string; // ←追加
     class: string;
@@ -93,5 +93,8 @@ export const festivalItems: FestivalItem[] = [
     { id: 68, img: 'event_68.jpg', title: 'アジアンスイーツパラダイス', reading: "あじあんすいーつぱらだいす", category: "food", floor: 1, class: "定時制",location:"屋外テント"},
     { id: 69, img: 'event_69.jpg', title: '多文化共生研究会', reading: "たぶんかきょうせいけんきゅうかい", category: "stage",class: "定時制"},
     { id: 70, img: 'event_70.jpg', title: '朝鮮学校', reading: "ちょうせんがっこう", category: "stage", floor: 1, class: "有志"},
-    { id: 71, img: 'event_71.jpg', title: '音楽部', reading:"音楽部", category: "stage", class:"音楽部"}
+    { id: 71, img: 'event_71.jpg', title: '音楽部', reading:"音楽部", category: "stage", class:"音楽部"},
+
+    //その他
+    { id: 72, img: 'event_72.jpg', title: '翠実本部', reading:"すいじつほんぶ", category: "other", class: "有志", floor: 1, room:"seitokaisitsu", location:"生徒会室"},
 ];
