@@ -349,10 +349,6 @@
     border-radius: 3px;
 }
 
-.boxPlay{
-    background-color: #d800eb80;
-}
-
 .expClass {
     font-size: 15px;
     margin-bottom: 5px;
@@ -365,8 +361,28 @@
     color: #000000;
 }
 
-.expPlay{
-    fill: #d800eb80;
+.boxPlay{
+    background-color: #0095eb80;
+}
+
+.boxFood{
+    background-color: #d83bb650;
+}
+
+.boxStage{
+    background-color: #73e58f80;
+}
+
+.boxShop{
+    background-color: #c7818150;
+}
+
+.boxExhibition{
+    background-color: #ffe60050;
+}
+
+.boxOther{
+    background-color:#6819e650;
 }
 
 .expToilet{

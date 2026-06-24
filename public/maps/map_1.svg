@@ -246,7 +246,7 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.83915336"
      inkscape:cx="551.74658"
-     inkscape:cy="246.08136"
+     inkscape:cy="247.27304"
      inkscape:window-width="1024"
      inkscape:window-height="715"
      inkscape:window-x="-8"
@@ -532,9 +532,9 @@
          style="white-space:pre;inline-size:332.428;display:inline"><tspan
            x="0"
            y="0"
-           id="tspan2"><tspan
+           id="tspan4"><tspan
              style="font-weight:700;font-size:9px;font-family:'Yu Gothic'"
-             id="tspan1">女</tspan></tspan></text></g><g
+             id="tspan3">女</tspan></tspan></text></g><g
        id="g116"
        transform="translate(-134.60038,-82.074693)"><text
          id="text117"
@@ -1721,12 +1721,12 @@
        inkscape:label="busitsu"
        style="stroke-width:1.0937" /><rect
        id="room-3-6-back"
-       width="32.174999"
+       width="29.791645"
        height="43.208"
-       x="455.22073"
+       x="457.6041"
        y="214.60001"
        inkscape:label="3-6back"
-       style="stroke-width:1.03267" /></g><g
+       style="stroke-width:0.993687" /></g><g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="floor_2" /><g

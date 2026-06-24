@@ -140,6 +140,8 @@ function MapContent() {
     );
     const hasTimetableButton =
         selectedRoom === "gym_stage" || selectedRoom === "outdoor_stage";
+    const isStagePopupOnly =
+        selectedRoom === "gym_stage" || selectedRoom === "outdoor_stage";
 
     return (
         <div className={styles.outerContainer}>
@@ -291,6 +293,10 @@ function MapContent() {
                             <div className={styles.expClass}>0-0 (場所)</div>
                             <div className={styles.expTitle}>ステージ</div>
                         </div>
+                        <div className={`${styles.expBox} ${styles.boxOther}`}>
+                            <div className={styles.expClass}>0-0 (場所)</div>
+                            <div className={styles.expTitle}>その他</div>
+                        </div>
                     </div>
 
                     <div className={styles.expToilet}>
@@ -331,15 +337,19 @@ function MapContent() {
                             top: popupPos.y,
                         }}
                     >
-                        <h2>{selectedRoom}</h2>
+                        {/*{!isStagePopupOnly && <h2>{selectedRoom}</h2>}確認用*/} 
                         <h2>会場 : {roomInfo?.location ?? selectedRoom}</h2>
-                        <h2>団体 : {roomInfo?.class ?? selectedRoom}</h2>
+                        {!isStagePopupOnly && (
+                            <>
+                                <h2>団体 : {roomInfo?.class ?? selectedRoom}</h2>
 
-                        {roomEvents.map((event) => (
-                        <div key={event.room}>
-                            {event.room}
-                        </div>
-                        ))}
+                                {roomEvents.map((event) => (
+                                    <div key={event.room}>
+                                        {event.room}
+                                    </div>
+                                ))}
+                            </>
+                        )}
 
                         <div className={styles.popupButtonRow}>
                             {hasTimetableButton && (
@@ -353,14 +363,16 @@ function MapContent() {
                                 </button>
                             )}
 
-                            <button
-                                className={styles.goButton}
-                                onClick={() => {
-                                    router.push(`/event?room=${selectedRoom}`);
-                                }}
-                            >
-                                詳細
-                            </button>
+                            {!isStagePopupOnly && (
+                                <button
+                                    className={styles.goButton}
+                                    onClick={() => {
+                                        router.push(`/event?room=${selectedRoom}`);
+                                    }}
+                                >
+                                    詳細
+                                </button>
+                            )}
 
                             <button
                                 className={styles.closeButton}

@@ -1,7 +1,7 @@
 /*部屋に色付け(SvgMapにかかる)*/
 .room {
-    /*fill: #ffffff00;*/
-    fill: #114514;
+    fill: #ffffff00;
+    /*fill: #114514;←確認用*/
     stroke-width: 1;
     cursor: pointer;
     transition: fill 0.2s ease;
@@ -10,26 +10,26 @@
 
 /*ここ変更したら凡例のほうも忘れずに治す*/
 .play{
-    fill: #d800eb80;
+    fill: #0095eb80;
 }
 .food {
-    fill: #ffff0080;
+    fill: #d83bb650;
 }
 
 .stage {
-    fill: #e5737380;
+    fill: #73e58f80;
 }
 
 .exhibition {
-    fill: #64b5f650;
+    fill: #ffe60050;
 }
 
 .shop {
-    fill: #81c78450;
+    fill: #c7818150;
 }
 
 .other{
-    fill:#11451450;
+    fill:#6819e650;
 }
 
 .svg-map-popup-open .room {
