@@ -9,7 +9,7 @@
    viewBox="0 0 850 500.00002"
    sodipodi:docname="map_1.svg"
    xml:space="preserve"
-   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -245,14 +245,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.83915336"
-     inkscape:cx="452.24153"
-     inkscape:cy="244.88968"
-     inkscape:window-width="1024"
-     inkscape:window-height="715"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:cx="317.582"
+     inkscape:cy="245.48552"
+     inkscape:window-width="1366"
+     inkscape:window-height="691"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"><inkscape:page
+     inkscape:current-layer="layer1"
+     showgrid="false"><inkscape:page
        x="0"
        y="0"
        inkscape:label="1"
@@ -1413,39 +1414,6 @@
             </g>
         </g>
     </g></g></g><g
-       id="g821-8"
-       transform="translate(117.37345,78.14682)"><rect
-         style="fill:#ffffff;stroke-width:1.22269"
-         id="rect817-7"
-         width="22.04603"
-         height="17.815275"
-         x="489.18353"
-         y="257.25772" /><g
-         style="clip-rule:evenodd;fill-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
-         id="g817-7"
-         transform="matrix(0.02504709,-3.8462995e-4,3.9050781e-4,0.02467003,492.67538,256.28422)"><g
-           transform="translate(-2083,-809)"
-           id="g3-8">
-        <g
-   transform="matrix(2.02015,0,0,2.02017,1796.24,252.584)"
-   id="g2-4-3">
-            <rect
-   x="142.327"
-   y="275.741"
-   width="396.01099"
-   height="396.01099"
-   style=""
-   id="rect1-83" />
-            <g
-   transform="matrix(0.495014,0,0,0.495007,98.7048,-130.298)"
-   id="g1-8-7">
-                <path
-   d="m 442.277,1334.13 c -13.632,-1.93 -24.589,-12.41 -25.329,-25.03 l -14.77,-251.91 c -0.821,-13.99 11.225,-25.35 26.882,-25.35 h 118.128 c 15.657,0 27.703,11.36 26.882,25.35 L 559.3,1309.1 c -0.74,12.62 -11.697,23.1 -25.329,25.03 l -6.678,206.97 c -0.452,13.99 -7.814,25.35 -16.43,25.35 h -45.478 c -8.616,0 -15.978,-11.36 -16.43,-25.35 z m 44.914,-460.033 c 37.891,0 68.654,30.763 68.654,68.654 0,37.891 -30.763,68.649 -68.654,68.649 -37.891,0 -68.654,-30.758 -68.654,-68.649 0,-37.891 30.763,-68.654 68.654,-68.654 z"
-   style="fill:url(#_Linear1-8-4)"
-   id="path1-10" />
-            </g>
-        </g>
-    </g></g></g><g
        id="g820"
        transform="translate(-134.60038,-82.074693)"><rect
          style="fill:#ffffff"
@@ -1477,40 +1445,6 @@
    d="m 765.757,1402.79 h -55.129 c -10.348,0 -16.229,-14.16 -13.125,-31.6 l 40.519,-206.78 -21.773,-108.98 c -2.601,-13.02 3.439,-23.59 13.479,-23.59 h 142.663 c 10.04,0 16.08,10.57 13.479,23.59 l -21.773,108.98 40.519,206.78 c 3.104,17.44 -2.777,31.6 -13.125,31.6 h -55.129 l -4.411,142.78 c -0.356,11.52 -6.162,20.88 -12.958,20.88 h -35.867 c -6.795,0 -12.602,-9.36 -12.958,-20.88 z M 801.06,874.097 c 37.891,0 68.653,30.763 68.653,68.654 0,37.891 -30.762,68.649 -68.653,68.649 -37.892,0 -68.654,-30.758 -68.654,-68.649 0,-37.891 30.762,-68.654 68.654,-68.654 z"
    style="fill:url(#_Linear1-1)"
    id="path1-1" />
-            </g>
-        </g>
-    </g></g></g></g><g
-       id="g820-2"
-       transform="translate(-125.18727,57.71513)"><rect
-         style="fill:#ffffff"
-         id="rect818-1"
-         width="32.020439"
-         height="11.797004"
-         x="727.20099"
-         y="259.53409" /><g
-         id="g819-6"><g
-           style="clip-rule:evenodd;fill-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
-           id="g818-8"
-           transform="matrix(0.02253596,0,0,0.02307228,735.91885,256.34795)"><g
-             transform="translate(-3931,-809)"
-             id="g3-5-5">
-        <g
-   transform="matrix(2.02015,0,0,2.02017,3644.28,252.584)"
-   id="g2-5-7">
-            <rect
-   x="142.327"
-   y="275.741"
-   width="396.01099"
-   height="396.01099"
-   style=""
-   id="rect1-1-6" />
-            <g
-   transform="matrix(0.495014,0,0,0.495007,-56.2026,-130.298)"
-   id="g1-7-1">
-                <path
-   d="m 765.757,1402.79 h -55.129 c -10.348,0 -16.229,-14.16 -13.125,-31.6 l 40.519,-206.78 -21.773,-108.98 c -2.601,-13.02 3.439,-23.59 13.479,-23.59 h 142.663 c 10.04,0 16.08,10.57 13.479,23.59 l -21.773,108.98 40.519,206.78 c 3.104,17.44 -2.777,31.6 -13.125,31.6 h -55.129 l -4.411,142.78 c -0.356,11.52 -6.162,20.88 -12.958,20.88 h -35.867 c -6.795,0 -12.602,-9.36 -12.958,-20.88 z M 801.06,874.097 c 37.891,0 68.653,30.763 68.653,68.654 0,37.891 -30.762,68.649 -68.653,68.649 -37.892,0 -68.654,-30.758 -68.654,-68.649 0,-37.891 30.762,-68.654 68.654,-68.654 z"
-   style="fill:url(#_Linear1-1-1)"
-   id="path1-1-8" />
             </g>
         </g>
     </g></g></g></g><path
@@ -1633,33 +1567,33 @@
        x="702.98694"
        y="281.84488"
        inkscape:label="cafeteria" /><rect
-       style=";stroke-width:1.0233"
+       style="stroke-width:1.06746"
        id="room-3-4"
        width="64.041"
-       height="39.706455"
+       height="43.207973"
        x="553.83911"
-       y="216.96136"
+       y="214.60001"
        inkscape:label="3-4" /><rect
-       style=""
        id="room-3-5"
        width="61.513"
-       height="40.446869"
+       height="43.208"
        x="490.64093"
-       y="216.22095"
-       inkscape:label="3-5" /><rect
-       style="display:inline;stroke-width:0.711739"
+       y="214.60001"
+       inkscape:label="3-5"
+       style="stroke-width:1.03357" /><rect
+       style="display:inline;stroke-width:0.738551"
        id="room-3-6-front"
        width="30.181"
-       height="40.127777"
+       height="43.208"
        x="424.91473"
-       y="217.48492"
+       y="214.60001"
        inkscape:label="3-6front" /><rect
-       style=";stroke-width:1.05353"
+       style="stroke-width:1.08423"
        id="seitokaisitsu"
        width="66.279999"
-       height="40.795902"
+       height="43.208"
        x="357.64774"
-       y="216.71457"
+       y="214.60001"
        inkscape:label="seitokaisitsu" /><rect
        style=";stroke-width:1.04094"
        id="kagaku"
@@ -1668,12 +1602,12 @@
        x="505.35724"
        y="66.128265"
        inkscape:label="kagaku" /><rect
-       style=";stroke-width:1.03442"
+       style="stroke-width:1.04973"
        id="seibutsu"
        width="146.084"
-       height="39.953259"
+       height="41.145"
        x="359.08624"
-       y="67.073135"
+       y="66.127998"
        inkscape:label="seibutsu" /><rect
        style=";stroke-width:1.04665"
        id="mirai"
@@ -1773,10 +1707,11 @@
        inkscape:label="busitsu" /><rect
        id="room-3-6-back"
        width="32.174999"
-       height="40.517029"
+       height="43.208"
        x="455.22073"
-       y="218.07695"
-       inkscape:label="3-6back" /></g><g
+       y="214.60001"
+       inkscape:label="3-6back"
+       style="stroke-width:1.03267" /></g><g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="floor_2" /><g
