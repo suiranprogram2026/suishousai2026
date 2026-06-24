@@ -37,29 +37,29 @@ const getInitialDay = (): number => {
 // sampleEvents: start/end as "HH:MM"
 const sampleEvents: Record<number, Event[]> = {
     1: [
-        { id: 'e1', cell: 45, stage: 'gym', start: '09:40', end: '10:10', title: 'スイラン！ブラバン！ビックバン！' },
-        { id: 'e2', cell: 72, stage: 'gym', start: '10:40', end: '11:10', title: '音楽部' },
-        { id: 'e3', cell: 43, stage: 'gym', start: '11:35', end: '11:55', title: '書道部' },
-        { id: 'e4', cell: 71, stage: 'gym', start: '12:15', end: '12:30', title: '朝鮮学校' },
-        { id: 'e5', cell: 70, stage: 'gym', start: '12:35', end: '13:05', title: '定時制多文化共生研究会' },
-        { id: 'e6', cell: 39, stage: 'gym', start: '13:20', end: '13:50', title: '弦楽部'},
-        { id: 'e7', cell: 29, stage: 'gym', start: '14:25', end: '15:10', title: '夢走舞踊（ダンス部）'},
+        { id: 'e1', cell: 62, stage: 'gym', start: '09:40', end: '10:10', title: 'スイラン！ブラバン！ビックバン！' },
+        { id: 'e2', cell: 71, stage: 'gym', start: '10:40', end: '11:10', title: '音楽部' },
+        { id: 'e3', cell: 41, stage: 'gym', start: '11:35', end: '11:55', title: '書道部' },
+        { id: 'e4', cell: 70, stage: 'gym', start: '12:15', end: '12:30', title: '朝鮮学校' },
+        { id: 'e5', cell: 69, stage: 'gym', start: '12:35', end: '13:05', title: '定時制多文化共生研究会' },
+        { id: 'e6', cell: 66, stage: 'gym', start: '13:20', end: '13:50', title: '弦楽部'},
+        { id: 'e7', cell: 59, stage: 'gym', start: '14:25', end: '15:10', title: '夢走舞踊（ダンス部）'},
 
-        { id: 'e8', cell: 31, stage: 'outdoor', start: '13:00', end: '13:20', title: '風林火山（バスケ部）' },
-        { id: 'e9', cell: 51, stage: 'outdoor', start: '10:00', end: '11:00', title: '生徒会執行部' },
-        { id: 'e10', cell: 46, stage: 'outdoor', start: '11:50', end: '12:10', title: 'スパゲティ' },
+        { id: 'e8', cell: 61, stage: 'outdoor', start: '13:00', end: '13:20', title: '風林火山（バスケ部）' },
+        { id: 'e9', cell: 63, stage: 'outdoor', start: '10:00', end: '11:00', title: '生徒会執行部' },
+        { id: 'e10', cell: 60, stage: 'outdoor', start: '11:50', end: '12:10', title: 'スパゲティ' },
      
     ],
     2: [
-        { id: 'e11', cell: 29, stage: 'gym', start: '09:40', end: '10:25', title: '夢走舞踊（ダンス部）' },
-        { id: 'e12', cell: 63, stage: 'gym', start: '11:00', end: '11:20', title: 'Untitled project' },
-        { id: 'e13', cell: 39, stage: 'gym', start: '11:50', end: '12:20', title: '弦楽部' },
-        { id: 'e14', cell: 61, stage: 'gym', start: '12:45', end: '13:25', title: '翠嵐ピアノの会' },
-        { id: 'e15', cell: 72, stage: 'gym', start: '13:45', end: '14:15', title: '音楽部' },
-        { id: 'e16', cell: 45, stage: 'gym', start: '14:40', end: '15:10', title: 'スイラン！ブラバン！ビックバン！' },
-        { id: 'e17', cell: 47, stage: 'outdoor', start: '10:30', end: '10:50', title: 'ミントブルー' },
-        { id: 'e18', cell: 66, stage: 'outdoor', start: '11:10', end: '11:40', title: 'どすこいコンテスト' },
-        { id: 'e19', cell: 51, stage: 'outdoor', start: '13:00', end: '14:00', title: '生徒会執行部' },
+        { id: 'e11', cell: 59, stage: 'gym', start: '09:40', end: '10:25', title: '夢走舞踊（ダンス部）' },
+        { id: 'e12', cell: 67, stage: 'gym', start: '11:00', end: '11:20', title: 'Untitled project' },
+        { id: 'e13', cell: 66, stage: 'gym', start: '11:50', end: '12:20', title: '弦楽部' },
+        { id: 'e14', cell: 65, stage: 'gym', start: '12:45', end: '13:25', title: '翠嵐ピアノの会' },
+        { id: 'e15', cell: 71, stage: 'gym', start: '13:45', end: '14:15', title: '音楽部' },
+        { id: 'e16', cell: 62, stage: 'gym', start: '14:40', end: '15:10', title: 'スイラン！ブラバン！ビックバン！' },
+        { id: 'e17', cell: 64, stage: 'outdoor', start: '10:30', end: '10:50', title: 'ミントブルー' },
+        { id: 'e18', cell: 68, stage: 'outdoor', start: '11:10', end: '11:40', title: 'どすこいコンテスト' },
+        { id: 'e19', cell: 61, stage: 'outdoor', start: '13:00', end: '14:00', title: '生徒会執行部' },
     ],
 };
 
