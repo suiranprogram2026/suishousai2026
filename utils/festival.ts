@@ -94,7 +94,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 69, img: '', title: '多文化共生研究会', reading: "たぶんかきょうせいけんきゅうかい", category: "stage",class: "定時制", floor:1, room:"gym_stage", location:"体育館"},
     { id: 70, img: '', title: '朝鮮学校', reading: "ちょうせんがっこう", category: "stage", class: "有志", floor:1, room:"gym_stage", location:"体育館"},
     { id: 71, img: 'event_71.jpg', title: '音楽部', reading:"おんがくぶ", category: "stage", class:"音楽部", floor:1, room:"gym_stage", location:"体育館"},
-    { id: 72, img: 'event_72.jpg', title: '書道部', reading:"しょどうぶ", category: "stage", class:"書道部", floor:1, room:"gym_stage", location:"体育館"},
+ 
 
     //その他
     { id: 73, img: 'event_73.jpg', title: '翠実本部', reading:"すいじつほんぶ", category: "other", class: "翠実総務", floor: 1, room:"seitokaisitsu", location:"生徒会室"},
