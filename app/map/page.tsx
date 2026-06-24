@@ -61,22 +61,14 @@ function MapContent() {
     };
     const [popupPos, setPopupPos] = useState({ x: 0, y: 0 });
     const POPUP_WIDTH = 200;
-    const POPUP_HEIGHT = 150; // だいたいでOK
 
-    const clampPopup = (x: number, y: number) => {
+    const clampPopupX = (x: number) => {
         const margin = 10;
 
-        const safeX = Math.min(
+        return Math.min(
             window.innerWidth - POPUP_WIDTH - margin,
             Math.max(margin, x)
         );
-
-    const safeY = Math.min(
-        window.innerHeight - POPUP_HEIGHT - margin,
-        Math.max(margin, y)
-    );
-
-    return { x: safeX, y: safeY };
     };
 
     const openRoom = (roomId: string) => {
@@ -88,12 +80,10 @@ function MapContent() {
 
         setSelectedRoom(roomId);
 
-        setPopupPos(
-            clampPopup(
-                rect.right + 10,
-                rect.top
-            )
-        );
+        setPopupPos({
+            x: clampPopupX(rect.left + rect.width / 2 - POPUP_WIDTH / 2),
+            y: rect.bottom + 10,
+        });
     };
 
 
