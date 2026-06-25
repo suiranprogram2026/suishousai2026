@@ -36,7 +36,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 14, img: 'event_14.jpg', title: '新世紀サヴァイバル～残酷な戦士のアンチテーゼ～', reading: "しんせいきさばいばる～ざんこくなせんしのあんちてーぜ～", category: "play", floor: 2, class: "2-5", location: "3-3", room:"room-3-3"},
     { id: 15, img: 'event_15.jpeg', title: 'モンスター翠ンク', reading: "もんすたーすいんく", category: "play", floor: 2, class: "2-6", location: "2-6", room:"room-2-6"},
     { id: 16, img: 'event_16.png', title: '焼きそばTETSUO', reading: "やきそばてつお", category: "food", floor: 1, class: "2-7", location: "屋外テント", room:"keyaki3"},
-    { id: 17, img: '', title: 'プリクランド～Cutie So Match～', reading: "ぷりくらんど～きゅーてぃーそーまっち～", category: "play", floor: 2, class: "2-8", location: "2-8", room:"room-2-8"},
+    { id: 17, img: 'event_17.jpg', title: 'プリクランド～Cutie So Match～', reading: "ぷりくらんど～きゅーてぃーそーまっち～", category: "play", floor: 2, class: "2-8", location: "2-8", room:"room-2-8"},
     { id: 18, img: 'event_18.jpg', title: '衰乱神社の呪い', reading: "すいらんじんじゃののろい", category: "play", floor: 2, class: "2-9", location: "2-9", room:"room-2-9"},
     //3年
     { id: 19, img: 'event_19.jpeg', title: 'マリオカート31DX', reading: "まりおかーとさーてぃーんでらっくす", category: "play", floor: 2, class: "3-1", location: "3-1", room:"room-3-1"},
@@ -52,7 +52,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 28, img: 'event_28.png', title: 'サッカービリヤード', reading: "さっかーびりやーど", category: "play", floor: 2, class: "サッカー部", location:"2-7後ろ", room:"room-2-7-back"},
     { id: 29, img: 'event_29.jpg', title: '翠嵐茶館', reading: "すいらんちゃかん", category: "food", floor: 2, class: "茶道部",location:"被服室", room:"hihuku"},
     { id: 30, img: 'event_30.png', title: 'わくわく！！バスケットラックアウト', category: "play", floor: 2, class: "バスケ部", location:"3-9前", room:"room-3-9-front"},
-    { id: 31, img: 'event_31.png', title: '生徒会物販「のびるくん本舗」（イラストなし！！）', reading: "せいとかいぶっぱん「のびるくんほんぽ」", category: "shop", floor: 4, class: "生徒会執行部", location:"1-6後ろ", room:"room-1-6-back"},
+    { id: 31, img: 'event_31.jpg', title: '生徒会物販「のびるくん本舗」（イラストなし！！）', reading: "せいとかいぶっぱん「のびるくんほんぽ」", category: "shop", floor: 4, class: "生徒会執行部", location:"1-6後ろ", room:"room-1-6-back"},
     { id: 32, img: 'event_32.jpeg', title: '「あい」は世界を救うのか', reading: "あいはせかいをすくうのか", category: "play", floor: 4, class: "バドミントン部", location:"1-5後ろ",room:"room-1-5-back"},
     { id: 33, img: 'event_33.png', title: '水風戦～ハンド部員を撃沈せよ～', reading: "みずふうせん～はんどぶいんをげきちんせよ～", category: "play", floor: 1, class: "ハンドボール部", location:"部室棟", room:"busitu"},
     { id: 34, img: 'event_34.jpg', title: '翠翔祭ライブ', reading: "すいしょうさいライブ", category: "stage", floor: 1, class: "ポプソン", location:"テキサス", room:"tekisasu"},
@@ -75,10 +75,10 @@ export const festivalItems: FestivalItem[] = [
     { id: 51, img: 'event_51.jpg', title: '神反応＆体内時計チャレンジ', reading: "かみたいおうあんどたいないどけいちゃれんじ", category: "play", floor: 2, class: "陸上部",location:"3-9後ろ", room:"room-3-9-back"},
     { id: 52, img: 'event_52.jpeg', title: 'beyond borde', category: "exhibition", floor: 4, class: "国際交流委員会", location:"1-5前", room:"room-1-5-front"},
     { id: 53, img: 'event_53.jpeg', title: 'ベーゴマ体験',reading:"べーごまたいけん", category: "play", floor: 3, class: "有志",location:"書道室", room:"syodou-back"},
-    { id: 54, img: '', title: '定時制 イラスト・写真部', reading: "ていじせい いらすと・しゃしんぶ", category: "exhibition", floor: 1, class: "定時制", location:"3-6前", room:"room-3-6-front"},
-    { id: 55, img: '', title: '翠嵐アジアンダイニング', reading: "すいらんあじあんだいにんぐ", category: "food", floor: 1, class: "定時制",location:"屋外テント", room:"hujidana1"},
-    { id: 56, img: '', title: 'アジアンスイーツパラダイス', reading: "あじあんすいーつぱらだいす", category: "food", floor: 1, class: "定時制",location:"3-5", room:"room-3-5"},
-    { id: 57, img: '', title: '定時制 多文化共生（イラストなし！！）', reading: "ていじせい たぶんかきょうせい", category: "exhibition", floor: 1, class: "定時制",location:"3-6後ろ", room:"room-3-6-back"},
+    { id: 54, img: 'event_teiji.jpg', title: '定時制 イラスト・写真部', reading: "ていじせい いらすと・しゃしんぶ", category: "exhibition", floor: 1, class: "定時制", location:"3-6前", room:"room-3-6-front"},
+    { id: 55, img: 'event_teiji.jpg', title: '翠嵐アジアンダイニング', reading: "すいらんあじあんだいにんぐ", category: "food", floor: 1, class: "定時制",location:"屋外テント", room:"hujidana1"},
+    { id: 56, img: 'event_teiji.jpg', title: 'アジアンスイーツパラダイス', reading: "あじあんすいーつぱらだいす", category: "food", floor: 1, class: "定時制",location:"3-5", room:"room-3-5"},
+    { id: 57, img: 'event_teiji.jpg', title: '定時制 多文化共生', reading: "ていじせい たぶんかきょうせい", category: "exhibition", floor: 1, class: "定時制",location:"3-6後ろ", room:"room-3-6-back"},
     /*{ id: 58, img: 'event_58.jpg', title: 'AIと人間はどのように独自性と有用性に差が出るか',reading:"えーあいとにんげんはどのようにどくじせいとゆうようせいにさがでるか", category: "exhibition", floor: 1, class: "有志"},*/
     //ステージ
     { id: 59, img: 'event_59.jpeg', title: '夢走舞踊', reading: "むそうぶよう", category: "stage", class: "ダンス部", floor:1, room:"gym_stage", location:"体育館"},
@@ -91,8 +91,8 @@ export const festivalItems: FestivalItem[] = [
     { id: 66, img: 'event_66.jpg', title: '弦楽部', reading: "げんがくぶ", category: "stage", class: "弦楽部", floor:1, room:"gym_stage", location:"野外ステージ"},
     { id: 67, img: 'event_67.jpeg', title: 'Project Untitled', reading: "ぷろじぇくとあんたいとるど", category: "stage", class: "有志", floor:1, room:"gym_stage", location:"体育館"},
     { id: 68, img: 'event_68.jpg', title: 'どすこいコンテスト', category: "stage", class: "有志", floor:1, room:"outdoor_stage", location:"野外ステージ"},
-    { id: 69, img: '', title: '多文化共生研究会', reading: "たぶんかきょうせいけんきゅうかい", category: "stage",class: "定時制", floor:1, room:"gym_stage", location:"体育館"},
-    { id: 70, img: '', title: '朝鮮学校', reading: "ちょうせんがっこう", category: "stage", class: "有志", floor:1, room:"gym_stage", location:"体育館"},
+    { id: 69, img: 'event_teiji.jpg', title: '多文化共生研究会', reading: "たぶんかきょうせいけんきゅうかい", category: "stage",class: "定時制", floor:1, room:"gym_stage", location:"体育館"},
+    { id: 70, img: 'event_70.png', title: '朝鮮学校', reading: "ちょうせんがっこう", category: "stage", class: "有志", floor:1, room:"gym_stage", location:"体育館"},
     { id: 71, img: 'event_71.jpg', title: '音楽部', reading:"おんがくぶ", category: "stage", class:"音楽部", floor:1, room:"gym_stage", location:"体育館"},
  
 
