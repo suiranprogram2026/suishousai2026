@@ -126,6 +126,9 @@
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
+    width: 80%;
+    margin-right: 10px;
+    width: 120px;
 }
 
 .pop_button_sec:hover{
@@ -212,11 +215,6 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-    }
-
-    .pop_button_sec {
-        margin-right: 10px;
-        width: 120px;
     }
 
     .container {
@@ -320,10 +318,6 @@
     /* グリッドの列数 */
     .e-eventbox-f {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .pop_button_sec {
-        width: 120px;
     }
 
     @media (min-width: 800px) {
@@ -508,7 +502,6 @@
     }
 
     .pop_button_sec {
-        width: 100%;
         max-width: 120px;
     }
 
