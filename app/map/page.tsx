@@ -248,6 +248,7 @@ function MapContent() {
             <div className={styles.mapWrapper}>
                 <div className={styles.mapContainer} ref={mapContainerRef}>
                     <div className={styles.innerContainer}>
+                        <h2>色付きの部屋をタップして詳細を表示</h2>
                         <div
                             key={`floor-${activeFloor}`}
                             className={styles.floor}
@@ -331,6 +332,15 @@ function MapContent() {
                                 height={50}
                             />
                             <p>女子トイレ</p>
+                        </div>
+                        <div className={styles.expToiletInner}>
+                            <Image 
+                                src={"/maps/ng.png"} 
+                                alt={"立入禁止"}
+                                width={50}
+                                height={50}
+                            />
+                            <p>立入禁止</p>
                         </div>
                     </div>
                 </div>

@@ -31,7 +31,8 @@ const categories = [
     { value: "food", title: "調理食販" },
     { value: "stage", title: "ステージ" },
     { value: "exhibition", title: "展示団体" },
-    { value: "shop", title: "物販団体"}
+    { value: "shop", title: "物販団体"},
+    { value: "other", title: "その他"}
 ] as const;
 
 
