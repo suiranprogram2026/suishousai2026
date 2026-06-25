@@ -48,7 +48,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 25, img: 'event_25.jpg', title: '込宮総合病院', reading: "こみやそうごうびょういん", category: "play", floor: 2, class: "3-9", location :"3-8", room:"room-3-8"},
     //部活・委員会・有志 
     { id: 26, img: 'event_26.jpeg', title: '翠嵐ゲームショウ　2026', reading: "すいらんげーむしょう　にーまるにーろく", category: "exhibition", floor: 3, class: "IT研究部", location: "情報室", room:"jyouhou"},
-    { id: 27, img: 'event_27.jpg', title: '翠嵐王～早押しの極意～', reading: "すいらんおう～はやおしのごくい～", category: "play", floor: 1, class: "クイズ研究部", location:"科学実験室", room:"kagaku"},
+    { id: 27, img: 'event_27.jpg', title: '翠嵐王～早押しの極意～', reading: "すいらんおう～はやおしのごくい～", category: "play", floor: 1, class: "クイズ研究部", location:"化学実験室", room:"kagaku"},
     { id: 28, img: 'event_28.png', title: 'サッカービリヤード', reading: "さっかーびりやーど", category: "play", floor: 2, class: "サッカー部", location:"2-7後ろ", room:"room-2-7-back"},
     { id: 29, img: 'event_29.jpg', title: '翠嵐茶館', reading: "すいらんちゃかん", category: "food", floor: 2, class: "茶道部",location:"被服室", room:"hihuku"},
     { id: 30, img: 'event_30.png', title: 'わくわく！！バスケットラックアウト', category: "play", floor: 2, class: "バスケ部", location:"3-9前", room:"room-3-9-front"},
@@ -98,7 +98,8 @@ export const festivalItems: FestivalItem[] = [
 
     //その他
     { id: 73, img: 'event_73.jpg', title: '翠実本部', reading:"すいじつほんぶ", category: "other", class: "翠実総務", floor: 1, room:"seitokaisitsu", location:"生徒会室"},
-    { id: 74, img: 'event_74.jpg', title: '室内飲食スペース', reading:"しつないいんしょくすぺーす", category: "other", class: "", floor: 1, location:"定時制昇降口", room:"space"},
-    { id: 75, img: 'event_75.jpg', title: '藤棚', reading:"ふじだないんしょくすぺーす", category: "other", class: "", floor: 1, location:"藤棚", room:"hujidana_space"},
-    { id: 76, img: 'event_76.jpg', title: '食堂', reading:"しょくどう", category: "food", class: "有志", floor: 1, location:"", room:"cafeteria"},
+    { id: 74, img: 'event_74.jpg', title: '軒下飲食スペース', reading:"のきしたいんしょくすぺーす", category: "other", class: "", floor: 1, location:"軒下", room:"nokisita"},
+    { id: 75, img: 'event_75.jpg', title: '藤棚飲食スペース', reading:"ふじだないんしょくすぺーす", category: "other", class: "", floor: 1, location:"藤棚", room:"hujidana_space"},
+    { id: 76, img: 'event_76.jpg', title: '食堂', reading:"しょくどう", category: "food", class: "有志", floor: 1, location:"食堂", room:"cafeteria"},
+    { id: 77, img: 'event_77.jpg', title: 'PTA', reading:"ぴーてぃーえー", category: "other", class: "PTA", floor: 1, location:"定時制昇降口", room:"space"},
 ];

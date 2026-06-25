@@ -419,8 +419,15 @@
     padding: 20px;
     color: #000000;
     width: 80%;
-    width: 150px;
+    width: 180px;
     border: 3px #373737 solid;
+}
+
+.popup h2,
+.popupTextLine {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .popupButtonRow {

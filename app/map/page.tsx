@@ -81,21 +81,38 @@ function MapContent() {
         );
     };
 
-    const openRoom = (roomId: string) => {
-        if (!validRoomIds.has(roomId)) return;
-
+    const setPopupPositionFromRoom = (roomId: string) => {
         const element = document.getElementById(roomId);
 
-        if (!element) return;
+        if (!element) return false;
 
         const rect = element.getBoundingClientRect();
-
-        setSelectedRoom(roomId);
 
         setPopupPos({
             x: clampPopupX(rect.left + rect.width / 2 - POPUP_WIDTH / 2),
             y: rect.bottom + 10,
         });
+
+        return true;
+    };
+
+    const openRoom = (roomId: string, shouldScroll = false) => {
+        if (!validRoomIds.has(roomId)) return;
+
+        if (!setPopupPositionFromRoom(roomId)) return;
+
+        setSelectedRoom(roomId);
+
+        if (shouldScroll) {
+            mapContainerRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+            });
+
+            window.setTimeout(() => {
+                setPopupPositionFromRoom(roomId);
+            }, 500);
+        }
     };
 
 
@@ -252,7 +269,7 @@ function MapContent() {
                                 onRoomClick={openRoom}
                                 onLoaded={() => {
                                     if (pendingRoom) {
-                                        openRoom(pendingRoom);
+                                        openRoom(pendingRoom, true);
                                         setPendingRoom(null);
                                     }
                                 }}
@@ -339,14 +356,18 @@ function MapContent() {
                         {!isStagePopupOnly && (
                             <>
                                 <h2>団体 : {roomInfo?.class ?? selectedRoom}</h2>
-
+                                <h2>企画 : {roomInfo?.title ?? selectedRoom}</h2>
                                 {roomEvents.map((event) => (
-                                    <div key={event.room}>
+                                    <div
+                                        key={event.room}
+                                        className={styles.popupTextLine}
+                                    >
                                         {event.room}
                                     </div>
                                 ))}
                             </>
                         )}
+                        
 
                         <div className={styles.popupButtonRow}>
                             {hasTimetableButton && (
