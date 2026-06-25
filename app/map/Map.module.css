@@ -1,11 +1,5 @@
 .topArea {
-    background: linear-gradient(
-        to bottom,
-        #101c32 0%,   /* 紺 */
-        #ffffff 100%  /* 白 */
-    );
-
-    padding-bottom: 20px;
+    background: #101c32
 }
 
 .toppers{
