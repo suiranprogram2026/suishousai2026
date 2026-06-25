@@ -156,7 +156,7 @@ const TimeTable: React.FC = () => {
                                         {event.title}
                                     </div>
                                 </DrawerTrigger>
-                                <DrawerContent className={"eventDrawer"}>
+                                <DrawerContent className="bg-[#55575C] text-white">
                                     <DrawerHeader>
                                         <DrawerTitle>{event.title}</DrawerTitle>
                                     </DrawerHeader>
