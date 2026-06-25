@@ -14,6 +14,11 @@ import { Anton } from 'next/font/google';
 import Header from '@/components/Header/Header';
 
 const floors = [1, 2, 3, 4];
+const defaultFloor = floors[0];
+const getItemFloor = (item: FestivalItem) =>
+    item.floor !== undefined && floors.includes(item.floor)
+        ? item.floor
+        : defaultFloor;
 const anton = Anton({
   subsets: ['latin'],
   weight: '400',
@@ -101,7 +106,7 @@ function MapContent() {
             if (foundEvent) {
                 setSelectedItem(foundEvent);
                 setSearchQuery(foundEvent.title);
-                setActiveFloor(foundEvent.floor!);
+                setActiveFloor(getItemFloor(foundEvent));
             
                 // ⭐ここを追加：該当イベントに部屋番号があれば、読み込み待ち状態にする
                 if (foundEvent.room) {
@@ -171,7 +176,7 @@ function MapContent() {
                                 className={styles.suggestionItem}
                                 onClick={() => {
                                     setSelectedItem(item);
-                                    setActiveFloor(item.floor!);
+                                    setActiveFloor(getItemFloor(item));
                                     setSearchQuery(item.title);
                                     setShowSuggestions(false);
                                     router.replace(`?id=${encodeURIComponent(item.title)}`, { scroll: false });
@@ -219,38 +224,33 @@ function MapContent() {
             <div className={styles.mapWrapper}>
                 <div className={styles.mapContainer} ref={mapContainerRef}>
                     <div className={styles.innerContainer}>
-                        {[activeFloor].map((floor) => (
-                                <div
-                                    key={floor}
-                                    className={styles.floor}
-                                    style={{
-                                        transform: `scale(${1 - (activeFloor - floor) * 0.1})`,
-                                        zIndex: floor,
-                                        transition: "transform 0.3s ease, opacity 0.3s ease",
-                                        position: "absolute",
-                                        left: 0,
-                                        width: "100%",
-                                        height: "100%",
-                                        opacity: floor === activeFloor ? 1 : 0.05,
-                                        pointerEvents:
-                                        floor === activeFloor
-                                            ? "auto"
-                                            : "none",
-                                    }}
-                                >
-                                    <SvgMap
-                                        floor={floor}
-                                        selectedRoom={selectedRoom}
-                                        onRoomClick={openRoom}
-                                        onLoaded={() => {
-                                            if (pendingRoom) {
-                                                openRoom(pendingRoom);
-                                                setPendingRoom(null);
-                                            }
-                                        }}
-                                    />
-                                </div>
-                            ))}
+                        <div
+                            key={`floor-${activeFloor}`}
+                            className={styles.floor}
+                            style={{
+                                transform: "scale(1)",
+                                zIndex: activeFloor,
+                                transition: "transform 0.3s ease, opacity 0.3s ease",
+                                position: "absolute",
+                                left: 0,
+                                width: "100%",
+                                height: "100%",
+                                opacity: 1,
+                                pointerEvents: "auto",
+                            }}
+                        >
+                            <SvgMap
+                                floor={activeFloor}
+                                selectedRoom={selectedRoom}
+                                onRoomClick={openRoom}
+                                onLoaded={() => {
+                                    if (pendingRoom) {
+                                        openRoom(pendingRoom);
+                                        setPendingRoom(null);
+                                    }
+                                }}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
