@@ -68,7 +68,7 @@ export default function Header() {
         <li><a href="/">TOP</a></li>
         <li className={styles.comingsoon}><a>MAP</a><span>SOON</span></li>
         <li className={styles.comingsoon}><a>EVENT</a><span>SOON</span></li>
-        <li className={styles.comingsoon}><a>TIMETABLE</a><span>SOON</span></li>
+        <li><a href="/timetable">TIMETABLE</a></li>
         <li><a href="/about">ABOUT</a></li>
         <li><a href="/attention">ATTENTION</a></li>
       </ul>
