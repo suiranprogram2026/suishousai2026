@@ -12,6 +12,9 @@ type Props = {
   onLoaded?: () => void;
 };
 
+const roomItems = festivalItems.filter((item) => item.room);
+const roomIds = new Set(roomItems.map((item) => item.room));
+
 export default function SvgMap({
   floor,
   selectedRoom,
@@ -45,9 +48,11 @@ export default function SvgMap({
           svgRef.current = svg;
           svg.querySelectorAll("rect").forEach((el) => {
 
-            const item = festivalItems.find(
+            const item = roomItems.find(
               (f) => f.room === el.id
             );
+
+            if (!roomIds.has(el.id)) return;
 
             el.classList.add("room");/*cssで.roomが効くようになる*/
 

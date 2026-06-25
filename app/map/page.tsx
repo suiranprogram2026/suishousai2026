@@ -19,6 +19,11 @@ const getItemFloor = (item: FestivalItem) =>
     item.floor !== undefined && floors.includes(item.floor)
         ? item.floor
         : defaultFloor;
+const validRoomIds = new Set(
+    festivalItems
+        .map((item) => item.room)
+        .filter((room): room is string => Boolean(room))
+);
 const anton = Anton({
   subsets: ['latin'],
   weight: '400',
@@ -77,6 +82,8 @@ function MapContent() {
     };
 
     const openRoom = (roomId: string) => {
+        if (!validRoomIds.has(roomId)) return;
+
         const element = document.getElementById(roomId);
 
         if (!element) return;
