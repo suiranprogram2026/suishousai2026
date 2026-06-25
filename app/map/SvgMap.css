@@ -1,6 +1,6 @@
 /*部屋に色付け(SvgMapにかかる)*/
 .room {
-    fill: #ffffff00;
+    fill: #ffffff;
     /*fill: #114514;←確認用*/
     stroke-width: 1;
     cursor: pointer;

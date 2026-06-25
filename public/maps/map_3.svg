@@ -244,15 +244,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="1.1867421"
-     inkscape:cx="754.16554"
-     inkscape:cy="101.53849"
+     inkscape:zoom="3.3566135"
+     inkscape:cx="607.7554"
+     inkscape:cy="216.43838"
      inkscape:window-width="1024"
      inkscape:window-height="715"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="g547"
      showgrid="false"><inkscape:page
        x="0"
        y="0"
@@ -421,7 +421,7 @@
          id="tspan600"
          style="font-variant:normal;font-weight:700;font-size:12px;font-family:'Yu Gothic';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
          x="2358.6128"
-         y="37.11998">視聴覚室</tspan></text><text
+         y="37.11998" /></text><text
        id="text601"
        xml:space="preserve"
        x="2212.8262"
@@ -430,7 +430,7 @@
          id="tspan601"
          style="font-variant:normal;font-weight:700;font-size:12px;font-family:'Yu Gothic';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
          x="2212.8262"
-         y="165.75998">女</tspan></text><text
+         y="165.75998" /></text><text
        id="text602"
        xml:space="preserve"
        x="1968.506"
@@ -439,7 +439,7 @@
          id="tspan602"
          style="font-variant:normal;font-weight:700;font-size:12px;font-family:'Yu Gothic';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
          x="1968.506"
-         y="165.75998">男</tspan></text><text
+         y="165.75998" /></text><text
        id="text603"
        xml:space="preserve"
        x="2054.426"
@@ -951,63 +951,63 @@
        width="32.020439"
        height="11.797004"
        x="2201.1709"
-       y="156.97101" /><g
-       id="g819-3-03"
-       transform="translate(1473.9698,-102.56308)"><g
-         style="clip-rule:evenodd;fill-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
-         id="g818-3-8"
-         transform="matrix(0.02253596,0,0,0.02307228,735.91885,256.34795)"><g
-           transform="translate(-3931,-809)"
-           id="g3-5-4-01">
-        <g
-   transform="matrix(2.02015,0,0,2.02017,3644.28,252.584)"
-   id="g2-5-1-25">
-            <rect
-   x="142.327"
-   y="275.741"
-   width="396.01099"
-   height="396.01099"
-   style=""
-   id="rect1-1-1-0" />
-            <g
-   transform="matrix(0.495014,0,0,0.495007,-56.2026,-130.298)"
-   id="g1-7-3-9">
-                <path
-   d="m 765.757,1402.79 h -55.129 c -10.348,0 -16.229,-14.16 -13.125,-31.6 l 40.519,-206.78 -21.773,-108.98 c -2.601,-13.02 3.439,-23.59 13.479,-23.59 h 142.663 c 10.04,0 16.08,10.57 13.479,23.59 l -21.773,108.98 40.519,206.78 c 3.104,17.44 -2.777,31.6 -13.125,31.6 h -55.129 l -4.411,142.78 c -0.356,11.52 -6.162,20.88 -12.958,20.88 h -35.867 c -6.795,0 -12.602,-9.36 -12.958,-20.88 z M 801.06,874.097 c 37.891,0 68.653,30.763 68.653,68.654 0,37.891 -30.762,68.649 -68.653,68.649 -37.892,0 -68.654,-30.758 -68.654,-68.649 0,-37.891 30.762,-68.654 68.654,-68.654 z"
-   style="fill:url(#_Linear1-1-7-5)"
-   id="path1-1-87-47" />
-            </g>
-        </g>
-    </g></g></g><rect
+       y="156.97101" /><rect
        style="fill:#ffffff;stroke-width:1.22269"
        id="rect817-6"
        width="22.04603"
        height="17.815275"
        x="1960.7596"
        y="154.55789" /><g
-       transform="matrix(0.02504709,-3.8462995e-4,3.9050781e-4,0.02467003,1911.7626,134.42754)"
-       id="g3-82"
-       style="clip-rule:evenodd;fill-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+       style="clip-rule:evenodd;fill-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
+       id="g4"
+       transform="matrix(0.02729535,0,0,0.02283625,1962.4863,153.98567)"><g
+         transform="translate(-2083,-809)"
+         id="g3">
         <g
    transform="matrix(2.02015,0,0,2.02017,1796.24,252.584)"
-   id="g2-4-11">
+   id="g2">
             <rect
    x="142.327"
    y="275.741"
    width="396.01099"
    height="396.01099"
-   style=""
-   id="rect1-9" />
+   style="fill:none"
+   id="rect1" />
             <g
    transform="matrix(0.495014,0,0,0.495007,98.7048,-130.298)"
-   id="g1-8-76">
+   id="g1-0">
                 <path
    d="m 442.277,1334.13 c -13.632,-1.93 -24.589,-12.41 -25.329,-25.03 l -14.77,-251.91 c -0.821,-13.99 11.225,-25.35 26.882,-25.35 h 118.128 c 15.657,0 27.703,11.36 26.882,25.35 L 559.3,1309.1 c -0.74,12.62 -11.697,23.1 -25.329,25.03 l -6.678,206.97 c -0.452,13.99 -7.814,25.35 -16.43,25.35 h -45.478 c -8.616,0 -15.978,-11.36 -16.43,-25.35 z m 44.914,-460.033 c 37.891,0 68.654,30.763 68.654,68.654 0,37.891 -30.763,68.649 -68.654,68.649 -37.891,0 -68.654,-30.758 -68.654,-68.649 0,-37.891 30.763,-68.654 68.654,-68.654 z"
-   style="fill:url(#_Linear1-8-2)"
-   id="path1-29" />
+   style="fill:url(#_Linear1)"
+   id="path1" />
             </g>
         </g>
     </g></g><g
+       style="clip-rule:evenodd;fill-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
+       id="g5"
+       transform="matrix(0.0246426,0,0,0.02283598,2209.2661,153.39932)"><g
+         transform="translate(-3931,-809)"
+         id="g3-2">
+        <g
+   transform="matrix(2.02015,0,0,2.02017,3644.28,252.584)"
+   id="g2-3">
+            <rect
+   x="142.327"
+   y="275.741"
+   width="396.01099"
+   height="396.01099"
+   style="fill:none"
+   id="rect1-3" />
+            <g
+   transform="matrix(0.495014,0,0,0.495007,-56.2026,-130.298)"
+   id="g1-4">
+                <path
+   d="m 765.757,1402.79 h -55.129 c -10.348,0 -16.229,-14.16 -13.125,-31.6 l 40.519,-206.78 -21.773,-108.98 c -2.601,-13.02 3.439,-23.59 13.479,-23.59 h 142.663 c 10.04,0 16.08,10.57 13.479,23.59 l -21.773,108.98 40.519,206.78 c 3.104,17.44 -2.777,31.6 -13.125,31.6 h -55.129 l -4.411,142.78 c -0.356,11.52 -6.162,20.88 -12.958,20.88 h -35.867 c -6.795,0 -12.602,-9.36 -12.958,-20.88 z M 801.06,874.097 c 37.891,0 68.653,30.763 68.653,68.654 0,37.891 -30.762,68.649 -68.653,68.649 -37.892,0 -68.654,-30.758 -68.654,-68.649 0,-37.891 30.762,-68.654 68.654,-68.654 z"
+   style="fill:url(#_Linear1-1)"
+   id="path1-1" />
+            </g>
+        </g>
+    </g></g></g><g
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="floor_1"
