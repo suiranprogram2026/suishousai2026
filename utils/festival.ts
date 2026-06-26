@@ -77,7 +77,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 53, img: 'event_53.jpeg', title: 'ベーゴマ体験',reading:"べーごまたいけん", category: "play", floor: 3, class: "有志",location:"書道室", room:"syodou-back"},
     { id: 54, img: 'event_teiji.jpg', title: '定時制 イラスト・写真部', reading: "ていじせい いらすと・しゃしんぶ", category: "exhibition", floor: 1, class: "定時制", location:"3-6前", room:"room-3-6-front"},
     { id: 55, img: 'event_teiji.jpg', title: '翠嵐アジアンダイニング', reading: "すいらんあじあんだいにんぐ", category: "food", floor: 1, class: "定時制",location:"屋外テント", room:"hujidana1"},
-    { id: 56, img: 'event_teiji.jpg', title: 'アジアンスイーツパラダイス', reading: "あじあんすいーつぱらだいす", category: "food", floor: 1, class: "定時制",location:"3-5", room:"room-3-5"},
+    { id: 56, img: 'event_56.png', title: 'アジアンスイーツパラダイス', reading: "あじあんすいーつぱらだいす", category: "food", floor: 1, class: "定時制",location:"3-5", room:"room-3-5"},
     { id: 57, img: 'event_teiji.jpg', title: '定時制 多文化共生', reading: "ていじせい たぶんかきょうせい", category: "exhibition", floor: 1, class: "定時制",location:"3-6後ろ", room:"room-3-6-back"},
     /*{ id: 58, img: 'event_58.jpg', title: 'AIと人間はどのように独自性と有用性に差が出るか',reading:"えーあいとにんげんはどのようにどくじせいとゆうようせいにさがでるか", category: "exhibition", floor: 1, class: "有志"},*/
     //ステージ
