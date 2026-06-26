@@ -172,7 +172,7 @@ function MapContent() {
                             />
             </div>
 
-             <div className={styles.topArea}>
+            <div className={styles.topArea}>
 
             {/* サーチボックス */}
             <div className={styles.header}>
@@ -248,7 +248,6 @@ function MapContent() {
             <div className={styles.mapWrapper}>
                 <div className={styles.mapContainer} ref={mapContainerRef}>
                     <div className={styles.innerContainer}>
-                        <h2>色付きの部屋をタップして詳細を表示</h2>
                         <div
                             key={`floor-${activeFloor}`}
                             className={styles.floor}
@@ -286,6 +285,7 @@ function MapContent() {
                     <h1 className={styles.expMapExp}>
                         -凡例-
                     </h1>
+                    <h2>色付きの部屋をタップして詳細を表示</h2>
 
                     <div className={styles.expCategory}>
                         <div className={`${styles.expBox} ${styles.boxPlay}`}>
