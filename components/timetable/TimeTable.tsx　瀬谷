@@ -52,7 +52,7 @@ const sampleEvents: Record<number, Event[]> = {
     ],
     2: [
         { id: 'e11', cell: 59, stage: 'gym', start: '09:40', end: '10:25', title: '夢走舞踊（ダンス部）' },
-        { id: 'e12', cell: 67, stage: 'gym', start: '11:00', end: '11:20', title: 'Untitled project' },
+        { id: 'e12', cell: 67, stage: 'gym', start: '11:00', end: '11:20', title: 'Project Untitled' },
         { id: 'e13', cell: 66, stage: 'gym', start: '11:50', end: '12:20', title: '弦楽部' },
         { id: 'e14', cell: 65, stage: 'gym', start: '12:45', end: '13:25', title: '翠嵐ピアノの会' },
         { id: 'e15', cell: 71, stage: 'gym', start: '13:45', end: '14:15', title: '音楽部' },
