@@ -83,7 +83,7 @@ export const festivalItems: FestivalItem[] = [
     //ステージ
     { id: 59, img: 'event_59.jpeg', title: '夢走舞踊', reading: "むそうぶよう", category: "stage", class: "ダンス部", floor:1, room:"gym_stage", location:"体育館"},
     { id: 60, img: 'event_60.png', title: '風林火山', reading:"ふうりんかざん", category: "stage", class: "バスケ部", floor:1, room:"outdoor_stage", location:"野外ステージ"},
-    { id: 61, img: '', title: 'ビンゴ大会', category: "stage", class: "生徒会執行部", floor:1, room:"outdoor_stage", location:"野外ステージ"},
+    { id: 61, img: 'event_61.jpg', title: 'ビンゴ大会', category: "stage", class: "生徒会執行部", floor:1, room:"outdoor_stage", location:"野外ステージ"},
     { id: 62, img: 'event_62.jpg', title: 'スイラン！ブラバン！ビックバン！', reading: "すいらん！ぶらばん！びっくばん！", category: "stage",class: "吹奏楽部", floor:1, room:"gym_stage", location:"体育館"},
     { id: 63, img: 'event_63.jpeg', title: 'スパゲティ', category: "stage", class: "吹奏楽部", floor:1, room:"outdoor_stage", location:"野外ステージ"},
     { id: 64, img: 'event_64.jpeg', title: 'ミントブルー', category: "stage", class: "吹奏楽部", floor:1, room:"gym_stage", location:"体育館"},
