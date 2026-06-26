@@ -89,7 +89,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 64, img: 'event_64.jpeg', title: 'ミントブルー', category: "stage", class: "吹奏楽部", floor:1, room:"gym_stage", location:"体育館"},
     { id: 65, img: 'event_65.jpg', title: '翠嵐ピアノの会', reading: "すいらんぴあののかい", category: "stage", class: "有志", floor:1, room:"gym_stage", location:"体育館"},
     { id: 66, img: 'event_66.jpg', title: '弦楽部', reading: "げんがくぶ", category: "stage", class: "弦楽部", floor:1, room:"gym_stage", location:"野外ステージ"},
-    { id: 67, img: 'event_67.jpeg', title: 'Project Untitled', reading: "ぷろじぇくとあんたいとるど", category: "stage", class: "有志", floor:1, room:"gym_stage", location:"体育館"},
+    { id: 67, img: 'event_67.jpeg', title: 'Untitled Project', reading: "ぷろじぇくとあんたいとるど", category: "stage", class: "有志", floor:1, room:"gym_stage", location:"体育館"},
     { id: 68, img: 'event_68.jpg', title: 'どすこいコンテスト', category: "stage", class: "有志", floor:1, room:"outdoor_stage", location:"野外ステージ"},
     { id: 69, img: 'event_69.jpg', title: '多文化共生研究会', reading: "たぶんかきょうせいけんきゅうかい", category: "stage",class: "定時制", floor:1, room:"gym_stage", location:"体育館"},
     { id: 70, img: 'event_70.png', title: '朝鮮学校', reading: "ちょうせんがっこう", category: "stage", class: "有志", floor:1, room:"gym_stage", location:"体育館"},
