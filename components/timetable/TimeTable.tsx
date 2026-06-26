@@ -45,9 +45,9 @@ const sampleEvents: Record<number, Event[]> = {
         { id: 'e6', cell: 66, stage: 'gym', start: '13:20', end: '13:50', title: '弦楽部'},
         { id: 'e7', cell: 59, stage: 'gym', start: '14:25', end: '15:10', title: '夢走舞踊（ダンス部）'},
 
-        { id: 'e8', cell: 61, stage: 'outdoor', start: '13:00', end: '13:20', title: '風林火山（バスケ部）' },
+        { id: 'e8', cell: 60, stage: 'outdoor', start: '13:00', end: '13:20', title: '風林火山（バスケ部）' },
         { id: 'e9', cell: 63, stage: 'outdoor', start: '10:00', end: '11:00', title: '生徒会執行部' },
-        { id: 'e10', cell: 60, stage: 'outdoor', start: '11:50', end: '12:10', title: 'スパゲティ' },
+        { id: 'e10', cell: 61, stage: 'outdoor', start: '11:50', end: '12:10', title: 'スパゲティ' },
      
     ],
     2: [
