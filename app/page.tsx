@@ -42,7 +42,7 @@ export default function Home() {
           </section>
 
           <div className="mid_header">
-            {/*<div className="headerbox_top">
+            <div className="headerbox_top">
               <div className="headerbox_left"></div>
               <div className="headerbox_right"></div>
               <div className="headerbox_titlearea headerbox_search">
@@ -57,7 +57,7 @@ export default function Home() {
                 </h1>
               </div>
             </div>
-            <TopSelect />*/}
+            <TopSelect />
 
             <div className="headerbox_top">
               <div className="headerbox_left"></div>

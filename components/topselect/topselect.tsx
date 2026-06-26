@@ -37,21 +37,21 @@ export default function Page() {
     <div className={styles.menuContainer}>
 
       <MenuButton
-        image="/preevent.png"
+        image="/event.png"
         alt="イベント"
-        
+        href="/event"
       />
 
       <MenuButton
-        image="/premap.png"
+        image="/map.png"
         alt="マップ"
-        
+        href="/map"
       />
 
       <MenuButton
-        image="/pretimetable.png"
+        image="/timetable.png"
         alt="タイムテーブル"
-        
+        href="/timetable"
       />
 
     </div>

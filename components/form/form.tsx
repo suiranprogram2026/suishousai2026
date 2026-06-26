@@ -74,31 +74,6 @@ export default function Form() {
                         <p>校内パンフレットからも投票可能です。</p>
                     </div>
 
-
-                {/*<div className="survey_box">
-                    <div className="form_back">
-                        <h2>-来場者アンケート-</h2>
-                    </div>
-                    <div className="anc">
-                        <p>翠翔祭に関するアンケートです。次年度以降のためにご回答よろしくお願いします！</p>
-                        <p>回答期限：6/30（火）まで</p>
-                        <p>※翠嵐生は回答不要です</p>
-                        <a href="https://forms.gle/iUrw2htZqmvdJGj99" 
-                            className="inline-block
-                                px-6 py-3 mt-6
-                                bg-sky-500
-                                text-white
-                                font-bold
-                                rounded-xl
-                                shadow-lg
-                                transition-all
-                                duration-200
-                                hover:scale-105
-                                hover:shadow-xl
-                                hover:bg-sky-400">アンケートに回答</a>
-                    </div>
-                    
-                </div>*/}
             </div>
         </div>    
         </>
