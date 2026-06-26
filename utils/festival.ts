@@ -34,7 +34,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 12, img: 'event_12.jpg', title: '三好横丁八本通り', reading: "みよしよこちょうやつもとどおり", category: "food", floor: 3, class: "2-3", location: "2-3", room:"room-2-3"},
     { id: 13, img: 'event_13.jpg', title: 'メイドなんですわ', reading: "めいどなんですわ", category: "food", floor: 3, class: "2-4", location: "2-4", room:"room-2-4"},
     { id: 14, img: 'event_14.jpg', title: '新世紀サヴァイバル～残酷な戦士のアンチテーゼ～', reading: "しんせいきさばいばる～ざんこくなせんしのあんちてーぜ～", category: "play", floor: 2, class: "2-5", location: "3-3", room:"room-3-3"},
-    { id: 15, img: 'event_15.jpeg', title: 'モンスター翠ンク', reading: "もんすたーすいんく", category: "play", floor: 2, class: "2-6", location: "2-6", room:"room-2-6"},
+    { id: 15, img: 'event_15.jpg', title: 'モンスター翠ンク', reading: "もんすたーすいんく", category: "play", floor: 2, class: "2-6", location: "2-6", room:"room-2-6"},
     { id: 16, img: 'event_16.png', title: '焼きそばTETSUO', reading: "やきそばてつお", category: "food", floor: 1, class: "2-7", location: "屋外テント", room:"keyaki3"},
     { id: 17, img: 'event_17.jpg', title: 'プリクランド～Cutie So Match～', reading: "ぷりくらんど～きゅーてぃーそーまっち～", category: "play", floor: 2, class: "2-8", location: "2-8", room:"room-2-8"},
     { id: 18, img: 'event_18.jpg', title: '衰乱神社の呪い', reading: "すいらんじんじゃののろい", category: "play", floor: 2, class: "2-9", location: "2-9", room:"room-2-9"},
