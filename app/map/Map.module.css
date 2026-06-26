@@ -1,5 +1,5 @@
 .topArea {
-    background: #101c32
+    background: #101c32;
 }
 
 .toppers{
@@ -206,7 +206,7 @@
     max-width: 600px;
     min-width: 330px;
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 0px;
     box-sizing: border-box;
 }
 
@@ -362,19 +362,19 @@
 }
 
 .boxPlay{
-    background-color: #0095eb80;
+    background-color: #00777153;
 }
 
 .boxFood{
-    background-color: #d83bb650;
+    background-color: #d83b6d50;
 }
 
 .boxStage{
-    background-color: #73e58f80;
+    background-color: #60bd7780;
 }
 
 .boxShop{
-    background-color: #c7818150;
+    background-color: #ffae0050;
 }
 
 .boxExhibition{
@@ -382,7 +382,7 @@
 }
 
 .boxOther{
-    background-color:#6819e650;
+    background-color:#ff000050;
 }
 
 .expToilet{

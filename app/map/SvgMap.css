@@ -10,14 +10,14 @@
 
 /*ここ変更したら凡例のほうも忘れずに治す*/
 .play{
-    fill: #0095eb80;
+    fill: #00777153;
 }
 .food {
-    fill: #d83bb650;
+    fill: #d83b6d50;
 }
 
 .stage {
-    fill: #73e58f80;
+    fill: #60bd7780;
 }
 
 .exhibition {
@@ -25,11 +25,11 @@
 }
 
 .shop {
-    fill: #c7818150;
+    fill: #ffae0050;
 }
 
 .other{
-    fill:#6819e650;
+    fill:#ff000050;
 }
 
 .svg-map-popup-open .room {

@@ -165,6 +165,7 @@ function MapContent() {
     return (
         <div className={styles.outerContainer}>
             
+            <div className={styles.topArea}>
             <div className={styles.toppers}>
                             <Header
                                 title="MAP"
@@ -172,7 +173,7 @@ function MapContent() {
                             />
             </div>
 
-            <div className={styles.topArea}>
+            
 
             {/* サーチボックス */}
             <div className={styles.header}>
