@@ -75,7 +75,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 51, img: 'event_51.jpg', title: '神反応＆体内時計チャレンジ', reading: "かみたいおうあんどたいないどけいちゃれんじ", category: "play", floor: 2, class: "陸上部",location:"3-9後ろ", room:"room-3-9-back"},
     { id: 52, img: 'event_52.jpeg', title: 'beyond borde', category: "exhibition", floor: 4, class: "国際交流委員会", location:"1-5前", room:"room-1-5-front"},
     { id: 53, img: 'event_53.jpeg', title: 'ベーゴマ体験',reading:"べーごまたいけん", category: "play", floor: 3, class: "有志",location:"書道室", room:"syodou-back"},
-    { id: 54, img: 'event_teiji.jpg', title: '定時制 イラスト・写真部', reading: "ていじせい いらすと・しゃしんぶ", category: "exhibition", floor: 1, class: "定時制", location:"3-6前", room:"room-3-6-front"},
+    { id: 54, img: 'event_54.jpg', title: '定時制 イラスト・写真部', reading: "ていじせい いらすと・しゃしんぶ", category: "exhibition", floor: 1, class: "定時制", location:"3-6前", room:"room-3-6-front"},
     { id: 55, img: 'event_55.jpg', title: '翠嵐アジアンダイニング', reading: "すいらんあじあんだいにんぐ", category: "food", floor: 1, class: "定時制",location:"屋外テント", room:"hujidana1"},
     { id: 56, img: 'event_56.png', title: 'アジアンスイーツパラダイス', reading: "あじあんすいーつぱらだいす", category: "food", floor: 1, class: "定時制",location:"3-5", room:"room-3-5"},
     { id: 57, img: 'event_57.png', title: '定時制 多文化共生', reading: "ていじせい たぶんかきょうせい", category: "exhibition", floor: 1, class: "定時制",location:"3-6後ろ", room:"room-3-6-back"},

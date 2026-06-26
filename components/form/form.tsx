@@ -28,42 +28,6 @@ export default function Form() {
                         </div>
                         
                         
-                        {/*<h3 className="bumon">〈部門紹介〉</h3>
-                        <div className="bumonbox">
-                            <div className="bumonsboxl">
-                                <h4 className="bumons">企画部門</h4>
-                                <a href="https://docs.google.com/forms/d/1Vq-yNeBQz2Zk48sxJPOndMgG4LbK6rU-FZ6e3sV8Izo/edit?usp=drivesdk" className="relative inline-block text-lg group">
-                                    <span className="relative z-10 block px-5 py-2 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
-                                        <span className="absolute inset-0 w-full h-full px-5 py-2 rounded-lg bg-gray-50"></span>
-                                        <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-                                        <span className="relative">投票</span>
-                                    </span>
-                                    <span className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
-                                </a>
-                            </div>
-                            <div className="bumonsbox">
-                                <h4 className="bumons">調理食販部門</h4>
-                                <a href="https://docs.google.com/forms/d/1KXE1577SNQ5Bpc9YA87fDQfD28HfViVTo0uArde2VGk/edit?usp=drivesdk" className="relative inline-block text-lg group">
-                                    <span className="relative z-10 block px-5 py-2 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
-                                        <span className="absolute inset-0 w-full h-full px-5 py-2 rounded-lg bg-gray-50"></span>
-                                        <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-                                        <span className="relative">投票</span>
-                                    </span>
-                                    <span className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
-                                </a>
-                            </div>
-                            <div className="bumonsboxr">
-                                <h4 className="bumons">ステージ部門</h4>
-                                <a href="https://docs.google.com/forms/d/1scpgu1SGEyP_c6XRBVb_u_5e_IZ1V1DWPFbt1OsJO1I/edit?usp=drivesdk" className="relative inline-block text-lg group">
-                                    <span className="relative z-10 block px-5 py-2 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
-                                        <span className="absolute inset-0 w-full h-full px-5 py-2 rounded-lg bg-gray-50"></span>
-                                        <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-                                        <span className="relative">投票</span>
-                                    </span>
-                                    <span className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
-                                </a>
-                            </div>
-                        </div>*/}
                     </div>
                    
                     <div className="formhow">
@@ -74,6 +38,31 @@ export default function Form() {
                         <p>校内パンフレットからも投票可能です。</p>
                     </div>
 
+
+                {/*<div className="survey_box">
+                    <div className="form_back">
+                        <h2>-来場者アンケート-</h2>
+                    </div>
+                    <div className="anc">
+                        <p>翠翔祭に関するアンケートです。次年度以降のためにご回答よろしくお願いします！</p>
+                        <p>回答期限：6/30（火）まで</p>
+                        <p>※翠嵐生は回答不要です</p>
+                        <a href="https://forms.gle/iUrw2htZqmvdJGj99" 
+                            className="inline-block
+                                px-6 py-3 mt-6
+                                bg-sky-500
+                                text-white
+                                font-bold
+                                rounded-xl
+                                shadow-lg
+                                transition-all
+                                duration-200
+                                hover:scale-105
+                                hover:shadow-xl
+                                hover:bg-sky-400">アンケートに回答</a>
+                    </div>
+                    
+                </div>*/}
             </div>
         </div>    
         </>
