@@ -45,10 +45,6 @@ const sampleEvents: Record<number, Event[]> = {
         { id: 'e6', cell: 66, stage: 'gym', start: '13:20', end: '13:50', title: '弦楽部'},
         { id: 'e7', cell: 59, stage: 'gym', start: '14:25', end: '15:10', title: '夢走舞踊（ダンス部）'},
 
-        { id: 'e8', cell: 60, stage: 'outdoor', start: '13:00', end: '13:20', title: '風林火山（バスケ部）' },
-        { id: 'e9', cell: 61, stage: 'outdoor', start: '10:00', end: '11:00', title: '生徒会執行部' },
-        { id: 'e10', cell: 63, stage: 'outdoor', start: '11:50', end: '12:10', title: 'スパゲティ' },
-     
     ],
     2: [
         { id: 'e11', cell: 59, stage: 'gym', start: '09:40', end: '10:25', title: '夢走舞踊（ダンス部）' },
@@ -56,10 +52,10 @@ const sampleEvents: Record<number, Event[]> = {
         { id: 'e13', cell: 66, stage: 'gym', start: '11:50', end: '12:20', title: '弦楽部' },
         { id: 'e14', cell: 65, stage: 'gym', start: '12:45', end: '13:25', title: '翠嵐ピアノの会' },
         { id: 'e15', cell: 71, stage: 'gym', start: '13:45', end: '14:15', title: '音楽部' },
-        { id: 'e16', cell: 62, stage: 'gym', start: '14:40', end: '15:10', title: 'スイラン！ブラバン！ビックバン！' },
-        { id: 'e17', cell: 64, stage: 'outdoor', start: '10:30', end: '10:50', title: 'ミントブルー' },
+        { id: 'e16', cell: 62, stage: 'gym', start: '14:40', end: '15:10', title: 'スイラン！ブラバン！ビックバン！' }
+       /* { id: 'e17', cell: 64, stage: 'outdoor', start: '10:30', end: '10:50', title: 'ミントブルー' },
         { id: 'e18', cell: 68, stage: 'outdoor', start: '11:10', end: '11:40', title: 'どすこいコンテスト' },
-        { id: 'e19', cell: 61, stage: 'outdoor', start: '13:00', end: '14:00', title: '生徒会執行部' },
+        { id: 'e19', cell: 61, stage: 'outdoor', start: '13:00', end: '14:00', title: '生徒会執行部' }*/
     ],
 };
 
