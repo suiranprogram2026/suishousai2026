@@ -31,7 +31,7 @@ const formatTime = (dec: number): string => {
 const getInitialDay = (): number => {
     const today = new Date();
     const date = today.getDate();
-    return date <= 27 ? 1 : 2;
+    return date <= 27 ? 1 : 2;  //日付が27以下ならday1、それ以外でday2をデフォルトに。つまり、2桁の所に1日目の日付を入れればおｋ
 };
 
 // sampleEvents: start/end as "HH:MM"
