@@ -22,9 +22,8 @@ export default function Form() {
                         <p>企画部門、調理食販部門、ステージ部門、立て看板部門の４部門に分かれて、在校生及び来場者の人気を競います。</p>
                         <p>翠翔祭二日間で最も票を集めた団体がグランプリ獲得です！</p>
                         <div className="button_vot">
-                            {/*<p>一人一票でお願いします</p>*/}
-                            <p>現在準備中</p>
-                            <a href="/404">投票する</a>
+                            <p>一人一票でお願いします</p>
+                            <a href="/https://docs.google.com/forms/d/e/1FAIpQLScF_e-cKg5SJXiHLFwcq0EraogXhJOiuHgQfN0XTJBc236-hQ/viewform?usp=header">投票する</a>
                         </div>
                         
                         
@@ -39,7 +38,7 @@ export default function Form() {
                     </div>
 
 
-                {/*<div className="survey_box">
+                {<div className="survey_box">
                     <div className="form_back">
                         <h2>-来場者アンケート-</h2>
                     </div>
@@ -62,7 +61,7 @@ export default function Form() {
                                 hover:bg-sky-400">アンケートに回答</a>
                     </div>
                     
-                </div>*/}
+                </div>
             </div>
         </div>    
         </>
