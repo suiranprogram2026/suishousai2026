@@ -38,7 +38,7 @@ export default function Form() {
                     </div>
 
 
-                {<div className="survey_box">
+                <div className="survey_box">
                     <div className="form_back">
                         <h2>-来場者アンケート-</h2>
                     </div>
