@@ -23,7 +23,7 @@ export default function Form() {
                         <p>翠翔祭二日間で最も票を集めた団体がグランプリ獲得です！</p>
                         <div className="button_vot">
                             <p>一人一票でお願いします</p>
-                            <a href="/https://docs.google.com/forms/d/e/1FAIpQLScF_e-cKg5SJXiHLFwcq0EraogXhJOiuHgQfN0XTJBc236-hQ/viewform?usp=header">投票する</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScF_e-cKg5SJXiHLFwcq0EraogXhJOiuHgQfN0XTJBc236-hQ/viewform?usp=header">投票する</a>
                         </div>
                         
                         
