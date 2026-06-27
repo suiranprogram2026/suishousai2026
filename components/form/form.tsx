@@ -38,7 +38,7 @@ export default function Form() {
                     </div>
 
 
-                <div className="survey_box">
+                {/*<div className="survey_box">
                     <div className="form_back">
                         <h2>-来場者アンケート-</h2>
                     </div>
@@ -61,7 +61,7 @@ export default function Form() {
                                 hover:bg-sky-400">アンケートに回答</a>
                     </div>
                     
-                </div>
+                </div>*/}
             </div>
         </div>    
         </>
