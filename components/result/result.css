@@ -8,6 +8,7 @@
     flex-direction: column;
     text-align: center;
     padding: 10px;
+    color: white;
 }
 
 .result_back {
@@ -39,6 +40,13 @@
     font-size: 35px;
     margin-bottom: 10px;
 }
+
+@media (max-width: 767px) {
+    .result_content h2 {
+        font-size: clamp(24px, 5vw, 30px);
+    }
+}
+
 
 .result_content h3 {
     font-size: clamp(20px, 2.5vw, 30px);

@@ -40,7 +40,7 @@ export default function Header() {
 
         <div className={styles.rightMenu}>
           
-          <a href="https://www.pen-kanagawa.ed.jp/yokohamasuiran-h/zennichi/seikatsu/suisyousai.html">
+          {/*<a href="https://www.pen-kanagawa.ed.jp/yokohamasuiran-h/zennichi/seikatsu/suisyousai.html">
             <Image
               className={styles.apply}
               src="/apply.svg"
@@ -48,7 +48,7 @@ export default function Header() {
               width={1200}
               height={600}
             />
-          </a>
+          </a>*/}
 
           <button className={`${styles.hamburger} ${open ? styles.open : ""}`}
                   onClick={() => setOpen(!open)}>
